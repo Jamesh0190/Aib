@@ -1,0 +1,83 @@
+[build]
+  # Directory to change to before starting a build
+  base = "."
+  
+  # Directory that contains the deploy-ready HTML files and assets
+  publish = "."
+  
+  # Default build command
+  command = ""
+
+[build.environment]
+  # Set the version of Node.js
+  NODE_VERSION = "18"
+
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover
+  for = "/*"
+  [headers.values]
+    # Security headers
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    
+    # Cache headers
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Redirect rules
+[[redirects]]
+  from = "/app"
+  to = "/#interface"
+  status = 301
+
+[[redirects]]
+  from = "/demo"
+  to = "/#interface"
+  status = 301
+
+[[redirects]]
+  from = "/signup"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/login"
+  to = "/"
+  status = 301
+
+# Fallback for SPA (if you later add client-side routing)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Form handling (for contact forms)
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+# Environment variables (set these in Netlify dashboard)
+# CONTACT_EMAIL = "hello@aibhai.com"
+# ANALYTICS_ID = "your-analytics-id"

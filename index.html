@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AiBhai - Your AI Companion in Life, Faith, and Growth. Transform every aspect of your life with comprehensive AI-powered support.">
+    <meta name="keywords" content="AI assistant, personal development, spiritual guidance, health wellness, productivity, life coach">
+    <meta name="author" content="AiBhai">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aibhai.com/">
+    <meta property="og:title" content="AiBhai - Your AI Companion in Life, Faith, and Growth">
+    <meta property="og:description" content="Transform every aspect of your life with AiBhai - the comprehensive AI-powered platform that supports your health, spirituality, career, and personal development journey.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aibhai.com/">
+    <meta property="twitter:title" content="AiBhai - Your AI Companion in Life, Faith, and Growth">
+    <meta property="twitter:description" content="Transform every aspect of your life with AiBhai - the comprehensive AI-powered platform that supports your health, spirituality, career, and personal development journey.">
+    
+    <title>AiBhai - Your AI Companion in Life, Faith, and Growth</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <i class="fas fa-brain"></i> AiBhai
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#interface">App</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="#" class="btn btn-secondary" onclick="showLogin()">Login</a>
+                    <a href="#" class="btn btn-primary" onclick="startTrial()">Start Free Trial</a>
+                </div>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content animate-fade-in">
+                <h1>Your AI Companion in Life, Faith, and Growth</h1>
+                <p>Transform every aspect of your life with AiBhai - the comprehensive AI-powered platform that supports your health, spirituality, career, and personal development journey.</p>
+                <div class="hero-cta">
+                    <a href="#" class="btn btn-primary btn-hero" onclick="startTrial()">
+                        <i class="fas fa-rocket"></i> Start Your Journey
+                    </a>
+                    <a href="#features" class="btn btn-secondary btn-hero">
+                        <i class="fas fa-play"></i> Explore Features
+                    </a>
+                </div>
+                
+                <!-- Dashboard Preview -->
+                <div class="dashboard-preview">
+                    <div class="preview-card">
+                        <div class="chat-interface">
+                            <div class="chat-header">
+                                <div class="avatar">AI</div>
+                                <div>
+                                    <h4>AiBhai Assistant</h4>
+                                    <p style="font-size: 0.9rem; opacity: 0.7;">Always here to help</p>
+                                </div>
+                            </div>
+                            <div class="chat-messages">
+                                <div class="message ai">
+                                    Good morning! I've prepared your daily wellness plan and noticed you have a meeting at 2 PM. Would you like me to suggest some pre-meeting meditation exercises?
+                                </div>
+                                <div class="message user">
+                                    Yes, that would be great. Also remind me about my evening prayers.
+                                </div>
+                                <div class="message ai">
+                                    Perfect! I've scheduled a 10-minute mindfulness session at 1:40 PM and set your Maghrib prayer reminder for 6:15 PM today. Your wellness score is looking excellent this week! 🌟
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Everything You Need to Thrive</h2>
+                <p>AiBhai integrates all aspects of personal development into one intelligent, compassionate platform</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Life Planner & Habit Architect</h3>
+                    <p>AI-powered calendar management with smart time blocking, habit coaching, and weekly improvement suggestions tailored to your goals.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Health & Wellness Guide</h3>
+                    <p>Comprehensive health tracking with nutrition monitoring, movement prompts, sleep analytics, and mental wellness support with CBT-based journaling.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mosque"></i>
+                    </div>
+                    <h3>Faith & Spiritual Advisor</h3>
+                    <p>Customizable spiritual guidance with prayer reminders, Quranic reflections, and daily spiritual practices adapted to your beliefs.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Business & Career Coach</h3>
+                    <p>Professional growth support with email drafting, proposal writing, startup mentoring, and freelancer tools to advance your career.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-pound-sign"></i>
+                    </div>
+                    <h3>Financial Wellness Assistant</h3>
+                    <p>Smart budgeting, savings goals, subscription tracking, and spending analysis with AI-powered financial advice and education.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Social & Emotional Growth</h3>
+                    <p>Relationship coaching with conversation practice, conflict resolution tools, emotional resilience exercises, and social skill development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Interface Section -->
+    <section class="app-interface" id="interface">
+        <div class="container">
+            <div class="interface-container">
+                <div class="interface-content">
+                    <h2>Meet Your Personal AI Companion</h2>
+                    <p>Experience the future of personal development with an AI that understands your unique needs, respects your values, and grows with you on your journey to becoming the best version of yourself.</p>
+                    <div class="hero-cta">
+                        <a href="#" class="btn btn-primary" onclick="openDemo()">
+                            <i class="fas fa-play"></i> Try Demo
+                        </a>
+                    </div>
+                </div>
+                <div class="app-mockup">
+                    <div class="mockup-screen">
+                        <div class="chat-interface">
+                            <div class="chat-header">
+                                <div class="avatar">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div>
+                                    <h4>AiBhai - Your Life Companion</h4>
+                                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Online • Ready to assist</p>
+                                </div>
+                            </div>
+                            <div class="chat-messages" id="demoChat">
+                                <div class="message ai">
+                                    Welcome! I'm here to support every aspect of your life. How can I help you grow today?
+                                </div>
+                                <div class="message user">
+                                    I want to improve my morning routine and be more productive.
+                                </div>
+                                <div class="message ai">
+                                    Excellent goal! Let me create a personalized morning routine based on your lifestyle. I'll include time for reflection, exercise, and goal-setting. Would you like me to integrate your prayer times and health goals too?
+                                </div>
+                                <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                                    <div class="typing-dot"></div>
+                                    <div class="typing-dot"></div>
+                                    <div class="typing-dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: white;">Choose Your Growth Plan</h2>
+                <p style="color: rgba(255, 255, 255, 0.7);">Start free and upgrade as you discover the power of AI-guided personal development</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="plan-name">Free</div>
+                    <div class="plan-price">£0<span style="font-size: 1rem; font-weight: normal;">/month</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Basic AI chat support</li>
+                        <li><i class="fas fa-check"></i> Simple habit tracking</li>
+                        <li><i class="fas fa-check"></i> Prayer time reminders</li>
+                        <li><i class="fas fa-check"></i> Basic budgeting tools</li>
+                        <li><i class="fas fa-check"></i> Community access</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary" onclick="selectPlan('free')" style="width: 100%; text-align: center;">Get Started Free</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="plan-name">Basic</div>
+                    <div class="plan-price">£4.99<span style="font-size: 1rem; font-weight: normal;">/month</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Advanced AI coaching</li>
+                        <li><i class="fas fa-check"></i> Smart calendar integration</li>
+                        <li><i class="fas fa-check"></i> Health tracking & analytics</li>
+                        <li><i class="fas fa-check"></i> Spiritual guidance tools</li>
+                        <li><i class="fas fa-check"></i> Financial wellness dashboard</li>
+                        <li><i class="fas fa-check"></i> Email & writing assistance</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" onclick="selectPlan('basic')" style="width: 100%; text-align: center;">Start Basic Plan</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="plan-name">Pro</div>
+                    <div class="plan-price">£9.99<span style="font-size: 1rem; font-weight: normal;">/month</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Everything in Basic</li>
+                        <li><i class="fas fa-check"></i> Wearable device integration</li>
+                        <li><i class="fas fa-check"></i> Advanced business tools</li>
+                        <li><i class="fas fa-check"></i> Custom learning plans</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> API access</li>
+                        <li><i class="fas fa-check"></i> White-label options</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" onclick="selectPlan('pro')" style="width: 100%; text-align: center;">Go Pro</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="about">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-brain"></i> AiBhai</h3>
+                    <p style="color: rgba(255, 255, 255, 0.7); margin-top: 1rem;">Your AI companion in life, faith, and growth. Empowering individuals to become the best version of themselves through intelligent, ethical, and deeply personal support.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Features</h3>
+                    <a href="#">Life Planning</a>
+                    <a href="#">Health & Wellness</a>
+                    <a href="#">Spiritual Guidance</a>
+                    <a href="#">Business Coaching</a>
+                    <a href="#">Financial Tools</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <a href="#">Help Center</a>
+                    <a href="#">Community</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                    <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AiBhai.com. All rights reserved. Made with ❤️ for your growth journey.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Demo/Signup -->
+    <div id="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; align-items: center; justify-content: center;">
+        <div style="background: white; padding: 2rem; border-radius: 20px; max-width: 500px; width: 90%; margin: 1rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h3 id="modalTitle">Get Started with AiBhai</h3>
+                <button onclick="closeModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+            </div>
+            <div id="modalContent">
+                <p>Start your journey to becoming the best version of yourself. AiBhai is currently in development and will launch soon!</p>
+                <form onsubmit="handleSignup(event)" style="margin-top: 1.5rem;">
+                    <input type="email" placeholder="Enter your email" required style="width: 100%; padding: 1rem; border: 2px solid var(--border); border-radius: 10px; margin-bottom: 1rem;">
+                    <select style="width: 100%; padding: 1rem; border: 2px solid var(--border); border-radius: 10px; margin-bottom: 1rem;">
+                        <option>I'm interested in...</option>
+                        <option>Personal Development</option>
+                        <option>Spiritual Growth</option>
+                        <option>Health & Wellness</option>
+                        <option>Business & Career</option>
+                        <option>Financial Planning</option>
+                        <option>Everything!</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Join Waitlist</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
