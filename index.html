@@ -270,6 +270,13 @@
             border: 1px solid rgba(102, 126, 234, 0.3);
         }
 
+        .message.expert-suggestion {
+            background: rgba(255, 193, 7, 0.2);
+            color: #e0e0e0;
+            align-self: flex-start;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+
         .chat-input {
             padding: 1rem;
             border-top: 1px solid rgba(0, 212, 255, 0.3);
@@ -303,6 +310,263 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        /* Expert Consultation Section */
+        .expert-consultation {
+            padding: 4rem 0;
+            position: relative;
+            z-index: 1;
+            background: rgba(15, 15, 25, 0.6);
+            backdrop-filter: blur(10px);
+        }
+
+        .expert-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .expert-category-card {
+            background: rgba(20, 20, 35, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .expert-category-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 212, 255, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+        }
+
+        .expert-category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .expert-category-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .expert-category-card p {
+            color: #e0e0e0;
+            font-size: 0.9rem;
+        }
+
+        .expert-count {
+            display: inline-block;
+            background: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Expert Directory */
+        .expert-directory {
+            padding: 4rem 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .expert-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-button {
+            background: rgba(20, 20, 35, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            color: #e0e0e0;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-button.active,
+        .filter-button:hover {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: #00d4ff;
+            color: #00d4ff;
+        }
+
+        .experts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .expert-card {
+            background: rgba(20, 20, 35, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .expert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.5);
+        }
+
+        .expert-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .expert-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            object-fit: cover;
+            border: 3px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .expert-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.25rem;
+            color: #ffffff;
+        }
+
+        .expert-specialty {
+            color: #00d4ff;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .expert-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .stars {
+            color: #ffc107;
+        }
+
+        .expert-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            margin-top: 0.5rem;
+        }
+
+        .status-online {
+            background: rgba(76, 175, 80, 0.2);
+            color: #4caf50;
+        }
+
+        .status-busy {
+            background: rgba(255, 152, 0, 0.2);
+            color: #ff9800;
+        }
+
+        .status-offline {
+            background: rgba(244, 67, 54, 0.2);
+            color: #f44336;
+        }
+
+        .expert-bio {
+            color: #e0e0e0;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .expert-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-tag {
+            background: rgba(0, 212, 255, 0.1);
+            color: #00d4ff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .expert-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .expert-actions button {
+            flex: 1;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-book {
+            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            color: white;
+        }
+
+        .btn-book:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn-profile {
+            background: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-profile:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+
+        .expert-availability {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .availability-info {
+            font-size: 0.9rem;
+            color: #e0e0e0;
+        }
+
+        .consultation-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #00d4ff;
         }
 
         /* Core Services Section */
@@ -395,6 +659,18 @@
             font-weight: bold;
         }
 
+        .expert-support-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+
         /* Features Section */
         .features {
             padding: 4rem 0;
@@ -460,6 +736,139 @@
         .feature-card p {
             color: #e0e0e0;
             line-height: 1.6;
+        }
+
+        /* Booking Modal */
+        .booking-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 3000;
+        }
+
+        .booking-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .booking-content {
+            background: rgba(20, 20, 35, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .booking-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .booking-expert-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            object-fit: cover;
+        }
+
+        .booking-expert-info h3 {
+            color: #ffffff;
+            margin-bottom: 0.25rem;
+        }
+
+        .booking-expert-info p {
+            color: #00d4ff;
+            font-size: 0.9rem;
+        }
+
+        .booking-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .booking-tab {
+            flex: 1;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: #e0e0e0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .booking-tab.active {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: #00d4ff;
+            color: #00d4ff;
+        }
+
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .time-slot {
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: #e0e0e0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .time-slot:hover,
+        .time-slot.selected {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: #00d4ff;
+            color: #00d4ff;
+        }
+
+        .time-slot.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .booking-summary {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            color: #e0e0e0;
+        }
+
+        .summary-row.total {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #00d4ff;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* Testimonials Section */
@@ -868,7 +1277,9 @@
             .features-grid,
             .services-grid,
             .pricing-grid,
-            .testimonials-grid {
+            .testimonials-grid,
+            .expert-categories,
+            .experts-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -887,6 +1298,11 @@
             .dashboard-header {
                 flex-direction: column;
                 align-items: flex-start;
+            }
+
+            .booking-content {
+                margin: 1rem;
+                padding: 1.5rem;
             }
         }
 
@@ -1144,6 +1560,7 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#expert-consultation">Expert Consultation</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#pricing">Pricing</a></li>
@@ -1164,7 +1581,7 @@
                 <p>AiBhai is your comprehensive AI-powered personal assistant, supporting your journey toward holistic development across health, wellness, spirituality, productivity, relationships, finance, career, and continuous learning.</p>
                 <div class="hero-buttons">
                     <a href="#" class="btn-primary pulse" onclick="openModal('signupModal')">Start Your Journey</a>
-                    <a href="#" class="btn-secondary" onclick="scrollToSection('services')">Explore Features</a>
+                    <a href="#" class="btn-secondary" onclick="scrollToSection('expert-consultation')">Talk to Expert</a>
                 </div>
             </div>
         </div>
@@ -1198,12 +1615,127 @@
         </div>
     </section>
 
+    <!-- Expert Consultation Section -->
+    <section class="expert-consultation" id="expert-consultation">
+        <div class="container">
+            <h2 class="section-title">Connect with Human Experts</h2>
+            <p style="text-align: center; margin-bottom: 3rem; color: #e0e0e0; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Get personalized guidance from verified human experts to complement AI insights. Our experts can help confirm, verify, and enhance the answers you receive from our AI platform.
+            </p>
+            
+            <div class="expert-categories">
+                <div class="expert-category-card" onclick="filterExperts('health')">
+                    <div class="expert-category-icon">🏥</div>
+                    <h3>Health & Medical</h3>
+                    <p>Professional medical advice and wellness guidance</p>
+                    <span class="expert-count">245 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('mental-health')">
+                    <div class="expert-category-icon">🧠</div>
+                    <h3>Mental Health</h3>
+                    <p>Therapy, counseling, and emotional support</p>
+                    <span class="expert-count">189 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('spiritual')">
+                    <div class="expert-category-icon">🕌</div>
+                    <h3>Spiritual Guidance</h3>
+                    <p>Faith-based counseling and spiritual mentoring</p>
+                    <span class="expert-count">156 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('financial')">
+                    <div class="expert-category-icon">💰</div>
+                    <h3>Financial Planning</h3>
+                    <p>Investment, budgeting, and wealth management</p>
+                    <span class="expert-count">203 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('career')">
+                    <div class="expert-category-icon">💼</div>
+                    <h3>Career & Business</h3>
+                    <p>Professional development and business strategy</p>
+                    <span class="expert-count">267 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('legal')">
+                    <div class="expert-category-icon">⚖️</div>
+                    <h3>Legal Advice</h3>
+                    <p>Legal consultation and document review</p>
+                    <span class="expert-count">134 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('education')">
+                    <div class="expert-category-icon">📚</div>
+                    <h3>Education & Learning</h3>
+                    <p>Academic guidance and skill development</p>
+                    <span class="expert-count">178 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('relationships')">
+                    <div class="expert-category-icon">❤️</div>
+                    <h3>Relationships</h3>
+                    <p>Family, marriage, and interpersonal counseling</p>
+                    <span class="expert-count">145 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('technology')">
+                    <div class="expert-category-icon">💻</div>
+                    <h3>Technology & IT</h3>
+                    <p>Tech support and digital transformation</p>
+                    <span class="expert-count">198 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('real-estate')">
+                    <div class="expert-category-icon">🏠</div>
+                    <h3>Real Estate</h3>
+                    <p>Property investment and real estate advice</p>
+                    <span class="expert-count">112 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('nutrition')">
+                    <div class="expert-category-icon">🥗</div>
+                    <h3>Nutrition & Diet</h3>
+                    <p>Dietary planning and nutritional counseling</p>
+                    <span class="expert-count">167 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('fitness')">
+                    <div class="expert-category-icon">💪</div>
+                    <h3>Fitness & Training</h3>
+                    <p>Personal training and fitness coaching</p>
+                    <span class="expert-count">156 experts</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Directory Section -->
+    <section class="expert-directory" id="expert-directory">
+        <div class="container">
+            <h2 class="section-title">Featured Experts</h2>
+            
+            <div class="expert-filters">
+                <button class="filter-button active" onclick="filterExperts('all')">All Experts</button>
+                <button class="filter-button" onclick="filterExperts('available')">Available Now</button>
+                <button class="filter-button" onclick="filterExperts('top-rated')">Top Rated</button>
+                <button class="filter-button" onclick="filterExperts('new')">New Experts</button>
+            </div>
+            
+            <div class="experts-grid" id="expertsGrid">
+                <!-- Expert cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
     <!-- Core Services Section -->
     <section class="services" id="services">
         <div class="container">
             <h2 class="section-title">Core Life Support Services</h2>
             <div class="services-grid">
                 <div class="service-card">
+                    <div class="expert-support-badge">+ Human Expert</div>
                     <div class="service-header">
                         <div class="service-icon">📅</div>
                         <h3>Life Planner & Habit Architect</h3>
@@ -1214,10 +1746,12 @@
                         <li>Weekly progress reviews & insights</li>
                         <li>Personalized improvement suggestions</li>
                         <li>Goal tracking & milestone celebrations</li>
+                        <li>Access to certified life coaches</li>
                     </ul>
                 </div>
 
                 <div class="service-card">
+                    <div class="expert-support-badge">+ Human Expert</div>
                     <div class="service-header">
                         <div class="service-icon">💪</div>
                         <h3>Health & Wellness Guide</h3>
@@ -1228,10 +1762,12 @@
                         <li>Sleep analytics & optimization</li>
                         <li>Mental wellness chat with CBT-based tools</li>
                         <li>Wearable device integration</li>
+                        <li>Consultation with health professionals</li>
                     </ul>
                 </div>
 
                 <div class="service-card">
+                    <div class="expert-support-badge">+ Human Expert</div>
                     <div class="service-header">
                         <div class="service-icon">🕌</div>
                         <h3>Faith & Spiritual Advisor</h3>
@@ -1242,10 +1778,12 @@
                         <li>Quranic/Hadith-based guidance (Muslim users)</li>
                         <li>Daily reflection prompts</li>
                         <li>Spiritual journaling & growth tracking</li>
+                        <li>Guidance from spiritual mentors</li>
                     </ul>
                 </div>
 
                 <div class="service-card">
+                    <div class="expert-support-badge">+ Human Expert</div>
                     <div class="service-header">
                         <div class="service-icon">💼</div>
                         <h3>Business & Career Coach</h3>
@@ -1256,10 +1794,12 @@
                         <li>Freelancer & solopreneur support</li>
                         <li>Career path planning & skill development</li>
                         <li>Professional networking strategies</li>
+                        <li>1-on-1 business consulting sessions</li>
                     </ul>
                 </div>
 
                 <div class="service-card">
+                    <div class="expert-support-badge">+ Human Expert</div>
                     <div class="service-header">
                         <div class="service-icon">💰</div>
                         <h3>Financial Wellness Assistant</h3>
@@ -1270,10 +1810,12 @@
                         <li>Subscription management & optimization</li>
                         <li>Spending analysis with AI insights</li>
                         <li>Financial education & alerts</li>
+                        <li>Consultation with financial advisors</li>
                     </ul>
                 </div>
 
                 <div class="service-card">
+                    <div class="expert-support-badge">+ Human Expert</div>
                     <div class="service-header">
                         <div class="service-icon">❤️</div>
                         <h3>Social & Emotional Growth</h3>
@@ -1284,10 +1826,12 @@
                         <li>Emotional resilience exercises</li>
                         <li>Communication skill development</li>
                         <li>Empathy & relationship building tools</li>
+                        <li>Therapy and counseling sessions</li>
                     </ul>
                 </div>
 
                 <div class="service-card">
+                    <div class="expert-support-badge">+ Human Expert</div>
                     <div class="service-header">
                         <div class="service-icon">📚</div>
                         <h3>Learning & Skill Builder</h3>
@@ -1298,10 +1842,12 @@
                         <li>Language learning support</li>
                         <li>Coding & technical skill development</li>
                         <li>Progress tracking & achievement badges</li>
+                        <li>Tutoring and mentorship sessions</li>
                     </ul>
                 </div>
 
                 <div class="service-card">
+                    <div class="expert-support-badge">+ Human Expert</div>
                     <div class="service-header">
                         <div class="service-icon">🎯</div>
                         <h3>Personal Integration Hub</h3>
@@ -1312,6 +1858,7 @@
                         <li>Life balance assessments</li>
                         <li>Personalized recommendations</li>
                         <li>Holistic progress reporting</li>
+                        <li>Integrated expert consultations</li>
                     </ul>
                 </div>
             </div>
@@ -1334,6 +1881,11 @@
                     <p>Advanced GPT-4 technology with custom-trained models for personalized, context-aware guidance and support.</p>
                 </div>
                 <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Human Expert Network</h3>
+                    <p>Access to verified professionals across all domains for personalized consultation and expert validation.</p>
+                </div>
+                <div class="feature-card">
                     <div class="feature-icon">🕌</div>
                     <h3>Faith-Conscious Design</h3>
                     <p>Spiritual guidance and values-based support tailored to your beliefs, with special features for faith-conscious users.</p>
@@ -1348,11 +1900,6 @@
                     <h3>24/7 Availability</h3>
                     <p>Your AI companion is always available to provide support, guidance, and assistance whenever you need it.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📈</div>
-                    <h3>Personal Growth</h3>
-                    <p>Continuous learning and improvement tracking to help you become the best version of yourself.</p>
-                </div>
             </div>
         </div>
     </section>
@@ -1364,7 +1911,7 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        "AiBhai has transformed how I approach my daily life. The holistic approach has helped me balance my career, health, and spiritual growth in ways I never thought possible."
+                        "The combination of AI insights and human expert consultation has been transformative. I get instant answers from AiBhai and can validate them with certified professionals when needed."
                     </div>
                     <div class="testimonial-author">
                         <img src="https://picsum.photos/seed/user1/50/50.jpg" alt="User" class="testimonial-avatar">
@@ -1377,7 +1924,7 @@
 
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        "As a busy professional, I struggled with maintaining balance. AiBhai's intelligent planning and habit coaching have been game-changers for my productivity and well-being."
+                        "As someone who values both technology and human connection, AiBhai perfectly bridges the gap. The AI provides quick insights, while the expert network offers deep, personalized guidance."
                     </div>
                     <div class="testimonial-author">
                         <img src="https://picsum.photos/seed/user2/50/50.jpg" alt="User" class="testimonial-avatar">
@@ -1390,7 +1937,7 @@
 
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        "The spiritual guidance features have been incredibly helpful in my faith journey. Having personalized reminders and reflections has deepened my connection to my beliefs."
+                        "The spiritual guidance features combined with access to real scholars have been incredible for my faith journey. I get daily reminders and can consult with experts when I have deeper questions."
                     </div>
                     <div class="testimonial-author">
                         <img src="https://picsum.photos/seed/user3/50/50.jpg" alt="User" class="testimonial-avatar">
@@ -1414,12 +1961,11 @@
                     <div class="price">£0<span style="font-size: 1rem;">/month</span></div>
                     <div class="price-subtitle">Perfect for getting started</div>
                     <ul class="pricing-features">
+                        <li>Basic AI assistance</li>
+                        <li>Limited expert access (1/month)</li>
                         <li>Basic life planning tools</li>
-                        <li>Limited health tracking</li>
-                        <li>Standard spiritual reminders</li>
-                        <li>5 AI conversations per day</li>
-                        <li>Basic habit tracking</li>
                         <li>Community support</li>
+                        <li>Mobile app access</li>
                     </ul>
                     <button class="cta-button" onclick="openModal('signupModal')" style="width: 100%;">Get Started Free</button>
                 </div>
@@ -1431,12 +1977,10 @@
                     <ul class="pricing-features">
                         <li>Everything in Free</li>
                         <li>Unlimited AI conversations</li>
-                        <li>Advanced health & wellness analytics</li>
-                        <li>Premium spiritual guidance</li>
-                        <li>Business & career coaching</li>
-                        <li>Financial planning tools</li>
-                        <li>Wearable device integration</li>
+                        <li>5 expert consultations/month</li>
+                        <li>Advanced analytics</li>
                         <li>Priority support</li>
+                        <li>All premium features</li>
                     </ul>
                     <button class="btn-primary" onclick="openModal('signupModal')" style="width: 100%;">Start Pro Trial</button>
                 </div>
@@ -1447,10 +1991,9 @@
                     <div class="price-subtitle">Essential features</div>
                     <ul class="pricing-features">
                         <li>Everything in Free</li>
-                        <li>20 AI conversations per day</li>
-                        <li>Enhanced habit tracking</li>
-                        <li>Basic financial tracking</li>
-                        <li>Standard learning modules</li>
+                        <li>20 AI conversations/day</li>
+                        <li>2 expert consultations/month</li>
+                        <li>Enhanced features</li>
                         <li>Email support</li>
                     </ul>
                     <button class="cta-button" onclick="openModal('signupModal')" style="width: 100%;">Choose Basic</button>
@@ -1462,13 +2005,11 @@
                     <div class="price-subtitle">For teams & families</div>
                     <ul class="pricing-features">
                         <li>Everything in Pro</li>
+                        <li>Unlimited expert access</li>
                         <li>Multiple user accounts</li>
                         <li>Team collaboration tools</li>
                         <li>Custom integrations</li>
-                        <li>Dedicated account manager</li>
-                        <li>White-label options</li>
-                        <li>API access</li>
-                        <li>Priority support</li>
+                        <li>Dedicated support</li>
                     </ul>
                     <button class="cta-button" onclick="openModal('contactModal')" style="width: 100%;">Contact Sales</button>
                 </div>
@@ -1496,6 +2037,7 @@
                 <button class="dashboard-tab" onclick="switchDashboardTab('spiritual')">Spiritual</button>
                 <button class="dashboard-tab" onclick="switchDashboardTab('productivity')">Productivity</button>
                 <button class="dashboard-tab" onclick="switchDashboardTab('finance')">Finance</button>
+                <button class="dashboard-tab" onclick="switchDashboardTab('experts')">My Experts</button>
             </div>
 
             <div class="dashboard-content">
@@ -1555,12 +2097,13 @@
 
                     <div class="dashboard-widget">
                         <div class="widget-header">
-                            <div class="widget-title">Financial Overview</div>
-                            <div class="widget-icon">💰</div>
+                            <div class="widget-title">Expert Consultations</div>
+                            <div class="widget-icon">👥</div>
                         </div>
                         <div style="text-align: center; padding: 1rem;">
-                            <div style="font-size: 1.5rem; font-weight: 600; color: #4caf50;">+12%</div>
-                            <div style="color: #e0e0e0;">Savings growth this month</div>
+                            <div style="font-size: 2rem; margin: 1rem 0;">3/5</div>
+                            <div style="color: #e0e0e0;">Used this month</div>
+                            <button class="btn-primary" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Book Expert</button>
                         </div>
                     </div>
                 </div>
@@ -1590,6 +2133,81 @@
 
     <button class="chat-toggle" onclick="toggleChat()" id="chatToggle">💬</button>
 
+    <!-- Booking Modal -->
+    <div class="booking-modal" id="bookingModal">
+        <div class="booking-content">
+            <button class="modal-close" onclick="closeBookingModal()">×</button>
+            
+            <div class="booking-header">
+                <img src="https://picsum.photos/seed/expert/60/60.jpg" alt="Expert" class="booking-expert-avatar" id="bookingExpertAvatar">
+                <div class="booking-expert-info">
+                    <h3 id="bookingExpertName">Dr. Sarah Johnson</h3>
+                    <p id="bookingExpertSpecialty">Medical Expert</p>
+                </div>
+            </div>
+
+            <div class="booking-tabs">
+                <button class="booking-tab active" onclick="switchBookingTab('instant')">Instant Session</button>
+                <button class="booking-tab" onclick="switchBookingTab('schedule')">Schedule Later</button>
+            </div>
+
+            <div id="instantBooking">
+                <div style="text-align: center; padding: 2rem;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🎥</div>
+                    <h3 style="margin-bottom: 1rem;">Start Video Consultation</h3>
+                    <p style="color: #e0e0e0; margin-bottom: 2rem;">Connect with your expert immediately for a 30-minute session</p>
+                    <div class="consultation-price">£45/session</div>
+                    <button class="btn-primary" style="width: 100%; margin-top: 1rem;" onclick="startInstantSession()">Start Session</button>
+                </div>
+            </div>
+
+            <div id="scheduleBooking" style="display: none;">
+                <h4 style="margin-bottom: 1rem; color: #ffffff;">Select Date & Time</h4>
+                
+                <div style="margin-bottom: 2rem;">
+                    <input type="date" id="bookingDate" style="width: 100%; padding: 0.75rem; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(0, 212, 255, 0.3); border-radius: 8px; color: white;">
+                </div>
+
+                <h4 style="margin-bottom: 1rem; color: #ffffff;">Available Time Slots</h4>
+                <div class="time-slots" id="timeSlots">
+                    <div class="time-slot" onclick="selectTimeSlot(this)">9:00 AM</div>
+                    <div class="time-slot" onclick="selectTimeSlot(this)">10:00 AM</div>
+                    <div class="time-slot" onclick="selectTimeSlot(this)">11:00 AM</div>
+                    <div class="time-slot disabled">12:00 PM</div>
+                    <div class="time-slot" onclick="selectTimeSlot(this)">2:00 PM</div>
+                    <div class="time-slot" onclick="selectTimeSlot(this)">3:00 PM</div>
+                    <div class="time-slot" onclick="selectTimeSlot(this)">4:00 PM</div>
+                    <div class="time-slot" onclick="selectTimeSlot(this)">5:00 PM</div>
+                </div>
+
+                <div class="booking-summary">
+                    <div class="summary-row">
+                        <span>Expert:</span>
+                        <span id="summaryExpert">Dr. Sarah Johnson</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Date:</span>
+                        <span id="summaryDate">Not selected</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Time:</span>
+                        <span id="summaryTime">Not selected</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Duration:</span>
+                        <span>30 minutes</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span>£45</span>
+                    </div>
+                </div>
+
+                <button class="btn-primary" style="width: 100%;" onclick="confirmBooking()">Confirm Booking</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1605,6 +2223,7 @@
                         <li><a href="#">Health & Wellness</a></li>
                         <li><a href="#">Spiritual Guidance</a></li>
                         <li><a href="#">Business Coaching</a></li>
+                        <li><a href="#">Expert Consultation</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1614,6 +2233,7 @@
                         <li><a href="#">Careers</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Contact</a></li>
+                        <li><a href="#">Become an Expert</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1623,6 +2243,7 @@
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Terms of Service</a></li>
                         <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Expert Guidelines</a></li>
                     </ul>
                 </div>
             </div>
@@ -1741,6 +2362,169 @@
         let currentDashboardTab = 'overview';
         let chatHistory = [];
         let heroChatHistory = [];
+        let currentBookingTab = 'instant';
+        let selectedExpert = null;
+        let selectedTimeSlot = null;
+
+        // Expert data
+        const experts = [
+            {
+                id: 1,
+                name: "Dr. Sarah Johnson",
+                specialty: "Medical Expert",
+                category: "health",
+                rating: 4.9,
+                reviews: 324,
+                status: "online",
+                price: 45,
+                bio: "Board-certified physician with 15+ years of experience in internal medicine and preventive care. Specializes in holistic health approaches.",
+                skills: ["Internal Medicine", "Preventive Care", "Nutrition", "Lifestyle Medicine"],
+                avatar: "https://picsum.photos/seed/sarah/80/80.jpg"
+            },
+            {
+                id: 2,
+                name: "Dr. Michael Chen",
+                specialty: "Mental Health Counselor",
+                category: "mental-health",
+                rating: 4.8,
+                reviews: 276,
+                status: "busy",
+                price: 55,
+                bio: "Licensed therapist specializing in CBT, mindfulness, and stress management. Helps individuals achieve mental wellness and balance.",
+                skills: ["CBT", "Mindfulness", "Stress Management", "Anxiety Treatment"],
+                avatar: "https://picsum.photos/seed/michael/80/80.jpg"
+            },
+            {
+                id: 3,
+                name: "Sheikh Ahmed Hassan",
+                specialty: "Islamic Scholar",
+                category: "spiritual",
+                rating: 5.0,
+                reviews: 456,
+                status: "online",
+                price: 35,
+                bio: "Renowned Islamic scholar with expertise in Quranic studies, Hadith, and Islamic spirituality. Provides guidance for faith-based living.",
+                skills: ["Quranic Studies", "Hadith", "Islamic Spirituality", "Faith Counseling"],
+                avatar: "https://picsum.photos/seed/ahmed/80/80.jpg"
+            },
+            {
+                id: 4,
+                name: "Emily Rodriguez",
+                specialty: "Financial Advisor",
+                category: "financial",
+                rating: 4.7,
+                reviews: 198,
+                status: "online",
+                price: 60,
+                bio: "Certified financial planner with expertise in investment strategies, retirement planning, and wealth management for individuals and families.",
+                skills: ["Investment Planning", "Retirement", "Wealth Management", "Tax Planning"],
+                avatar: "https://picsum.photos/seed/emily/80/80.jpg"
+            },
+            {
+                id: 5,
+                name: "Robert Thompson",
+                specialty: "Business Coach",
+                category: "career",
+                rating: 4.6,
+                reviews: 234,
+                status: "offline",
+                price: 75,
+                bio: "Executive coach and business strategist with 20+ years of experience helping entrepreneurs and professionals achieve their goals.",
+                skills: ["Business Strategy", "Leadership", "Entrepreneurship", "Executive Coaching"],
+                avatar: "https://picsum.photos/seed/robert/80/80.jpg"
+            },
+            {
+                id: 6,
+                name: "Lisa Wang",
+                specialty: "Legal Consultant",
+                category: "legal",
+                rating: 4.8,
+                reviews: 167,
+                status: "online",
+                price: 80,
+                bio: "Experienced attorney specializing in business law, contracts, and compliance. Provides practical legal advice for individuals and businesses.",
+                skills: ["Business Law", "Contracts", "Compliance", "Legal Consulting"],
+                avatar: "https://picsum.photos/seed/lisa/80/80.jpg"
+            },
+            {
+                id: 7,
+                name: "Dr. James Wilson",
+                specialty: "Educational Consultant",
+                category: "education",
+                rating: 4.5,
+                reviews: 189,
+                status: "busy",
+                price: 50,
+                bio: "Educational psychologist and learning specialist with expertise in curriculum development and personalized learning strategies.",
+                skills: ["Educational Psychology", "Curriculum Development", "Learning Strategies", "Academic Coaching"],
+                avatar: "https://picsum.photos/seed/james/80/80.jpg"
+            },
+            {
+                id: 8,
+                name: "Maria Garcia",
+                specialty: "Relationship Counselor",
+                category: "relationships",
+                rating: 4.9,
+                reviews: 267,
+                status: "online",
+                price: 65,
+                bio: "Licensed marriage and family therapist specializing in relationship dynamics, communication skills, and family counseling.",
+                skills: ["Marriage Counseling", "Family Therapy", "Communication Skills", "Relationship Dynamics"],
+                avatar: "https://picsum.photos/seed/maria/80/80.jpg"
+            },
+            {
+                id: 9,
+                name: "David Kim",
+                specialty: "IT Consultant",
+                category: "technology",
+                rating: 4.7,
+                reviews: 145,
+                status: "online",
+                price: 70,
+                bio: "Senior IT consultant with expertise in digital transformation, cybersecurity, and technology strategy for businesses.",
+                skills: ["Digital Transformation", "Cybersecurity", "IT Strategy", "Technology Consulting"],
+                avatar: "https://picsum.photos/seed/david/80/80.jpg"
+            },
+            {
+                id: 10,
+                name: "Jennifer Brown",
+                specialty: "Real Estate Advisor",
+                category: "real-estate",
+                rating: 4.6,
+                reviews: 178,
+                status: "offline",
+                price: 55,
+                bio: "Licensed real estate broker and investment specialist with expertise in property investment and market analysis.",
+                skills: ["Property Investment", "Market Analysis", "Real Estate Strategy", "Property Management"],
+                avatar: "https://picsum.photos/seed/jennifer/80/80.jpg"
+            },
+            {
+                id: 11,
+                name: "Dr. Rachel Green",
+                specialty: "Nutritionist",
+                category: "nutrition",
+                rating: 4.8,
+                reviews: 234,
+                status: "online",
+                price: 45,
+                bio: "Registered dietitian and nutritionist specializing in personalized nutrition plans, weight management, and dietary counseling.",
+                skills: ["Nutrition Planning", "Weight Management", "Dietary Counseling", "Meal Planning"],
+                avatar: "https://picsum.photos/seed/rachel/80/80.jpg"
+            },
+            {
+                id: 12,
+                name: "Mark Johnson",
+                specialty: "Personal Trainer",
+                category: "fitness",
+                rating: 4.9,
+                reviews: 289,
+                status: "busy",
+                price: 40,
+                bio: "Certified personal trainer and fitness coach specializing in strength training, weight loss, and athletic performance.",
+                skills: ["Strength Training", "Weight Loss", "Athletic Performance", "Fitness Coaching"],
+                avatar: "https://picsum.photos/seed/mark/80/80.jpg"
+            }
+        ];
 
         // Three.js Background
         let scene, camera, renderer, particles, particleSystem;
@@ -1856,6 +2640,9 @@
             // Initialize Three.js background
             initThreeJS();
             
+            // Populate experts grid
+            populateExpertsGrid();
+            
             // Add smooth scrolling
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -1875,6 +2662,171 @@
                 showNotification('Welcome to AiBhai!', 'Your AI companion for holistic life development is ready to help.');
             }, 2000);
         });
+
+        // Expert functions
+        function populateExpertsGrid(filter = 'all') {
+            const grid = document.getElementById('expertsGrid');
+            grid.innerHTML = '';
+            
+            let filteredExperts = experts;
+            
+            if (filter !== 'all') {
+                if (filter === 'available') {
+                    filteredExperts = experts.filter(expert => expert.status === 'online');
+                } else if (filter === 'top-rated') {
+                    filteredExperts = experts.filter(expert => expert.rating >= 4.8);
+                } else if (filter === 'new') {
+                    filteredExperts = experts.slice(-6);
+                } else {
+                    filteredExperts = experts.filter(expert => expert.category === filter);
+                }
+            }
+            
+            filteredExperts.forEach(expert => {
+                const expertCard = createExpertCard(expert);
+                grid.appendChild(expertCard);
+            });
+        }
+
+        function createExpertCard(expert) {
+            const card = document.createElement('div');
+            card.className = 'expert-card';
+            
+            const statusClass = `status-${expert.status}`;
+            const statusText = expert.status.charAt(0).toUpperCase() + expert.status.slice(1);
+            
+            card.innerHTML = `
+                <div class="expert-header">
+                    <img src="${expert.avatar}" alt="${expert.name}" class="expert-avatar">
+                    <div class="expert-info">
+                        <h3>${expert.name}</h3>
+                        <div class="expert-specialty">${expert.specialty}</div>
+                        <div class="expert-rating">
+                            <div class="stars">${'★'.repeat(Math.floor(expert.rating))}</div>
+                            <span>${expert.rating} (${expert.reviews} reviews)</span>
+                        </div>
+                        <div class="expert-status ${statusClass}">
+                            <span style="width: 8px; height: 8px; background: currentColor; border-radius: 50%; display: inline-block; margin-right: 0.5rem;"></span>
+                            ${statusText}
+                        </div>
+                    </div>
+                </div>
+                <div class="expert-bio">${expert.bio}</div>
+                <div class="expert-skills">
+                    ${expert.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                </div>
+                <div class="expert-actions">
+                    <button class="btn-book" onclick="openBookingModal(${expert.id})">Book Session</button>
+                    <button class="btn-profile" onclick="viewExpertProfile(${expert.id})">View Profile</button>
+                </div>
+                <div class="expert-availability">
+                    <div class="availability-info">30-minute session</div>
+                    <div class="consultation-price">£${expert.price}</div>
+                </div>
+            `;
+            
+            return card;
+        }
+
+        function filterExperts(category) {
+            populateExpertsGrid(category);
+            
+            // Update filter buttons
+            document.querySelectorAll('.filter-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        function openBookingModal(expertId) {
+            const expert = experts.find(e => e.id === expertId);
+            if (!expert) return;
+            
+            selectedExpert = expert;
+            
+            // Update booking modal with expert info
+            document.getElementById('bookingExpertAvatar').src = expert.avatar;
+            document.getElementById('bookingExpertName').textContent = expert.name;
+            document.getElementById('bookingExpertSpecialty').textContent = expert.specialty;
+            document.getElementById('summaryExpert').textContent = expert.name;
+            
+            // Show modal
+            document.getElementById('bookingModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+            selectedExpert = null;
+            selectedTimeSlot = null;
+        }
+
+        function switchBookingTab(tab) {
+            currentBookingTab = tab;
+            
+            // Update tab buttons
+            document.querySelectorAll('.booking-tab').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Show/hide content
+            if (tab === 'instant') {
+                document.getElementById('instantBooking').style.display = 'block';
+                document.getElementById('scheduleBooking').style.display = 'none';
+            } else {
+                document.getElementById('instantBooking').style.display = 'none';
+                document.getElementById('scheduleBooking').style.display = 'block';
+            }
+        }
+
+        function selectTimeSlot(slot) {
+            // Remove previous selection
+            document.querySelectorAll('.time-slot').forEach(s => {
+                s.classList.remove('selected');
+            });
+            
+            // Add selection to clicked slot
+            slot.classList.add('selected');
+            selectedTimeSlot = slot.textContent;
+            
+            // Update summary
+            const selectedDate = document.getElementById('bookingDate').value;
+            if (selectedDate) {
+                document.getElementById('summaryDate').textContent = new Date(selectedDate).toLocaleDateString();
+            }
+            document.getElementById('summaryTime').textContent = selectedTimeSlot;
+        }
+
+        function startInstantSession() {
+            if (!selectedExpert) return;
+            
+            closeBookingModal();
+            showNotification('Session Starting', `Connecting you with ${selectedExpert.name} for an instant consultation...`);
+            
+            // Simulate session start
+            setTimeout(() => {
+                showNotification('Session Connected', 'Your video consultation is now active. Enjoy your session!');
+            }, 2000);
+        }
+
+        function confirmBooking() {
+            if (!selectedExpert || !selectedTimeSlot) {
+                showNotification('Incomplete Booking', 'Please select a date and time for your consultation.');
+                return;
+            }
+            
+            closeBookingModal();
+            showNotification('Booking Confirmed', `Your consultation with ${selectedExpert.name} has been scheduled successfully!`);
+        }
+
+        function viewExpertProfile(expertId) {
+            const expert = experts.find(e => e.id === expertId);
+            if (!expert) return;
+            
+            showNotification('Expert Profile', `Viewing full profile for ${expert.name}. Feature coming soon!`);
+        }
 
         // Modal functions
         function openModal(modalId) {
@@ -2024,12 +2976,13 @@
                         </div>
                         <div class="dashboard-widget">
                             <div class="widget-header">
-                                <div class="widget-title">Financial Overview</div>
-                                <div class="widget-icon">💰</div>
+                                <div class="widget-title">Expert Consultations</div>
+                                <div class="widget-icon">👥</div>
                             </div>
                             <div style="text-align: center; padding: 1rem;">
-                                <div style="font-size: 1.5rem; font-weight: 600; color: #4caf50;">+12%</div>
-                                <div style="color: #e0e0e0;">Savings growth this month</div>
+                                <div style="font-size: 2rem; margin: 1rem 0;">3/5</div>
+                                <div style="color: #e0e0e0;">Used this month</div>
+                                <button class="btn-primary" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;" onclick="scrollToSection('expert-consultation')">Book Expert</button>
                             </div>
                         </div>
                     </div>
@@ -2219,6 +3172,81 @@
                             </ul>
                         </div>
                     </div>
+                `,
+                experts: `
+                    <div class="dashboard-grid">
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">My Expert Sessions</div>
+                                <div class="widget-icon">👥</div>
+                            </div>
+                            <ul style="list-style: none;">
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                                    <div style="font-weight: 600;">Dr. Sarah Johnson</div>
+                                    <div style="font-size: 0.9rem; color: #e0e0e0;">Medical Consultation - Tomorrow 2:00 PM</div>
+                                </li>
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                                    <div style="font-weight: 600;">Sheikh Ahmed Hassan</div>
+                                    <div style="font-size: 0.9rem; color: #e0e0e0;">Spiritual Guidance - Friday 4:00 PM</div>
+                                </li>
+                                <li style="padding: 0.5rem 0;">
+                                    <div style="font-weight: 600;">Emily Rodriguez</div>
+                                    <div style="font-size: 0.9rem; color: #e0e0e0;">Financial Planning - Next Week</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">Session History</div>
+                                <div class="widget-icon">📚</div>
+                            </div>
+                            <ul style="list-style: none;">
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                                    <div style="font-weight: 600;">Dr. Michael Chen</div>
+                                    <div style="font-size: 0.9rem; color: #e0e0e0;">Mental Health - Completed</div>
+                                </li>
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                                    <div style="font-weight: 600;">Robert Thompson</div>
+                                    <div style="font-size: 0.9rem; color: #e0e0e0;">Business Coaching - Completed</div>
+                                </li>
+                                <li style="padding: 0.5rem 0;">
+                                    <div style="font-weight: 600;">Maria Garcia</div>
+                                    <div style="font-size: 0.9rem; color: #e0e0e0;">Relationship Counseling - Completed</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">Available Sessions</div>
+                                <div class="widget-icon">🎟️</div>
+                            </div>
+                            <div style="text-align: center; padding: 1rem;">
+                                <div style="font-size: 2rem; margin: 1rem 0;">2</div>
+                                <div style="color: #e0e0e0;">Remaining this month</div>
+                                <button class="btn-primary" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;" onclick="scrollToSection('expert-consultation')">Book More</button>
+                            </div>
+                        </div>
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">Favorite Experts</div>
+                                <div class="widget-icon">⭐</div>
+                            </div>
+                            <ul style="list-style: none;">
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                                    <div style="font-weight: 600;">Dr. Sarah Johnson</div>
+                                    <div style="font-size: 0.9rem; color: #00d4ff;">Medical Expert</div>
+                                </li>
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                                    <div style="font-weight: 600;">Sheikh Ahmed Hassan</div>
+                                    <div style="font-size: 0.9rem; color: #00d4ff;">Islamic Scholar</div>
+                                </li>
+                                <li style="padding: 0.5rem 0;">
+                                    <div style="font-weight: 600;">Emily Rodriguez</div>
+                                    <div style="font-size: 0.9rem; color: #00d4ff;">Financial Advisor</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 `
             };
 
@@ -2252,6 +3280,14 @@
                 setTimeout(() => {
                     const aiResponse = generateAIResponse(message);
                     addChatMessage('ai', aiResponse);
+                    
+                    // Randomly suggest expert consultation (30% chance)
+                    if (Math.random() > 0.7) {
+                        setTimeout(() => {
+                            const expertSuggestion = `Would you like me to connect you with a verified human expert for more personalized guidance? I can help you find someone who specializes in this area.`;
+                            addChatMessage('expert-suggestion', expertSuggestion);
+                        }, 2000);
+                    }
                 }, 1000);
             }
         }
@@ -2341,6 +3377,14 @@
                 setTimeout(() => {
                     const aiResponse = generateAIResponse(message);
                     addChatMessage('ai', aiResponse, true);
+                    
+                    // Randomly suggest expert consultation (30% chance)
+                    if (Math.random() > 0.7) {
+                        setTimeout(() => {
+                            const expertSuggestion = `Would you like me to connect you with a verified human expert for more personalized guidance? I can help you find someone who specializes in this area.`;
+                            addChatMessage('expert-suggestion', expertSuggestion, true);
+                        }, 2000);
+                    }
                 }, 1000);
             }
         }
@@ -2409,12 +3453,27 @@
             }, observerOptions);
 
             // Observe all cards
-            document.querySelectorAll('.service-card, .feature-card, .pricing-card, .testimonial-card').forEach(card => {
+            document.querySelectorAll('.service-card, .feature-card, .pricing-card, .testimonial-card, .expert-card, .expert-category-card').forEach(card => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(30px)';
                 card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(card);
             });
+        });
+
+        // Set minimum date for booking to today
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateInput = document.getElementById('bookingDate');
+            if (dateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.min = today;
+                dateInput.value = today;
+                
+                dateInput.addEventListener('change', function() {
+                    const selectedDate = new Date(this.value);
+                    document.getElementById('summaryDate').textContent = selectedDate.toLocaleDateString();
+                });
+            }
         });
     </script>
 </body>
