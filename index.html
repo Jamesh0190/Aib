@@ -3,91 +3,1316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AiBhai - Your AI Companion in Life, Faith, and Growth. Transform every aspect of your life with comprehensive AI-powered support.">
-    <meta name="keywords" content="AI assistant, personal development, spiritual guidance, health wellness, productivity, life coach">
-    <meta name="author" content="AiBhai">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://aibhai.com/">
-    <meta property="og:title" content="AiBhai - Your AI Companion in Life, Faith, and Growth">
-    <meta property="og:description" content="Transform every aspect of your life with AiBhai - the comprehensive AI-powered platform that supports your health, spirituality, career, and personal development journey.">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://aibhai.com/">
-    <meta property="twitter:title" content="AiBhai - Your AI Companion in Life, Faith, and Growth">
-    <meta property="twitter:description" content="Transform every aspect of your life with AiBhai - the comprehensive AI-powered platform that supports your health, spirituality, career, and personal development journey.">
-    
-    <title>AiBhai - Your AI Companion in Life, Faith, and Growth</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <title>AiBhai - Your AI-Powered Life Support Tool</title>
+    <meta name="description" content="AiBhai is your comprehensive AI companion for holistic life development - health, wellness, spirituality, productivity, relationships, finance, career, and continuous learning.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Three.js Background */
+        #three-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(10, 10, 10, 0.7) 0%, rgba(10, 10, 10, 0.9) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(15, 15, 25, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #00d4ff, #667eea);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.2s both;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #e0e0e0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #00d4ff;
+            padding: 1rem 2rem;
+            border: 2px solid #00d4ff;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: #00d4ff;
+            color: #0a0a0a;
+        }
+
+        /* Chat Section */
+        .chat-section {
+            padding: 3rem 0;
+            background: rgba(15, 15, 25, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin: 2rem auto;
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            background: rgba(20, 20, 35, 0.8);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(102, 126, 234, 0.2) 100%);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .message {
+            padding: 0.75rem 1rem;
+            border-radius: 15px;
+            max-width: 80%;
+            animation: fadeInUp 0.3s ease-out;
+        }
+
+        .message.user {
+            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            color: white;
+            align-self: flex-end;
+        }
+
+        .message.ai {
+            background: rgba(102, 126, 234, 0.2);
+            color: #e0e0e0;
+            align-self: flex-start;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .chat-input {
+            padding: 1rem;
+            border-top: 1px solid rgba(0, 212, 255, 0.3);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 25px;
+            outline: none;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .chat-input input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .chat-input button {
+            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Core Services Section */
+        .services {
+            padding: 4rem 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(20, 20, 35, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.5);
+        }
+
+        .service-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-right: 1rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            color: #ffffff;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #e0e0e0;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+            font-weight: bold;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: rgba(20, 20, 35, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.5);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .feature-card p {
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 4rem 0;
+            background: rgba(15, 15, 25, 0.6);
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(20, 20, 35, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            color: #e0e0e0;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            object-fit: cover;
+        }
+
+        .testimonial-info h4 {
+            color: #ffffff;
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-info p {
+            color: #00d4ff;
+            font-size: 0.9rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 4rem 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: rgba(20, 20, 35, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card.featured {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: #00d4ff;
+            transform: scale(1.05);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+        }
+
+        .pricing-card.featured:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .price-subtitle {
+            color: #e0e0e0;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #e0e0e0;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+            font-weight: bold;
+        }
+
+        /* Dashboard Section */
+        .dashboard {
+            padding: 4rem 0;
+            position: relative;
+            z-index: 1;
+            display: none;
+        }
+
+        .dashboard.active {
+            display: block;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .dashboard-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .dashboard-tab {
+            padding: 0.75rem 1.5rem;
+            background: rgba(20, 20, 35, 0.8);
+            backdrop-filter: blur(10px);
+            border: 2px solid #00d4ff;
+            border-radius: 25px;
+            color: #00d4ff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .dashboard-tab.active {
+            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            color: white;
+        }
+
+        .dashboard-content {
+            background: rgba(20, 20, 35, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .dashboard-widget {
+            background: rgba(15, 15, 25, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .widget-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .widget-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .widget-icon {
+            font-size: 1.5rem;
+            color: #00d4ff;
+        }
+
+        /* Chat Interface */
+        .chat-interface {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 400px;
+            height: 600px;
+            background: rgba(20, 20, 35, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            display: none;
+            flex-direction: column;
+            z-index: 1000;
+            overflow: hidden;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .chat-interface.active {
+            display: flex;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.3) 0%, rgba(102, 126, 234, 0.3) 100%);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            background: rgba(15, 15, 25, 0.5);
+        }
+
+        .chat-input {
+            padding: 1rem;
+            border-top: 1px solid rgba(0, 212, 255, 0.3);
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(20, 20, 35, 0.8);
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 25px;
+            outline: none;
+            color: white;
+        }
+
+        .chat-input button {
+            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            border-radius: 50%;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .chat-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(15, 15, 25, 0.8);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #00d4ff;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #00d4ff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .features-grid,
+            .services-grid,
+            .pricing-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .chat-interface {
+                width: 95%;
+                height: 80%;
+                bottom: 10px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+
+            .dashboard-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* Loading States */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #00d4ff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Notification System */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(20, 20, 35, 0.95);
+            backdrop-filter: blur(20px);
+            border-left: 4px solid #00d4ff;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            z-index: 1001;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            max-width: 300px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .notification-title {
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .notification-close {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #e0e0e0;
+        }
+
+        .notification-message {
+            color: #e0e0e0;
+            font-size: 0.9rem;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: rgba(20, 20, 35, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #e0e0e0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 8px;
+            font-size: 1rem;
+            color: white;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #00d4ff;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Progress Tracker */
+        .progress-tracker {
+            margin: 2rem 0;
+        }
+
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #e0e0e0;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .step-circle.active {
+            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            color: white;
+        }
+
+        .step-circle.completed {
+            background: #4caf50;
+            color: white;
+        }
+
+        .step-label {
+            font-size: 0.8rem;
+            color: #e0e0e0;
+            text-align: center;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            transition: width 0.3s ease;
+        }
+
+        /* Floating elements */
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-delay-1 {
+            animation-delay: 1s;
+        }
+
+        .floating-delay-2 {
+            animation-delay: 2s;
+        }
+
+        .floating-delay-3 {
+            animation-delay: 3s;
+        }
+
+        /* Glow effect */
+        .glow {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        /* Pulse animation */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(0, 212, 255, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 212, 255, 0);
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo">
-                    <i class="fas fa-brain"></i> AiBhai
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#interface">App</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#about">About</a></li>
-                </ul>
-                <div class="nav-cta">
-                    <a href="#" class="btn btn-secondary" onclick="showLogin()">Login</a>
-                    <a href="#" class="btn btn-primary" onclick="startTrial()">Start Free Trial</a>
-                </div>
-                <button class="mobile-menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </button>
+    <!-- Three.js Background -->
+    <div id="three-container"></div>
+    <div class="overlay"></div>
+
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">AiBhai</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#" onclick="showDashboard()">Dashboard</a></li>
+            </ul>
+            <div>
+                <a href="#" class="cta-button" onclick="openModal('loginModal')">Login</a>
+                <a href="#" class="cta-button" onclick="openModal('signupModal')" style="margin-left: 10px;">Get Started</a>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="container">
-            <div class="hero-content animate-fade-in">
-                <h1>Your AI Companion in Life, Faith, and Growth</h1>
-                <p>Transform every aspect of your life with AiBhai - the comprehensive AI-powered platform that supports your health, spirituality, career, and personal development journey.</p>
-                <div class="hero-cta">
-                    <a href="#" class="btn btn-primary btn-hero" onclick="startTrial()">
-                        <i class="fas fa-rocket"></i> Start Your Journey
-                    </a>
-                    <a href="#features" class="btn btn-secondary btn-hero">
-                        <i class="fas fa-play"></i> Explore Features
-                    </a>
+            <div class="hero-content">
+                <h1 class="floating">Your AI Companion in Life, Faith, and Growth</h1>
+                <p>AiBhai is your comprehensive AI-powered personal assistant, supporting your journey toward holistic development across health, wellness, spirituality, productivity, relationships, finance, career, and continuous learning.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary pulse" onclick="openModal('signupModal')">Start Your Journey</a>
+                    <a href="#" class="btn-secondary" onclick="scrollToSection('services')">Explore Features</a>
                 </div>
-                
-                <!-- Dashboard Preview -->
-                <div class="dashboard-preview">
-                    <div class="preview-card">
-                        <div class="chat-interface">
-                            <div class="chat-header">
-                                <div class="avatar">AI</div>
-                                <div>
-                                    <h4>AiBhai Assistant</h4>
-                                    <p style="font-size: 0.9rem; opacity: 0.7;">Always here to help</p>
-                                </div>
-                            </div>
-                            <div class="chat-messages">
-                                <div class="message ai">
-                                    Good morning! I've prepared your daily wellness plan and noticed you have a meeting at 2 PM. Would you like me to suggest some pre-meeting meditation exercises?
-                                </div>
-                                <div class="message user">
-                                    Yes, that would be great. Also remind me about my evening prayers.
-                                </div>
-                                <div class="message ai">
-                                    Perfect! I've scheduled a 10-minute mindfulness session at 1:40 PM and set your Maghrib prayer reminder for 6:15 PM today. Your wellness score is looking excellent this week! 🌟
-                                </div>
-                            </div>
-                        </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Section -->
+    <section class="chat-section">
+        <div class="container">
+            <h2 class="section-title">Chat with AiBhai</h2>
+            <div class="chat-container">
+                <div class="chat-header">
+                    <div>
+                        <h3>AiBhai Assistant</h3>
+                        <div style="font-size: 0.9rem; opacity: 0.8;">Always here to help</div>
                     </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 10px; height: 10px; background: #00ff00; border-radius: 50%; animation: pulse 2s infinite;"></div>
+                        <span style="font-size: 0.9rem;">Online</span>
+                    </div>
+                </div>
+                <div class="chat-messages" id="heroChatMessages">
+                    <div class="message ai">
+                        👋 Hello! I'm AiBhai, your AI companion for life, faith, and growth. How can I support you today?
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="heroMessageInput" placeholder="Type your message..." onkeypress="handleHeroChatKeyPress(event)">
+                    <button onclick="sendHeroMessage()">📤</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Core Life Support Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">📅</div>
+                        <h3>Life Planner & Habit Architect</h3>
+                    </div>
+                    <ul class="service-features">
+                        <li>Smart calendar with AI time-blocking</li>
+                        <li>Intelligent habit coaching & reminders</li>
+                        <li>Weekly progress reviews & insights</li>
+                        <li>Personalized improvement suggestions</li>
+                        <li>Goal tracking & milestone celebrations</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">💪</div>
+                        <h3>Health & Wellness Guide</h3>
+                    </div>
+                    <ul class="service-features">
+                        <li>Nutrition tracking & meal planning</li>
+                        <li>Movement prompts & exercise guidance</li>
+                        <li>Sleep analytics & optimization</li>
+                        <li>Mental wellness chat with CBT-based tools</li>
+                        <li>Wearable device integration</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🕌</div>
+                        <h3>Faith & Spiritual Advisor</h3>
+                    </div>
+                    <ul class="service-features">
+                        <li>Customizable by belief system</li>
+                        <li>Prayer times & spiritual reminders</li>
+                        <li>Quranic/Hadith-based guidance (Muslim users)</li>
+                        <li>Daily reflection prompts</li>
+                        <li>Spiritual journaling & growth tracking</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">💼</div>
+                        <h3>Business & Career Coach</h3>
+                    </div>
+                    <ul class="service-features">
+                        <li>AI-powered email & proposal writing</li>
+                        <li>Startup mentorship & Lean Canvas tools</li>
+                        <li>Freelancer & solopreneur support</li>
+                        <li>Career path planning & skill development</li>
+                        <li>Professional networking strategies</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">💰</div>
+                        <h3>Financial Wellness Assistant</h3>
+                    </div>
+                    <ul class="service-features">
+                        <li>Budget planning & expense tracking</li>
+                        <li>Savings goals & investment guidance</li>
+                        <li>Subscription management & optimization</li>
+                        <li>Spending analysis with AI insights</li>
+                        <li>Financial education & alerts</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">❤️</div>
+                        <h3>Social & Emotional Growth</h3>
+                    </div>
+                    <ul class="service-features">
+                        <li>Conversation practice for conflicts</li>
+                        <li>Relationship journaling & insights</li>
+                        <li>Emotional resilience exercises</li>
+                        <li>Communication skill development</li>
+                        <li>Empathy & relationship building tools</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">📚</div>
+                        <h3>Learning & Skill Builder</h3>
+                    </div>
+                    <ul class="service-features">
+                        <li>Personalized learning plans</li>
+                        <li>Micro-learning modules & quizzes</li>
+                        <li>Language learning support</li>
+                        <li>Coding & technical skill development</li>
+                        <li>Progress tracking & achievement badges</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🎯</div>
+                        <h3>Personal Integration Hub</h3>
+                    </div>
+                    <ul class="service-features">
+                        <li>Unified dashboard for all life areas</li>
+                        <li>Cross-domain insights & correlations</li>
+                        <li>Life balance assessments</li>
+                        <li>Personalized recommendations</li>
+                        <li>Holistic progress reporting</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -96,98 +1321,82 @@
     <!-- Features Section -->
     <section class="features" id="features">
         <div class="container">
-            <div class="section-header">
-                <h2>Everything You Need to Thrive</h2>
-                <p>AiBhai integrates all aspects of personal development into one intelligent, compassionate platform</p>
-            </div>
+            <h2 class="section-title">Why Choose AiBhai?</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <h3>Life Planner & Habit Architect</h3>
-                    <p>AI-powered calendar management with smart time blocking, habit coaching, and weekly improvement suggestions tailored to your goals.</p>
+                    <div class="feature-icon">🧠</div>
+                    <h3>Holistic Approach</h3>
+                    <p>Comprehensive support across all life domains - mental, physical, spiritual, emotional, and professional development.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Health & Wellness Guide</h3>
-                    <p>Comprehensive health tracking with nutrition monitoring, movement prompts, sleep analytics, and mental wellness support with CBT-based journaling.</p>
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI-Powered Intelligence</h3>
+                    <p>Advanced GPT-4 technology with custom-trained models for personalized, context-aware guidance and support.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-mosque"></i>
-                    </div>
-                    <h3>Faith & Spiritual Advisor</h3>
-                    <p>Customizable spiritual guidance with prayer reminders, Quranic reflections, and daily spiritual practices adapted to your beliefs.</p>
+                    <div class="feature-icon">🕌</div>
+                    <h3>Faith-Conscious Design</h3>
+                    <p>Spiritual guidance and values-based support tailored to your beliefs, with special features for faith-conscious users.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3>Business & Career Coach</h3>
-                    <p>Professional growth support with email drafting, proposal writing, startup mentoring, and freelancer tools to advance your career.</p>
+                    <div class="feature-icon">🔒</div>
+                    <h3>Privacy & Security</h3>
+                    <p>End-to-end encryption and robust data protection protocols ensure your personal information remains secure and private.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-pound-sign"></i>
-                    </div>
-                    <h3>Financial Wellness Assistant</h3>
-                    <p>Smart budgeting, savings goals, subscription tracking, and spending analysis with AI-powered financial advice and education.</p>
+                    <div class="feature-icon">📱</div>
+                    <h3>24/7 Availability</h3>
+                    <p>Your AI companion is always available to provide support, guidance, and assistance whenever you need it.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Social & Emotional Growth</h3>
-                    <p>Relationship coaching with conversation practice, conflict resolution tools, emotional resilience exercises, and social skill development.</p>
+                    <div class="feature-icon">📈</div>
+                    <h3>Personal Growth</h3>
+                    <p>Continuous learning and improvement tracking to help you become the best version of yourself.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- App Interface Section -->
-    <section class="app-interface" id="interface">
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
         <div class="container">
-            <div class="interface-container">
-                <div class="interface-content">
-                    <h2>Meet Your Personal AI Companion</h2>
-                    <p>Experience the future of personal development with an AI that understands your unique needs, respects your values, and grows with you on your journey to becoming the best version of yourself.</p>
-                    <div class="hero-cta">
-                        <a href="#" class="btn btn-primary" onclick="openDemo()">
-                            <i class="fas fa-play"></i> Try Demo
-                        </a>
+            <h2 class="section-title">Success Stories</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "AiBhai has transformed how I approach my daily life. The holistic approach has helped me balance my career, health, and spiritual growth in ways I never thought possible."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://picsum.photos/seed/user1/50/50.jpg" alt="User" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Sarah Ahmed</h4>
+                            <p>Entrepreneur</p>
+                        </div>
                     </div>
                 </div>
-                <div class="app-mockup">
-                    <div class="mockup-screen">
-                        <div class="chat-interface">
-                            <div class="chat-header">
-                                <div class="avatar">
-                                    <i class="fas fa-robot"></i>
-                                </div>
-                                <div>
-                                    <h4>AiBhai - Your Life Companion</h4>
-                                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Online • Ready to assist</p>
-                                </div>
-                            </div>
-                            <div class="chat-messages" id="demoChat">
-                                <div class="message ai">
-                                    Welcome! I'm here to support every aspect of your life. How can I help you grow today?
-                                </div>
-                                <div class="message user">
-                                    I want to improve my morning routine and be more productive.
-                                </div>
-                                <div class="message ai">
-                                    Excellent goal! Let me create a personalized morning routine based on your lifestyle. I'll include time for reflection, exercise, and goal-setting. Would you like me to integrate your prayer times and health goals too?
-                                </div>
-                                <div class="typing-indicator" id="typingIndicator" style="display: none;">
-                                    <div class="typing-dot"></div>
-                                    <div class="typing-dot"></div>
-                                    <div class="typing-dot"></div>
-                                </div>
-                            </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "As a busy professional, I struggled with maintaining balance. AiBhai's intelligent planning and habit coaching have been game-changers for my productivity and well-being."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://picsum.photos/seed/user2/50/50.jpg" alt="User" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Michael Chen</h4>
+                            <p>Software Developer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "The spiritual guidance features have been incredibly helpful in my faith journey. Having personalized reminders and reflections has deepened my connection to my beliefs."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://picsum.photos/seed/user3/50/50.jpg" alt="User" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Aisha Khan</h4>
+                            <p>Student</p>
                         </div>
                     </div>
                 </div>
@@ -198,118 +1407,1015 @@
     <!-- Pricing Section -->
     <section class="pricing" id="pricing">
         <div class="container">
-            <div class="section-header">
-                <h2 style="color: white;">Choose Your Growth Plan</h2>
-                <p style="color: rgba(255, 255, 255, 0.7);">Start free and upgrade as you discover the power of AI-guided personal development</p>
-            </div>
+            <h2 class="section-title">Choose Your Plan</h2>
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <div class="plan-name">Free</div>
-                    <div class="plan-price">£0<span style="font-size: 1rem; font-weight: normal;">/month</span></div>
-                    <ul class="plan-features">
-                        <li><i class="fas fa-check"></i> Basic AI chat support</li>
-                        <li><i class="fas fa-check"></i> Simple habit tracking</li>
-                        <li><i class="fas fa-check"></i> Prayer time reminders</li>
-                        <li><i class="fas fa-check"></i> Basic budgeting tools</li>
-                        <li><i class="fas fa-check"></i> Community access</li>
+                    <h3>Free</h3>
+                    <div class="price">£0<span style="font-size: 1rem;">/month</span></div>
+                    <div class="price-subtitle">Perfect for getting started</div>
+                    <ul class="pricing-features">
+                        <li>Basic life planning tools</li>
+                        <li>Limited health tracking</li>
+                        <li>Standard spiritual reminders</li>
+                        <li>5 AI conversations per day</li>
+                        <li>Basic habit tracking</li>
+                        <li>Community support</li>
                     </ul>
-                    <a href="#" class="btn btn-secondary" onclick="selectPlan('free')" style="width: 100%; text-align: center;">Get Started Free</a>
+                    <button class="cta-button" onclick="openModal('signupModal')" style="width: 100%;">Get Started Free</button>
                 </div>
+
                 <div class="pricing-card featured">
-                    <div class="plan-name">Basic</div>
-                    <div class="plan-price">£4.99<span style="font-size: 1rem; font-weight: normal;">/month</span></div>
-                    <ul class="plan-features">
-                        <li><i class="fas fa-check"></i> Advanced AI coaching</li>
-                        <li><i class="fas fa-check"></i> Smart calendar integration</li>
-                        <li><i class="fas fa-check"></i> Health tracking & analytics</li>
-                        <li><i class="fas fa-check"></i> Spiritual guidance tools</li>
-                        <li><i class="fas fa-check"></i> Financial wellness dashboard</li>
-                        <li><i class="fas fa-check"></i> Email & writing assistance</li>
+                    <h3>Pro</h3>
+                    <div class="price">£9.99<span style="font-size: 1rem;">/month</span></div>
+                    <div class="price-subtitle">Most popular choice</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Free</li>
+                        <li>Unlimited AI conversations</li>
+                        <li>Advanced health & wellness analytics</li>
+                        <li>Premium spiritual guidance</li>
+                        <li>Business & career coaching</li>
+                        <li>Financial planning tools</li>
+                        <li>Wearable device integration</li>
+                        <li>Priority support</li>
                     </ul>
-                    <a href="#" class="btn btn-primary" onclick="selectPlan('basic')" style="width: 100%; text-align: center;">Start Basic Plan</a>
+                    <button class="btn-primary" onclick="openModal('signupModal')" style="width: 100%;">Start Pro Trial</button>
                 </div>
+
                 <div class="pricing-card">
-                    <div class="plan-name">Pro</div>
-                    <div class="plan-price">£9.99<span style="font-size: 1rem; font-weight: normal;">/month</span></div>
-                    <ul class="plan-features">
-                        <li><i class="fas fa-check"></i> Everything in Basic</li>
-                        <li><i class="fas fa-check"></i> Wearable device integration</li>
-                        <li><i class="fas fa-check"></i> Advanced business tools</li>
-                        <li><i class="fas fa-check"></i> Custom learning plans</li>
-                        <li><i class="fas fa-check"></i> Priority support</li>
-                        <li><i class="fas fa-check"></i> API access</li>
-                        <li><i class="fas fa-check"></i> White-label options</li>
+                    <h3>Basic</h3>
+                    <div class="price">£4.99<span style="font-size: 1rem;">/month</span></div>
+                    <div class="price-subtitle">Essential features</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Free</li>
+                        <li>20 AI conversations per day</li>
+                        <li>Enhanced habit tracking</li>
+                        <li>Basic financial tracking</li>
+                        <li>Standard learning modules</li>
+                        <li>Email support</li>
                     </ul>
-                    <a href="#" class="btn btn-primary" onclick="selectPlan('pro')" style="width: 100%; text-align: center;">Go Pro</a>
+                    <button class="cta-button" onclick="openModal('signupModal')" style="width: 100%;">Choose Basic</button>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Family/Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <div class="price-subtitle">For teams & families</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Pro</li>
+                        <li>Multiple user accounts</li>
+                        <li>Team collaboration tools</li>
+                        <li>Custom integrations</li>
+                        <li>Dedicated account manager</li>
+                        <li>White-label options</li>
+                        <li>API access</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <button class="cta-button" onclick="openModal('contactModal')" style="width: 100%;">Contact Sales</button>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Dashboard Section -->
+    <section class="dashboard" id="dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h2>Your Personal Dashboard</h2>
+                <div class="user-info">
+                    <img src="https://picsum.photos/seed/user/50/50.jpg" alt="User" style="width: 50px; height: 50px; border-radius: 50%;">
+                    <div>
+                        <div style="font-weight: 600;">Welcome back!</div>
+                        <div style="color: #00d4ff; font-size: 0.9rem;">Pro Member</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-tabs">
+                <button class="dashboard-tab active" onclick="switchDashboardTab('overview')">Overview</button>
+                <button class="dashboard-tab" onclick="switchDashboardTab('health')">Health</button>
+                <button class="dashboard-tab" onclick="switchDashboardTab('spiritual')">Spiritual</button>
+                <button class="dashboard-tab" onclick="switchDashboardTab('productivity')">Productivity</button>
+                <button class="dashboard-tab" onclick="switchDashboardTab('finance')">Finance</button>
+            </div>
+
+            <div class="dashboard-content">
+                <div class="dashboard-grid">
+                    <div class="dashboard-widget">
+                        <div class="widget-header">
+                            <div class="widget-title">Daily Progress</div>
+                            <div class="widget-icon">📊</div>
+                        </div>
+                        <div class="progress-tracker">
+                            <div class="progress-steps">
+                                <div class="progress-step">
+                                    <div class="step-circle completed">✓</div>
+                                    <div class="step-label">Morning Prayer</div>
+                                </div>
+                                <div class="progress-step">
+                                    <div class="step-circle completed">✓</div>
+                                    <div class="step-label">Exercise</div>
+                                </div>
+                                <div class="progress-step">
+                                    <div class="step-circle active">3</div>
+                                    <div class="step-label">Work Tasks</div>
+                                </div>
+                                <div class="progress-step">
+                                    <div class="step-circle">4</div>
+                                    <div class="step-label">Learning</div>
+                                </div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-widget">
+                        <div class="widget-header">
+                            <div class="widget-title">Wellness Score</div>
+                            <div class="widget-icon">💪</div>
+                        </div>
+                        <div style="text-align: center; padding: 1rem;">
+                            <div style="font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">85%</div>
+                            <div style="color: #e0e0e0;">Great job today!</div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-widget">
+                        <div class="widget-header">
+                            <div class="widget-title">Upcoming Tasks</div>
+                            <div class="widget-icon">📋</div>
+                        </div>
+                        <ul style="list-style: none;">
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">Team meeting at 2:00 PM</li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">Review project proposal</li>
+                            <li style="padding: 0.5rem 0;">Evening prayer reminder</li>
+                        </ul>
+                    </div>
+
+                    <div class="dashboard-widget">
+                        <div class="widget-header">
+                            <div class="widget-title">Financial Overview</div>
+                            <div class="widget-icon">💰</div>
+                        </div>
+                        <div style="text-align: center; padding: 1rem;">
+                            <div style="font-size: 1.5rem; font-weight: 600; color: #4caf50;">+12%</div>
+                            <div style="color: #e0e0e0;">Savings growth this month</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Interface -->
+    <div class="chat-interface" id="chatInterface">
+        <div class="chat-header">
+            <div>
+                <h3>AiBhai Assistant</h3>
+                <div style="font-size: 0.9rem; opacity: 0.8;">Always here to help</div>
+            </div>
+            <button onclick="toggleChat()" style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message ai">
+                👋 Hello! I'm AiBhai, your AI companion for life, faith, and growth. How can I support you today?
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Type your message..." onkeypress="handleChatKeyPress(event)">
+            <button onclick="sendMessage()">📤</button>
+        </div>
+    </div>
+
+    <button class="chat-toggle" onclick="toggleChat()" id="chatToggle">💬</button>
+
     <!-- Footer -->
-    <footer class="footer" id="about">
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3><i class="fas fa-brain"></i> AiBhai</h3>
-                    <p style="color: rgba(255, 255, 255, 0.7); margin-top: 1rem;">Your AI companion in life, faith, and growth. Empowering individuals to become the best version of themselves through intelligent, ethical, and deeply personal support.</p>
+                    <h3>AiBhai</h3>
+                    <p>Your AI-powered life support tool for holistic development across all aspects of life.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Features</h3>
-                    <a href="#">Life Planning</a>
-                    <a href="#">Health & Wellness</a>
-                    <a href="#">Spiritual Guidance</a>
-                    <a href="#">Business Coaching</a>
-                    <a href="#">Financial Tools</a>
+                    <ul>
+                        <li><a href="#">Life Planning</a></li>
+                        <li><a href="#">Health & Wellness</a></li>
+                        <li><a href="#">Spiritual Guidance</a></li>
+                        <li><a href="#">Business Coaching</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Support</h3>
-                    <a href="#">Help Center</a>
-                    <a href="#">Community</a>
-                    <a href="#">Contact Us</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Connect</h3>
-                    <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
-                    <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
-                    <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 AiBhai.com. All rights reserved. Made with ❤️ for your growth journey.</p>
+                <p>&copy; 2024 AiBhai. All rights reserved. | Designed with ❤️ for your holistic growth</p>
             </div>
         </div>
     </footer>
 
-    <!-- Modal for Demo/Signup -->
-    <div id="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; align-items: center; justify-content: center;">
-        <div style="background: white; padding: 2rem; border-radius: 20px; max-width: 500px; width: 90%; margin: 1rem;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-                <h3 id="modalTitle">Get Started with AiBhai</h3>
-                <button onclick="closeModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
-            </div>
-            <div id="modalContent">
-                <p>Start your journey to becoming the best version of yourself. AiBhai is currently in development and will launch soon!</p>
-                <form onsubmit="handleSignup(event)" style="margin-top: 1.5rem;">
-                    <input type="email" placeholder="Enter your email" required style="width: 100%; padding: 1rem; border: 2px solid var(--border); border-radius: 10px; margin-bottom: 1rem;">
-                    <select style="width: 100%; padding: 1rem; border: 2px solid var(--border); border-radius: 10px; margin-bottom: 1rem;">
-                        <option>I'm interested in...</option>
-                        <option>Personal Development</option>
-                        <option>Spiritual Growth</option>
-                        <option>Health & Wellness</option>
-                        <option>Business & Career</option>
-                        <option>Financial Planning</option>
-                        <option>Everything!</option>
-                    </select>
-                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Join Waitlist</button>
-                </form>
-            </div>
+    <!-- Modals -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('loginModal')">×</button>
+            <h2>Welcome Back</h2>
+            <p>Login to access your AiBhai dashboard</p>
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" required>
+                </div>
+                <button type="submit" class="cta-button" style="width: 100%;">Login</button>
+            </form>
         </div>
     </div>
 
-    <script src="assets/js/main.js"></script>
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('signupModal')">×</button>
+            <h2>Join AiBhai</h2>
+            <p>Start your journey to holistic life development</p>
+            <form onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" required>
+                </div>
+                <div class="form-group">
+                    <label>Faith/Belief System (Optional)</label>
+                    <select>
+                        <option value="">Prefer not to say</option>
+                        <option value="islam">Islam</option>
+                        <option value="christianity">Christianity</option>
+                        <option value="judaism">Judaism</option>
+                        <option value="hinduism">Hinduism</option>
+                        <option value="buddhism">Buddhism</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="cta-button" style="width: 100%;">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('contactModal')">×</button>
+            <h2>Contact Sales</h2>
+            <p>Interested in Family/Enterprise plans? Let us know how we can help.</p>
+            <form onsubmit="handleContact(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Company/Organization</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Number of Users</label>
+                    <select required>
+                        <option value="">Select range</option>
+                        <option value="1-10">1-10 users</option>
+                        <option value="11-50">11-50 users</option>
+                        <option value="51-200">51-200 users</option>
+                        <option value="200+">200+ users</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea rows="4" required></textarea>
+                </div>
+                <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <div class="notification-header">
+            <div class="notification-title">Notification</div>
+            <button class="notification-close" onclick="hideNotification()">×</button>
+        </div>
+        <div class="notification-message" id="notificationMessage">
+            Welcome to AiBhai!
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Global variables
+        let currentDashboardTab = 'overview';
+        let chatHistory = [];
+        let heroChatHistory = [];
+
+        // Three.js Background
+        let scene, camera, renderer, particles, particleSystem;
+        let mouseX = 0, mouseY = 0;
+        let windowHalfX = window.innerWidth / 2;
+        let windowHalfY = window.innerHeight / 2;
+
+        function initThreeJS() {
+            // Create scene
+            scene = new THREE.Scene();
+            
+            // Create camera
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
+            camera.position.z = 1000;
+            
+            // Create renderer
+            renderer = new THREE.WebGLRenderer({ alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            document.getElementById('three-container').appendChild(renderer.domElement);
+            
+            // Create particle system
+            const geometry = new THREE.BufferGeometry();
+            const vertices = [];
+            const colors = [];
+            
+            const particleCount = 2000;
+            
+            for (let i = 0; i < particleCount; i++) {
+                // Position
+                const x = Math.random() * 2000 - 1000;
+                const y = Math.random() * 2000 - 1000;
+                const z = Math.random() * 2000 - 1000;
+                vertices.push(x, y, z);
+                
+                // Color
+                const colorOptions = [
+                    new THREE.Color(0x00d4ff), // Cyan
+                    new THREE.Color(0x667eea), // Purple
+                    new THREE.Color(0x00ff88), // Teal
+                    new THREE.Color(0xff00ff), // Magenta
+                ];
+                
+                const color = colorOptions[Math.floor(Math.random() * colorOptions.length)];
+                colors.push(color.r, color.g, color.b);
+            }
+            
+            geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+            geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+            
+            // Create material
+            const material = new THREE.PointsMaterial({
+                size: 15,
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.8,
+                sizeAttenuation: true,
+                blending: THREE.AdditiveBlending
+            });
+            
+            // Create particle system
+            particleSystem = new THREE.Points(geometry, material);
+            scene.add(particleSystem);
+            
+            // Add lights
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+            scene.add(ambientLight);
+            
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+            directionalLight.position.set(1, 1, 1);
+            scene.add(directionalLight);
+            
+            // Add event listeners
+            document.addEventListener('mousemove', onDocumentMouseMove);
+            window.addEventListener('resize', onWindowResize);
+            
+            // Start animation
+            animate();
+        }
+        
+        function onDocumentMouseMove(event) {
+            mouseX = event.clientX - windowHalfX;
+            mouseY = event.clientY - windowHalfY;
+        }
+        
+        function onWindowResize() {
+            windowHalfX = window.innerWidth / 2;
+            windowHalfY = window.innerHeight / 2;
+            
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+        
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            // Update camera position based on mouse
+            camera.position.x += (mouseX * 0.5 - camera.position.x) * 0.05;
+            camera.position.y += (-mouseY * 0.5 - camera.position.y) * 0.05;
+            camera.lookAt(scene.position);
+            
+            // Rotate particles
+            particleSystem.rotation.x += 0.001;
+            particleSystem.rotation.y += 0.002;
+            
+            renderer.render(scene, camera);
+        }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Three.js background
+            initThreeJS();
+            
+            // Add smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Show welcome notification
+            setTimeout(() => {
+                showNotification('Welcome to AiBhai!', 'Your AI companion for holistic life development is ready to help.');
+            }, 2000);
+        });
+
+        // Modal functions
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modals when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Form handlers
+        function handleLogin(event) {
+            event.preventDefault();
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.innerHTML = '<div class="loading"></div> Logging in...';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                closeModal('loginModal');
+                showNotification('Login Successful!', 'Welcome back to your AiBhai dashboard.');
+                showDashboard();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                event.target.reset();
+            }, 2000);
+        }
+
+        function handleSignup(event) {
+            event.preventDefault();
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.innerHTML = '<div class="loading"></div> Creating account...';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                closeModal('signupModal');
+                showNotification('Account Created!', 'Welcome to AiBhai! Start your journey to holistic development.');
+                showDashboard();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                event.target.reset();
+            }, 2000);
+        }
+
+        function handleContact(event) {
+            event.preventDefault();
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.innerHTML = '<div class="loading"></div> Sending...';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                closeModal('contactModal');
+                showNotification('Message Sent!', 'Our sales team will contact you within 24 hours.');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                event.target.reset();
+            }, 2000);
+        }
+
+        // Dashboard functions
+        function showDashboard() {
+            const dashboard = document.getElementById('dashboard');
+            dashboard.classList.add('active');
+            dashboard.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function switchDashboardTab(tabName) {
+            // Update tab buttons
+            document.querySelectorAll('.dashboard-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Update content based on tab
+            const content = document.querySelector('.dashboard-content');
+            
+            // Simulate different content for different tabs
+            const tabContents = {
+                overview: `
+                    <div class="dashboard-grid">
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">Daily Progress</div>
+                                <div class="widget-icon">📊</div>
+                            </div>
+                            <div class="progress-tracker">
+                                <div class="progress-steps">
+                                    <div class="progress-step">
+                                        <div class="step-circle completed">✓</div>
+                                        <div class="step-label">Morning Prayer</div>
+                                    </div>
+                                    <div class="progress-step">
+                                        <div class="step-circle completed">✓</div>
+                                        <div class="step-label">Exercise</div>
+                                    </div>
+                                    <div class="progress-step">
+                                        <div class="step-circle active">3</div>
+                                        <div class="step-label">Work Tasks</div>
+                                    </div>
+                                    <div class="progress-step">
+                                        <div class="step-circle">4</div>
+                                        <div class="step-label">Learning</div>
+                                    </div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">Wellness Score</div>
+                                <div class="widget-icon">💪</div>
+                            </div>
+                            <div style="text-align: center; padding: 1rem;">
+                                <div style="font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">85%</div>
+                                <div style="color: #e0e0e0;">Great job today!</div>
+                            </div>
+                        </div>
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">Upcoming Tasks</div>
+                                <div class="widget-icon">📋</div>
+                            </div>
+                            <ul style="list-style: none;">
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">Team meeting at 2:00 PM</li>
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">Review project proposal</li>
+                                <li style="padding: 0.5rem 0;">Evening prayer reminder</li>
+                            </ul>
+                        </div>
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">Financial Overview</div>
+                                <div class="widget-icon">💰</div>
+                            </div>
+                            <div style="text-align: center; padding: 1rem;">
+                                <div style="font-size: 1.5rem; font-weight: 600; color: #4caf50;">+12%</div>
+                                <div style="color: #e0e0e0;">Savings growth this month</div>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                health: `
+                    <div class="dashboard-grid">
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">Health Metrics</div>
+                                <div class="widget-icon">❤️</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 2rem; margin: 1rem 0;">7,234</div>
+                                <div style="color: #e0e0e0;">Steps today</div>
+                            </div>
+                        </div>
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">Sleep Quality</div>
+                                <div class="widget-icon">😴</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 2rem; margin: 1rem 0;">8.2h</div>
+                                <div style="color: #e0e0e0;">Average sleep</div>
+                            </div>
+                        </div>
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">Nutrition</div>
+                                <div class="widget-icon">🥗</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 2rem; margin: 1rem 0;">1,850</div>
+                                <div style="color: #e0e0e0;">Calories today</div>
+                            </div>
+                        </div>
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">Mental Wellness</div>
+                                <div class="widget-icon">🧠</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 2rem; margin: 1rem 0;">92%</div>
+                                <div style="color: #e0e0e0;">Mood score</div>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                spiritual: `
+                    <div class="dashboard-grid">
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">Prayer Times</div>
+                                <div class="widget-icon">🕌</div>
+                            </div>
+                            <ul style="list-style: none;">
+                                <li style="padding: 0.5rem 0;">Fajr: 5:30 AM</li>
+                                <li style="padding: 0.5rem 0;">Dhuhr: 1:15 PM</li>
+                                <li style="padding: 0.5rem 0;">Asr: 4:45 PM</li>
+                                <li style="padding: 0.5rem 0;">Maghrib: 7:30 PM</li>
+                                <li style="padding: 0.5rem 0;">Isha: 9:00 PM</li>
+                            </ul>
+                        </div>
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">Quran Progress</div>
+                                <div class="widget-icon">📖</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 2rem; margin: 1rem 0;">15</div>
+                                <div style="color: #e0e0e0;">Juz completed</div>
+                            </div>
+                        </div>
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">Dhikr Counter</div>
+                                <div class="widget-icon">📿</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 2rem; margin: 1rem 0;">334</div>
+                                <div style="color: #e0e0e0;">Today's count</div>
+                            </div>
+                        </div>
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">Spiritual Goals</div>
+                                <div class="widget-icon">🎯</div>
+                            </div>
+                            <ul style="list-style: none;">
+                                <li style="padding: 0.5rem 0;">✓ Morning adhkar</li>
+                                <li style="padding: 0.5rem 0;">✓ Quran reading</li>
+                                <li style="padding: 0.5rem 0;">○ Evening reflection</li>
+                            </ul>
+                        </div>
+                    </div>
+                `,
+                productivity: `
+                    <div class="dashboard-grid">
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">Today's Tasks</div>
+                                <div class="widget-icon">✅</div>
+                            </div>
+                            <ul style="list-style: none;">
+                                <li style="padding: 0.5rem 0;">✓ Morning routine</li>
+                                <li style="padding: 0.5rem 0;">✓ Team standup</li>
+                                <li style="padding: 0.5rem 0;">○ Project review</li>
+                                <li style="padding: 0.5rem 0;">○ Client meeting</li>
+                            </ul>
+                        </div>
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">Focus Time</div>
+                                <div class="widget-icon">⏰</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 2rem; margin: 1rem 0;">4.5h</div>
+                                <div style="color: #e0e0e0;">Deep work today</div>
+                            </div>
+                        </div>
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">Habits</div>
+                                <div class="widget-icon">🔄</div>
+                            </div>
+                            <ul style="list-style: none;">
+                                <li style="padding: 0.5rem 0;">✓ Exercise</li>
+                                <li style="padding: 0.5rem 0;">✓ Reading</li>
+                                <li style="padding: 0.5rem 0;">✓ Meditation</li>
+                                <li style="padding: 0.5rem 0;">○ Journaling</li>
+                            </ul>
+                        </div>
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">Goals Progress</div>
+                                <div class="widget-icon">🎯</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 2rem; margin: 1rem 0;">78%</div>
+                                <div style="color: #e0e0e0;">Monthly goals</div>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                finance: `
+                    <div class="dashboard-grid">
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">Budget Overview</div>
+                                <div class="widget-icon">💳</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 2rem; margin: 1rem 0;">£2,450</div>
+                                <div style="color: #e0e0e0;">Remaining this month</div>
+                            </div>
+                        </div>
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">Savings Goal</div>
+                                <div class="widget-icon">🏦</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 2rem; margin: 1rem 0;">68%</div>
+                                <div style="color: #e0e0e0;">Of £10,000 goal</div>
+                            </div>
+                        </div>
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">Investments</div>
+                                <div class="widget-icon">📈</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 2rem; margin: 1rem 0;">+15%</div>
+                                <div style="color: #4caf50;">Portfolio growth</div>
+                            </div>
+                        </div>
+                        <div class="dashboard-widget">
+                            <div class="widget-header">
+                                <div class="widget-title">Expenses</div>
+                                <div class="widget-icon">📊</div>
+                            </div>
+                            <ul style="list-style: none;">
+                                <li style="padding: 0.5rem 0;">Food: £450</li>
+                                <li style="padding: 0.5rem 0;">Transport: £200</li>
+                                <li style="padding: 0.5rem 0;">Utilities: £300</li>
+                                <li style="padding: 0.5rem 0;">Other: £600</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            };
+
+            content.innerHTML = tabContents[tabName] || tabContents.overview;
+            currentDashboardTab = tabName;
+        }
+
+        // Chat functions
+        function toggleChat() {
+            const chatInterface = document.getElementById('chatInterface');
+            const chatToggle = document.getElementById('chatToggle');
+            
+            if (chatInterface.classList.contains('active')) {
+                chatInterface.classList.remove('active');
+                chatToggle.innerHTML = '💬';
+            } else {
+                chatInterface.classList.add('active');
+                chatToggle.innerHTML = '✕';
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+            
+            if (message) {
+                addChatMessage('user', message);
+                input.value = '';
+                
+                // Simulate AI response
+                setTimeout(() => {
+                    const aiResponse = generateAIResponse(message);
+                    addChatMessage('ai', aiResponse);
+                }, 1000);
+            }
+        }
+
+        function addChatMessage(sender, message, isHeroChat = false) {
+            const messagesDiv = isHeroChat ? document.getElementById('heroChatMessages') : document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+            messageDiv.textContent = message;
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            
+            if (isHeroChat) {
+                heroChatHistory.push({ sender, message, timestamp: new Date() });
+            } else {
+                chatHistory.push({ sender, message, timestamp: new Date() });
+            }
+        }
+
+        function generateAIResponse(userMessage) {
+            const responses = {
+                greeting: [
+                    "Hello! I'm AiBhai, your AI companion for holistic life development. How can I support you today?",
+                    "Welcome! I'm here to help you with health, wellness, spirituality, productivity, and more. What would you like to work on?",
+                    "Greetings! I'm your personal AI assistant for all aspects of life. What can I help you with today?"
+                ],
+                health: [
+                    "I'd be happy to help with your health and wellness goals! Could you tell me more about what specific areas you'd like to focus on?",
+                    "Great! Health is foundational to holistic development. Let's explore how I can support your wellness journey.",
+                    "I'm here to support your health goals! Whether it's nutrition, exercise, sleep, or mental wellness, I'm ready to help."
+                ],
+                spiritual: [
+                    "Spiritual growth is an important part of holistic development. I can provide guidance, reminders, and support for your spiritual journey.",
+                    "I'm here to support your spiritual growth! Let me know what specific aspects you'd like to focus on.",
+                    "Spiritual wellness is key to balanced living. How can I support your spiritual development today?"
+                ],
+                productivity: [
+                    "I'd love to help you boost your productivity! Let's talk about your goals and how I can help you achieve them.",
+                    "Productivity is about working smarter, not harder. I'm here to help you optimize your time and energy.",
+                    "Great! Let's work together to enhance your productivity. What specific areas would you like to improve?"
+                ],
+                finance: [
+                    "Financial wellness is crucial for peace of mind. I'm here to help you with budgeting, saving, and financial planning.",
+                    "I'd be happy to help you with your financial goals! Let's discuss your current situation and aspirations.",
+                    "Financial health is an important part of holistic wellness. How can I support your financial journey?"
+                ],
+                default: [
+                    "I'm here to help you with all aspects of life - health, wellness, spirituality, productivity, relationships, finance, career, and learning. What would you like to focus on?",
+                    "As your AI companion, I'm equipped to support you across multiple life domains. What area would you like to explore today?",
+                    "I'm your holistic life assistant! Whether it's personal growth, professional development, or spiritual guidance, I'm here to help."
+                ]
+            };
+
+            const lowerMessage = userMessage.toLowerCase();
+            
+            if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
+                return responses.greeting[Math.floor(Math.random() * responses.greeting.length)];
+            } else if (lowerMessage.includes('health') || lowerMessage.includes('wellness') || lowerMessage.includes('exercise') || lowerMessage.includes('fitness')) {
+                return responses.health[Math.floor(Math.random() * responses.health.length)];
+            } else if (lowerMessage.includes('spiritual') || lowerMessage.includes('faith') || lowerMessage.includes('prayer') || lowerMessage.includes('religion')) {
+                return responses.spiritual[Math.floor(Math.random() * responses.spiritual.length)];
+            } else if (lowerMessage.includes('productivity') || lowerMessage.includes('work') || lowerMessage.includes('task') || lowerMessage.includes('goal')) {
+                return responses.productivity[Math.floor(Math.random() * responses.productivity.length)];
+            } else if (lowerMessage.includes('money') || lowerMessage.includes('finance') || lowerMessage.includes('budget') || lowerMessage.includes('saving')) {
+                return responses.finance[Math.floor(Math.random() * responses.finance.length)];
+            } else {
+                return responses.default[Math.floor(Math.random() * responses.default.length)];
+            }
+        }
+
+        function handleChatKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        // Hero chat functions
+        function sendHeroMessage() {
+            const input = document.getElementById('heroMessageInput');
+            const message = input.value.trim();
+            
+            if (message) {
+                addChatMessage('user', message, true);
+                input.value = '';
+                
+                // Simulate AI response
+                setTimeout(() => {
+                    const aiResponse = generateAIResponse(message);
+                    addChatMessage('ai', aiResponse, true);
+                }, 1000);
+            }
+        }
+
+        function handleHeroChatKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendHeroMessage();
+            }
+        }
+
+        // Utility functions
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function showNotification(title, message) {
+            const notification = document.getElementById('notification');
+            const notificationTitle = document.querySelector('.notification-title');
+            const notificationMessage = document.querySelector('.notification-message');
+            
+            notificationTitle.textContent = title;
+            notificationMessage.textContent = message;
+            
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                hideNotification();
+            }, 5000);
+        }
+
+        function hideNotification() {
+            const notification = document.getElementById('notification');
+            notification.classList.remove('show');
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(15, 15, 25, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                header.style.background = 'rgba(15, 15, 25, 0.8)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Add some interactive animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate cards on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all cards
+            document.querySelectorAll('.service-card, .feature-card, .pricing-card, .testimonial-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
 </body>
 </html>
