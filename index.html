@@ -312,6 +312,175 @@
             justify-content: center;
         }
 
+        /* Core Services Section */
+        .services {
+            padding: 4rem 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(20, 20, 35, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.5);
+        }
+
+        .service-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-right: 1rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            color: #ffffff;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #e0e0e0;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+            font-weight: bold;
+        }
+
+        .expert-support-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: rgba(20, 20, 35, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.5);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .feature-card p {
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
         /* Expert Consultation Section */
         .expert-consultation {
             padding: 4rem 0;
@@ -375,7 +544,7 @@
             margin-top: 0.5rem;
         }
 
-        /* Expert Directory */
+        /* Expert Directory Section */
         .expert-directory {
             padding: 4rem 0;
             position: relative;
@@ -569,123 +738,20 @@
             color: #00d4ff;
         }
 
-        /* Core Services Section */
-        .services {
+        /* Why Choose AiBhai Section */
+        .why-choose {
             padding: 4rem 0;
             position: relative;
             z-index: 1;
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 3rem;
-            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: rgba(20, 20, 35, 0.8);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 2rem;
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
-            border-color: rgba(0, 212, 255, 0.5);
-        }
-
-        .service-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            margin-right: 1rem;
-            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .service-card h3 {
-            font-size: 1.4rem;
-            color: #ffffff;
-        }
-
-        .service-features {
-            list-style: none;
-        }
-
-        .service-features li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            color: #e0e0e0;
-        }
-
-        .service-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #00d4ff;
-            font-weight: bold;
-        }
-
-        .expert-support-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: rgba(255, 193, 7, 0.2);
-            color: #ffc107;
-            padding: 0.25rem 0.75rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            border: 1px solid rgba(255, 193, 7, 0.3);
-        }
-
-        /* Features Section */
-        .features {
-            padding: 4rem 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .features-grid {
+        .why-choose-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
         }
 
-        .feature-card {
+        .why-choose-card {
             background: rgba(20, 20, 35, 0.8);
             backdrop-filter: blur(10px);
             border-radius: 20px;
@@ -693,32 +759,14 @@
             text-align: center;
             transition: all 0.3s ease;
             border: 1px solid rgba(0, 212, 255, 0.2);
-            position: relative;
-            overflow: hidden;
         }
 
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
-            transition: left 0.5s;
-        }
-
-        .feature-card:hover::before {
-            left: 100%;
-        }
-
-        .feature-card:hover {
+        .why-choose-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
-            border-color: rgba(0, 212, 255, 0.5);
         }
 
-        .feature-icon {
+        .why-choose-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
             background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
@@ -727,148 +775,15 @@
             background-clip: text;
         }
 
-        .feature-card h3 {
+        .why-choose-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: #ffffff;
         }
 
-        .feature-card p {
+        .why-choose-card p {
             color: #e0e0e0;
             line-height: 1.6;
-        }
-
-        /* Booking Modal */
-        .booking-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
-            z-index: 3000;
-        }
-
-        .booking-modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .booking-content {
-            background: rgba(20, 20, 35, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            padding: 2rem;
-            max-width: 600px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-            border: 1px solid rgba(0, 212, 255, 0.3);
-        }
-
-        .booking-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-
-        .booking-expert-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin-right: 1rem;
-            object-fit: cover;
-        }
-
-        .booking-expert-info h3 {
-            color: #ffffff;
-            margin-bottom: 0.25rem;
-        }
-
-        .booking-expert-info p {
-            color: #00d4ff;
-            font-size: 0.9rem;
-        }
-
-        .booking-tabs {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .booking-tab {
-            flex: 1;
-            padding: 0.75rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            color: #e0e0e0;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .booking-tab.active {
-            background: rgba(0, 212, 255, 0.2);
-            border-color: #00d4ff;
-            color: #00d4ff;
-        }
-
-        .time-slots {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .time-slot {
-            padding: 0.75rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            color: #e0e0e0;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .time-slot:hover,
-        .time-slot.selected {
-            background: rgba(0, 212, 255, 0.2);
-            border-color: #00d4ff;
-            color: #00d4ff;
-        }
-
-        .time-slot.disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .booking-summary {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-            color: #e0e0e0;
-        }
-
-        .summary-row.total {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #00d4ff;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* Testimonials Section */
@@ -1279,7 +1194,8 @@
             .pricing-grid,
             .testimonials-grid,
             .expert-categories,
-            .experts-grid {
+            .experts-grid,
+            .why-choose-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1298,11 +1214,6 @@
             .dashboard-header {
                 flex-direction: column;
                 align-items: flex-start;
-            }
-
-            .booking-content {
-                margin: 1rem;
-                padding: 1.5rem;
             }
         }
 
@@ -1560,8 +1471,9 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#expert-consultation">Expert Consultation</a></li>
                 <li><a href="#features">Features</a></li>
+                <li><a href="#why-choose">Why Choose AiBhai</a></li>
+                <li><a href="#expert-consultation">Expert Consultation</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#" onclick="showDashboard()">Dashboard</a></li>
@@ -1611,120 +1523,6 @@
                     <input type="text" id="heroMessageInput" placeholder="Type your message..." onkeypress="handleHeroChatKeyPress(event)">
                     <button onclick="sendHeroMessage()">📤</button>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Expert Consultation Section -->
-    <section class="expert-consultation" id="expert-consultation">
-        <div class="container">
-            <h2 class="section-title">Connect with Human Experts</h2>
-            <p style="text-align: center; margin-bottom: 3rem; color: #e0e0e0; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Get personalized guidance from verified human experts to complement AI insights. Our experts can help confirm, verify, and enhance the answers you receive from our AI platform.
-            </p>
-            
-            <div class="expert-categories">
-                <div class="expert-category-card" onclick="filterExperts('health')">
-                    <div class="expert-category-icon">🏥</div>
-                    <h3>Health & Medical</h3>
-                    <p>Professional medical advice and wellness guidance</p>
-                    <span class="expert-count">245 experts</span>
-                </div>
-                
-                <div class="expert-category-card" onclick="filterExperts('mental-health')">
-                    <div class="expert-category-icon">🧠</div>
-                    <h3>Mental Health</h3>
-                    <p>Therapy, counseling, and emotional support</p>
-                    <span class="expert-count">189 experts</span>
-                </div>
-                
-                <div class="expert-category-card" onclick="filterExperts('spiritual')">
-                    <div class="expert-category-icon">🕌</div>
-                    <h3>Spiritual Guidance</h3>
-                    <p>Faith-based counseling and spiritual mentoring</p>
-                    <span class="expert-count">156 experts</span>
-                </div>
-                
-                <div class="expert-category-card" onclick="filterExperts('financial')">
-                    <div class="expert-category-icon">💰</div>
-                    <h3>Financial Planning</h3>
-                    <p>Investment, budgeting, and wealth management</p>
-                    <span class="expert-count">203 experts</span>
-                </div>
-                
-                <div class="expert-category-card" onclick="filterExperts('career')">
-                    <div class="expert-category-icon">💼</div>
-                    <h3>Career & Business</h3>
-                    <p>Professional development and business strategy</p>
-                    <span class="expert-count">267 experts</span>
-                </div>
-                
-                <div class="expert-category-card" onclick="filterExperts('legal')">
-                    <div class="expert-category-icon">⚖️</div>
-                    <h3>Legal Advice</h3>
-                    <p>Legal consultation and document review</p>
-                    <span class="expert-count">134 experts</span>
-                </div>
-                
-                <div class="expert-category-card" onclick="filterExperts('education')">
-                    <div class="expert-category-icon">📚</div>
-                    <h3>Education & Learning</h3>
-                    <p>Academic guidance and skill development</p>
-                    <span class="expert-count">178 experts</span>
-                </div>
-                
-                <div class="expert-category-card" onclick="filterExperts('relationships')">
-                    <div class="expert-category-icon">❤️</div>
-                    <h3>Relationships</h3>
-                    <p>Family, marriage, and interpersonal counseling</p>
-                    <span class="expert-count">145 experts</span>
-                </div>
-                
-                <div class="expert-category-card" onclick="filterExperts('technology')">
-                    <div class="expert-category-icon">💻</div>
-                    <h3>Technology & IT</h3>
-                    <p>Tech support and digital transformation</p>
-                    <span class="expert-count">198 experts</span>
-                </div>
-                
-                <div class="expert-category-card" onclick="filterExperts('real-estate')">
-                    <div class="expert-category-icon">🏠</div>
-                    <h3>Real Estate</h3>
-                    <p>Property investment and real estate advice</p>
-                    <span class="expert-count">112 experts</span>
-                </div>
-                
-                <div class="expert-category-card" onclick="filterExperts('nutrition')">
-                    <div class="expert-category-icon">🥗</div>
-                    <h3>Nutrition & Diet</h3>
-                    <p>Dietary planning and nutritional counseling</p>
-                    <span class="expert-count">167 experts</span>
-                </div>
-                
-                <div class="expert-category-card" onclick="filterExperts('fitness')">
-                    <div class="expert-category-icon">💪</div>
-                    <h3>Fitness & Training</h3>
-                    <p>Personal training and fitness coaching</p>
-                    <span class="expert-count">156 experts</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Expert Directory Section -->
-    <section class="expert-directory" id="expert-directory">
-        <div class="container">
-            <h2 class="section-title">Featured Experts</h2>
-            
-            <div class="expert-filters">
-                <button class="filter-button active" onclick="filterExperts('all')">All Experts</button>
-                <button class="filter-button" onclick="filterExperts('available')">Available Now</button>
-                <button class="filter-button" onclick="filterExperts('top-rated')">Top Rated</button>
-                <button class="filter-button" onclick="filterExperts('new')">New Experts</button>
-            </div>
-            
-            <div class="experts-grid" id="expertsGrid">
-                <!-- Expert cards will be populated by JavaScript -->
             </div>
         </div>
     </section>
@@ -1868,30 +1666,25 @@
     <!-- Features Section -->
     <section class="features" id="features">
         <div class="container">
-            <h2 class="section-title">Why Choose AiBhai?</h2>
+            <h2 class="section-title">Platform Features</h2>
             <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🧠</div>
-                    <h3>Holistic Approach</h3>
-                    <p>Comprehensive support across all life domains - mental, physical, spiritual, emotional, and professional development.</p>
-                </div>
                 <div class="feature-card">
                     <div class="feature-icon">🤖</div>
                     <h3>AI-Powered Intelligence</h3>
-                    <p>Advanced GPT-4 technology with custom-trained models for personalized, context-aware guidance and support.</p>
+                    <p>Advanced GPT-4 technology with custom-trained models for personalized, context-aware guidance and support across all life domains.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">👥</div>
                     <h3>Human Expert Network</h3>
-                    <p>Access to verified professionals across all domains for personalized consultation and expert validation.</p>
+                    <p>Access to verified professionals across all domains for personalized consultation and expert validation of AI insights.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🕌</div>
-                    <h3>Faith-Conscious Design</h3>
-                    <p>Spiritual guidance and values-based support tailored to your beliefs, with special features for faith-conscious users.</p>
+                    <div class="feature-icon">🔄</div>
+                    <h3>Seamless Integration</h3>
+                    <p>Perfect harmony between AI assistance and human expertise, providing instant answers with the option for deeper human consultation.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
+                    <div class="feature-icon">🛡️</div>
                     <h3>Privacy & Security</h3>
                     <p>End-to-end encryption and robust data protection protocols ensure your personal information remains secure and private.</p>
                 </div>
@@ -1900,6 +1693,164 @@
                     <h3>24/7 Availability</h3>
                     <p>Your AI companion is always available to provide support, guidance, and assistance whenever you need it.</p>
                 </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Personal Growth</h3>
+                    <p>Continuous learning and improvement tracking to help you become the best version of yourself with expert guidance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose AiBhai Section -->
+    <section class="why-choose" id="why-choose">
+        <div class="container">
+            <h2 class="section-title">Why Choose AiBhai?</h2>
+            <div class="why-choose-grid">
+                <div class="why-choose-card">
+                    <div class="why-choose-icon">🧠</div>
+                    <h3>Holistic Approach</h3>
+                    <p>Comprehensive support across all life domains - mental, physical, spiritual, emotional, and professional development.</p>
+                </div>
+                <div class="why-choose-card">
+                    <div class="why-choose-icon">🕌</div>
+                    <h3>Faith-Conscious Design</h3>
+                    <p>Spiritual guidance and values-based support tailored to your beliefs, with special features for faith-conscious users.</p>
+                </div>
+                <div class="why-choose-card">
+                    <div class="why-choose-icon">⚡</div>
+                    <h3>Instant & Deep Support</h3>
+                    <p>Get immediate AI answers and connect with human experts for confirmation, verification, and deeper insights when needed.</p>
+                </div>
+                <div class="why-choose-card">
+                    <div class="why-choose-icon">🎯</div>
+                    <h3>Personalized Experience</h3>
+                    <p>Tailored guidance and recommendations based on your unique needs, goals, and preferences across all life areas.</p>
+                </div>
+                <div class="why-choose-card">
+                    <div class="why-choose-icon">🌟</div>
+                    <h3>Expert Verification</h3>
+                    <p>All human experts are verified professionals, ensuring quality guidance and reliable advice for important decisions.</p>
+                </div>
+                <div class="why-choose-card">
+                    <div class="why-choose-icon">💎</div>
+                    <h3>Premium Quality</h3>
+                    <p>Combination of cutting-edge AI technology and human expertise provides unparalleled support for your life journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Consultation Section -->
+    <section class="expert-consultation" id="expert-consultation">
+        <div class="container">
+            <h2 class="section-title">Connect with Human Experts</h2>
+            <p style="text-align: center; margin-bottom: 3rem; color: #e0e0e0; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Get personalized guidance from verified human experts to complement AI insights. Our experts can help confirm, verify, and enhance the answers you receive from our AI platform.
+            </p>
+            
+            <div class="expert-categories">
+                <div class="expert-category-card" onclick="filterExperts('health')">
+                    <div class="expert-category-icon">🏥</div>
+                    <h3>Health & Medical</h3>
+                    <p>Professional medical advice and wellness guidance</p>
+                    <span class="expert-count">245 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('mental-health')">
+                    <div class="expert-category-icon">🧠</div>
+                    <h3>Mental Health</h3>
+                    <p>Therapy, counseling, and emotional support</p>
+                    <span class="expert-count">189 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('spiritual')">
+                    <div class="expert-category-icon">🕌</div>
+                    <h3>Spiritual Guidance</h3>
+                    <p>Faith-based counseling and spiritual mentoring</p>
+                    <span class="expert-count">156 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('financial')">
+                    <div class="expert-category-icon">💰</div>
+                    <h3>Financial Planning</h3>
+                    <p>Investment, budgeting, and wealth management</p>
+                    <span class="expert-count">203 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('career')">
+                    <div class="expert-category-icon">💼</div>
+                    <h3>Career & Business</h3>
+                    <p>Professional development and business strategy</p>
+                    <span class="expert-count">267 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('legal')">
+                    <div class="expert-category-icon">⚖️</div>
+                    <h3>Legal Advice</h3>
+                    <p>Legal consultation and document review</p>
+                    <span class="expert-count">134 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('education')">
+                    <div class="expert-category-icon">📚</div>
+                    <h3>Education & Learning</h3>
+                    <p>Academic guidance and skill development</p>
+                    <span class="expert-count">178 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('relationships')">
+                    <div class="expert-category-icon">❤️</div>
+                    <h3>Relationships</h3>
+                    <p>Family, marriage, and interpersonal counseling</p>
+                    <span class="expert-count">145 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('technology')">
+                    <div class="expert-category-icon">💻</div>
+                    <h3>Technology & IT</h3>
+                    <p>Tech support and digital transformation</p>
+                    <span class="expert-count">198 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('real-estate')">
+                    <div class="expert-category-icon">🏠</div>
+                    <h3>Real Estate</h3>
+                    <p>Property investment and real estate advice</p>
+                    <span class="expert-count">112 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('nutrition')">
+                    <div class="expert-category-icon">🥗</div>
+                    <h3>Nutrition & Diet</h3>
+                    <p>Dietary planning and nutritional counseling</p>
+                    <span class="expert-count">167 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('fitness')">
+                    <div class="expert-category-icon">💪</div>
+                    <h3>Fitness & Training</h3>
+                    <p>Personal training and fitness coaching</p>
+                    <span class="expert-count">156 experts</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Directory Section -->
+    <section class="expert-directory" id="expert-directory">
+        <div class="container">
+            <h2 class="section-title">Featured Experts</h2>
+            
+            <div class="expert-filters">
+                <button class="filter-button active" onclick="filterExperts('all')">All Experts</button>
+                <button class="filter-button" onclick="filterExperts('available')">Available Now</button>
+                <button class="filter-button" onclick="filterExperts('top-rated')">Top Rated</button>
+                <button class="filter-button" onclick="filterExperts('new')">New Experts</button>
+            </div>
+            
+            <div class="experts-grid" id="expertsGrid">
+                <!-- Expert cards will be populated by JavaScript -->
             </div>
         </div>
     </section>
@@ -2103,110 +2054,13 @@
                         <div style="text-align: center; padding: 1rem;">
                             <div style="font-size: 2rem; margin: 1rem 0;">3/5</div>
                             <div style="color: #e0e0e0;">Used this month</div>
-                            <button class="btn-primary" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Book Expert</button>
+                            <button class="btn-primary" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;" onclick="scrollToSection('expert-consultation')">Book Expert</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Chat Interface -->
-    <div class="chat-interface" id="chatInterface">
-        <div class="chat-header">
-            <div>
-                <h3>AiBhai Assistant</h3>
-                <div style="font-size: 0.9rem; opacity: 0.8;">Always here to help</div>
-            </div>
-            <button onclick="toggleChat()" style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;">×</button>
-        </div>
-        <div class="chat-messages" id="chatMessages">
-            <div class="message ai">
-                👋 Hello! I'm AiBhai, your AI companion for life, faith, and growth. How can I support you today?
-            </div>
-        </div>
-        <div class="chat-input">
-            <input type="text" id="messageInput" placeholder="Type your message..." onkeypress="handleChatKeyPress(event)">
-            <button onclick="sendMessage()">📤</button>
-        </div>
-    </div>
-
-    <button class="chat-toggle" onclick="toggleChat()" id="chatToggle">💬</button>
-
-    <!-- Booking Modal -->
-    <div class="booking-modal" id="bookingModal">
-        <div class="booking-content">
-            <button class="modal-close" onclick="closeBookingModal()">×</button>
-            
-            <div class="booking-header">
-                <img src="https://picsum.photos/seed/expert/60/60.jpg" alt="Expert" class="booking-expert-avatar" id="bookingExpertAvatar">
-                <div class="booking-expert-info">
-                    <h3 id="bookingExpertName">Dr. Sarah Johnson</h3>
-                    <p id="bookingExpertSpecialty">Medical Expert</p>
-                </div>
-            </div>
-
-            <div class="booking-tabs">
-                <button class="booking-tab active" onclick="switchBookingTab('instant')">Instant Session</button>
-                <button class="booking-tab" onclick="switchBookingTab('schedule')">Schedule Later</button>
-            </div>
-
-            <div id="instantBooking">
-                <div style="text-align: center; padding: 2rem;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">🎥</div>
-                    <h3 style="margin-bottom: 1rem;">Start Video Consultation</h3>
-                    <p style="color: #e0e0e0; margin-bottom: 2rem;">Connect with your expert immediately for a 30-minute session</p>
-                    <div class="consultation-price">£45/session</div>
-                    <button class="btn-primary" style="width: 100%; margin-top: 1rem;" onclick="startInstantSession()">Start Session</button>
-                </div>
-            </div>
-
-            <div id="scheduleBooking" style="display: none;">
-                <h4 style="margin-bottom: 1rem; color: #ffffff;">Select Date & Time</h4>
-                
-                <div style="margin-bottom: 2rem;">
-                    <input type="date" id="bookingDate" style="width: 100%; padding: 0.75rem; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(0, 212, 255, 0.3); border-radius: 8px; color: white;">
-                </div>
-
-                <h4 style="margin-bottom: 1rem; color: #ffffff;">Available Time Slots</h4>
-                <div class="time-slots" id="timeSlots">
-                    <div class="time-slot" onclick="selectTimeSlot(this)">9:00 AM</div>
-                    <div class="time-slot" onclick="selectTimeSlot(this)">10:00 AM</div>
-                    <div class="time-slot" onclick="selectTimeSlot(this)">11:00 AM</div>
-                    <div class="time-slot disabled">12:00 PM</div>
-                    <div class="time-slot" onclick="selectTimeSlot(this)">2:00 PM</div>
-                    <div class="time-slot" onclick="selectTimeSlot(this)">3:00 PM</div>
-                    <div class="time-slot" onclick="selectTimeSlot(this)">4:00 PM</div>
-                    <div class="time-slot" onclick="selectTimeSlot(this)">5:00 PM</div>
-                </div>
-
-                <div class="booking-summary">
-                    <div class="summary-row">
-                        <span>Expert:</span>
-                        <span id="summaryExpert">Dr. Sarah Johnson</span>
-                    </div>
-                    <div class="summary-row">
-                        <span>Date:</span>
-                        <span id="summaryDate">Not selected</span>
-                    </div>
-                    <div class="summary-row">
-                        <span>Time:</span>
-                        <span id="summaryTime">Not selected</span>
-                    </div>
-                    <div class="summary-row">
-                        <span>Duration:</span>
-                        <span>30 minutes</span>
-                    </div>
-                    <div class="summary-row total">
-                        <span>Total:</span>
-                        <span>£45</span>
-                    </div>
-                </div>
-
-                <button class="btn-primary" style="width: 100%;" onclick="confirmBooking()">Confirm Booking</button>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer>
@@ -2252,6 +2106,28 @@
             </div>
         </div>
     </footer>
+
+    <!-- Chat Interface -->
+    <div class="chat-interface" id="chatInterface">
+        <div class="chat-header">
+            <div>
+                <h3>AiBhai Assistant</h3>
+                <div style="font-size: 0.9rem; opacity: 0.8;">Always here to help</div>
+            </div>
+            <button onclick="toggleChat()" style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message ai">
+                👋 Hello! I'm AiBhai, your AI companion for life, faith, and growth. How can I support you today?
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Type your message..." onkeypress="handleChatKeyPress(event)">
+            <button onclick="sendMessage()">📤</button>
+        </div>
+    </div>
+
+    <button class="chat-toggle" onclick="toggleChat()" id="chatToggle">💬</button>
 
     <!-- Modals -->
     <div class="modal" id="loginModal">
@@ -2527,7 +2403,7 @@
         ];
 
         // Three.js Background
-        let scene, camera, renderer, particles, particleSystem;
+        let scene, camera, renderer, particles, particleSystem, connectionLines;
         let mouseX = 0, mouseY = 0;
         let windowHalfX = window.innerWidth / 2;
         let windowHalfY = window.innerHeight / 2;
@@ -2546,54 +2422,133 @@
             renderer.setPixelRatio(window.devicePixelRatio);
             document.getElementById('three-container').appendChild(renderer.domElement);
             
-            // Create particle system
-            const geometry = new THREE.BufferGeometry();
+            // Create nodes for expert network visualization
+            const nodeGeometry = new THREE.SphereGeometry(8, 16, 16);
+            const nodeMaterials = [
+                new THREE.MeshBasicMaterial({ color: 0x00d4ff }), // AI nodes - cyan
+                new THREE.MeshBasicMaterial({ color: 0x667eea }), // Expert nodes - purple
+                new THREE.MeshBasicMaterial({ color: 0x00ff88 }), // Support nodes - teal
+                new THREE.MeshBasicMaterial({ color: 0xff6b6b }), // User nodes - coral
+            ];
+            
+            const nodes = [];
+            const nodeCount = 150;
+            
+            for (let i = 0; i < nodeCount; i++) {
+                const material = nodeMaterials[Math.floor(Math.random() * nodeMaterials.length)];
+                const node = new THREE.Mesh(nodeGeometry, material);
+                
+                // Position nodes in a more organized pattern
+                const angle = (i / nodeCount) * Math.PI * 2;
+                const radius = 300 + Math.random() * 400;
+                const height = (Math.random() - 0.5) * 600;
+                
+                node.position.x = Math.cos(angle) * radius;
+                node.position.y = height;
+                node.position.z = Math.sin(angle) * radius;
+                
+                nodes.push(node);
+                scene.add(node);
+            }
+            
+            // Create connection lines between nodes
+            const lineMaterial = new THREE.LineBasicMaterial({ 
+                color: 0x00d4ff, 
+                opacity: 0.3, 
+                transparent: true 
+            });
+            
+            const connectionLines = new THREE.Group();
+            
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const distance = nodes[i].position.distanceTo(nodes[j].position);
+                    
+                    if (distance < 200) { // Only connect nearby nodes
+                        const geometry = new THREE.BufferGeometry().setFromPoints([
+                            nodes[i].position,
+                            nodes[j].position
+                        ]);
+                        const line = new THREE.Line(geometry, lineMaterial);
+                        connectionLines.add(line);
+                    }
+                }
+            }
+            
+            scene.add(connectionLines);
+            
+            // Create floating icons/symbols
+            const iconGeometries = [
+                new THREE.RingGeometry(15, 25, 8), // Support rings
+                new THREE.ConeGeometry(10, 20, 8), // Expert cones
+                new THREE.OctahedronGeometry(12), // AI crystals
+            ];
+            
+            const iconMaterial = new THREE.MeshBasicMaterial({ 
+                color: 0x00d4ff, 
+                opacity: 0.6, 
+                transparent: true,
+                wireframe: true
+            });
+            
+            for (let i = 0; i < 30; i++) {
+                const geometry = iconGeometries[Math.floor(Math.random() * iconGeometries.length)];
+                const icon = new THREE.Mesh(geometry, iconMaterial);
+                
+                icon.position.x = (Math.random() - 0.5) * 1000;
+                icon.position.y = (Math.random() - 0.5) * 1000;
+                icon.position.z = (Math.random() - 0.5) * 1000;
+                
+                icon.rotation.x = Math.random() * Math.PI;
+                icon.rotation.y = Math.random() * Math.PI;
+                
+                scene.add(icon);
+            }
+            
+            // Create particle system for ambient effect
+            const particleGeometry = new THREE.BufferGeometry();
             const vertices = [];
             const colors = [];
             
-            const particleCount = 2000;
+            const particleCount = 1000;
             
             for (let i = 0; i < particleCount; i++) {
-                // Position
-                const x = Math.random() * 2000 - 1000;
-                const y = Math.random() * 2000 - 1000;
-                const z = Math.random() * 2000 - 1000;
-                vertices.push(x, y, z);
+                vertices.push(
+                    Math.random() * 2000 - 1000,
+                    Math.random() * 2000 - 1000,
+                    Math.random() * 2000 - 1000
+                );
                 
-                // Color
                 const colorOptions = [
                     new THREE.Color(0x00d4ff), // Cyan
                     new THREE.Color(0x667eea), // Purple
                     new THREE.Color(0x00ff88), // Teal
-                    new THREE.Color(0xff00ff), // Magenta
                 ];
                 
                 const color = colorOptions[Math.floor(Math.random() * colorOptions.length)];
                 colors.push(color.r, color.g, color.b);
             }
             
-            geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
-            geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+            particleGeometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+            particleGeometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
             
-            // Create material
-            const material = new THREE.PointsMaterial({
-                size: 15,
+            const particleMaterial = new THREE.PointsMaterial({
+                size: 3,
                 vertexColors: true,
                 transparent: true,
-                opacity: 0.8,
+                opacity: 0.6,
                 sizeAttenuation: true,
                 blending: THREE.AdditiveBlending
             });
             
-            // Create particle system
-            particleSystem = new THREE.Points(geometry, material);
+            particleSystem = new THREE.Points(particleGeometry, particleMaterial);
             scene.add(particleSystem);
             
             // Add lights
-            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
             scene.add(ambientLight);
             
-            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
             directionalLight.position.set(1, 1, 1);
             scene.add(directionalLight);
             
@@ -2624,13 +2579,32 @@
             requestAnimationFrame(animate);
             
             // Update camera position based on mouse
-            camera.position.x += (mouseX * 0.5 - camera.position.x) * 0.05;
-            camera.position.y += (-mouseY * 0.5 - camera.position.y) * 0.05;
+            camera.position.x += (mouseX * 0.3 - camera.position.x) * 0.05;
+            camera.position.y += (-mouseY * 0.3 - camera.position.y) * 0.05;
             camera.lookAt(scene.position);
             
-            // Rotate particles
-            particleSystem.rotation.x += 0.001;
-            particleSystem.rotation.y += 0.002;
+            // Rotate particle system
+            if (particleSystem) {
+                particleSystem.rotation.x += 0.0005;
+                particleSystem.rotation.y += 0.001;
+            }
+            
+            // Rotate connection lines
+            if (connectionLines) {
+                connectionLines.rotation.x += 0.0003;
+                connectionLines.rotation.y += 0.0007;
+            }
+            
+            // Animate individual nodes
+            scene.children.forEach(child => {
+                if (child.type === 'Mesh' && child.geometry.type === 'SphereGeometry') {
+                    child.rotation.x += 0.01;
+                    child.rotation.y += 0.01;
+                    
+                    // Gentle floating motion
+                    child.position.y += Math.sin(Date.now() * 0.001 + child.position.x * 0.01) * 0.5;
+                }
+            });
             
             renderer.render(scene, camera);
         }
@@ -2716,8 +2690,8 @@
                     ${expert.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
                 </div>
                 <div class="expert-actions">
-                    <button class="btn-book" onclick="openBookingModal(${expert.id})">Book Session</button>
-                    <button class="btn-profile" onclick="viewExpertProfile(${expert.id})">View Profile</button>
+                    <button class="btn-book" onclick="showNotification('Booking System', 'Expert booking feature coming soon!')">Book Session</button>
+                    <button class="btn-profile" onclick="showNotification('Expert Profile', 'Expert profile feature coming soon!')">View Profile</button>
                 </div>
                 <div class="expert-availability">
                     <div class="availability-info">30-minute session</div>
@@ -2736,96 +2710,6 @@
                 btn.classList.remove('active');
             });
             event.target.classList.add('active');
-        }
-
-        function openBookingModal(expertId) {
-            const expert = experts.find(e => e.id === expertId);
-            if (!expert) return;
-            
-            selectedExpert = expert;
-            
-            // Update booking modal with expert info
-            document.getElementById('bookingExpertAvatar').src = expert.avatar;
-            document.getElementById('bookingExpertName').textContent = expert.name;
-            document.getElementById('bookingExpertSpecialty').textContent = expert.specialty;
-            document.getElementById('summaryExpert').textContent = expert.name;
-            
-            // Show modal
-            document.getElementById('bookingModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeBookingModal() {
-            document.getElementById('bookingModal').classList.remove('active');
-            document.body.style.overflow = 'auto';
-            selectedExpert = null;
-            selectedTimeSlot = null;
-        }
-
-        function switchBookingTab(tab) {
-            currentBookingTab = tab;
-            
-            // Update tab buttons
-            document.querySelectorAll('.booking-tab').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-            
-            // Show/hide content
-            if (tab === 'instant') {
-                document.getElementById('instantBooking').style.display = 'block';
-                document.getElementById('scheduleBooking').style.display = 'none';
-            } else {
-                document.getElementById('instantBooking').style.display = 'none';
-                document.getElementById('scheduleBooking').style.display = 'block';
-            }
-        }
-
-        function selectTimeSlot(slot) {
-            // Remove previous selection
-            document.querySelectorAll('.time-slot').forEach(s => {
-                s.classList.remove('selected');
-            });
-            
-            // Add selection to clicked slot
-            slot.classList.add('selected');
-            selectedTimeSlot = slot.textContent;
-            
-            // Update summary
-            const selectedDate = document.getElementById('bookingDate').value;
-            if (selectedDate) {
-                document.getElementById('summaryDate').textContent = new Date(selectedDate).toLocaleDateString();
-            }
-            document.getElementById('summaryTime').textContent = selectedTimeSlot;
-        }
-
-        function startInstantSession() {
-            if (!selectedExpert) return;
-            
-            closeBookingModal();
-            showNotification('Session Starting', `Connecting you with ${selectedExpert.name} for an instant consultation...`);
-            
-            // Simulate session start
-            setTimeout(() => {
-                showNotification('Session Connected', 'Your video consultation is now active. Enjoy your session!');
-            }, 2000);
-        }
-
-        function confirmBooking() {
-            if (!selectedExpert || !selectedTimeSlot) {
-                showNotification('Incomplete Booking', 'Please select a date and time for your consultation.');
-                return;
-            }
-            
-            closeBookingModal();
-            showNotification('Booking Confirmed', `Your consultation with ${selectedExpert.name} has been scheduled successfully!`);
-        }
-
-        function viewExpertProfile(expertId) {
-            const expert = experts.find(e => e.id === expertId);
-            if (!expert) return;
-            
-            showNotification('Expert Profile', `Viewing full profile for ${expert.name}. Feature coming soon!`);
         }
 
         // Modal functions
@@ -3453,27 +3337,12 @@
             }, observerOptions);
 
             // Observe all cards
-            document.querySelectorAll('.service-card, .feature-card, .pricing-card, .testimonial-card, .expert-card, .expert-category-card').forEach(card => {
+            document.querySelectorAll('.service-card, .feature-card, .pricing-card, .testimonial-card, .expert-card, .expert-category-card, .why-choose-card').forEach(card => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(30px)';
                 card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(card);
             });
-        });
-
-        // Set minimum date for booking to today
-        document.addEventListener('DOMContentLoaded', function() {
-            const dateInput = document.getElementById('bookingDate');
-            if (dateInput) {
-                const today = new Date().toISOString().split('T')[0];
-                dateInput.min = today;
-                dateInput.value = today;
-                
-                dateInput.addEventListener('change', function() {
-                    const selectedDate = new Date(this.value);
-                    document.getElementById('summaryDate').textContent = selectedDate.toLocaleDateString();
-                });
-            }
         });
     </script>
 </body>
