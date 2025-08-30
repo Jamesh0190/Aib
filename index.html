@@ -13,7 +13,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Inter', sans-serif;
             background: #0a0a0a;
@@ -21,13 +20,11 @@
             overflow-x: hidden;
             line-height: 1.6;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
         /* Three.js Background */
         #three-container {
             position: fixed;
@@ -37,18 +34,16 @@
             height: 100%;
             z-index: -1;
         }
-
         .overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at center, rgba(10, 10, 10, 0.7) 0%, rgba(10, 10, 10, 0.9) 100%);
+            background: radial-gradient(circle at center, rgba(10, 10, 10, 0.4) 0%, rgba(10, 10, 10, 0.7) 100%);
             z-index: 0;
             pointer-events: none;
         }
-
         /* Header Styles */
         header {
             background: rgba(15, 15, 25, 0.8);
@@ -61,29 +56,25 @@
             z-index: 1000;
             transition: all 0.3s ease;
         }
-
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1rem 0;
         }
-
         .logo {
             font-size: 1.8rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            background: linear-gradient(135deg, #00ffcc 0%, #ffcc00 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .nav-links {
             display: flex;
             gap: 2rem;
             list-style: none;
         }
-
         .nav-links a {
             color: #ffffff;
             text-decoration: none;
@@ -91,11 +82,9 @@
             transition: all 0.3s ease;
             position: relative;
         }
-
         .nav-links a:hover {
-            color: #00d4ff;
+            color: #00ffcc;
         }
-
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -103,17 +92,15 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(135deg, #00d4ff, #667eea);
+            background: linear-gradient(135deg, #00ffcc, #ffcc00);
             transition: width 0.3s ease;
         }
-
         .nav-links a:hover::after {
             width: 100%;
         }
-
         .cta-button {
-            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
-            color: white;
+            background: linear-gradient(135deg, #00ffcc 0%, #ffcc00 100%);
+            color: #0a0a0a;
             padding: 0.75rem 1.5rem;
             border: none;
             border-radius: 25px;
@@ -123,12 +110,10 @@
             text-decoration: none;
             display: inline-block;
         }
-
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 255, 204, 0.4);
         }
-
         /* Hero Section */
         .hero {
             padding: 8rem 0 4rem 0;
@@ -136,23 +121,20 @@
             position: relative;
             overflow: hidden;
         }
-
         .hero-content {
             position: relative;
             z-index: 1;
         }
-
         .hero h1 {
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            background: linear-gradient(135deg, #00ffcc 0%, #ffcc00 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             animation: fadeInUp 1s ease-out;
         }
-
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
@@ -163,7 +145,6 @@
             margin-right: auto;
             color: #e0e0e0;
         }
-
         .hero-buttons {
             display: flex;
             gap: 1rem;
@@ -171,10 +152,9 @@
             flex-wrap: wrap;
             animation: fadeInUp 1s ease-out 0.4s both;
         }
-
         .btn-primary {
-            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
-            color: white;
+            background: linear-gradient(135deg, #00ffcc 0%, #ffcc00 100%);
+            color: #0a0a0a;
             padding: 1rem 2rem;
             border: none;
             border-radius: 25px;
@@ -185,17 +165,15 @@
             text-decoration: none;
             display: inline-block;
         }
-
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 255, 204, 0.4);
         }
-
         .btn-secondary {
             background: transparent;
-            color: #00d4ff;
+            color: #00ffcc;
             padding: 1rem 2rem;
-            border: 2px solid #00d4ff;
+            border: 2px solid #00ffcc;
             border-radius: 25px;
             font-weight: 600;
             font-size: 1.1rem;
@@ -204,12 +182,10 @@
             text-decoration: none;
             display: inline-block;
         }
-
         .btn-secondary:hover {
-            background: #00d4ff;
+            background: #00ffcc;
             color: #0a0a0a;
         }
-
         /* Chat Section */
         .chat-section {
             padding: 3rem 0;
@@ -221,7 +197,6 @@
             position: relative;
             z-index: 1;
         }
-
         .chat-container {
             display: flex;
             flex-direction: column;
@@ -229,18 +204,16 @@
             border-radius: 15px;
             overflow: hidden;
             background: rgba(20, 20, 35, 0.8);
-            border: 1px solid rgba(0, 212, 255, 0.3);
+            border: 1px solid rgba(0, 255, 204, 0.3);
         }
-
         .chat-header {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(102, 126, 234, 0.2) 100%);
+            background: linear-gradient(135deg, rgba(0, 255, 204, 0.2) 0%, rgba(255, 204, 0, 0.2) 100%);
             padding: 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+            border-bottom: 1px solid rgba(0, 255, 204, 0.3);
         }
-
         .chat-messages {
             flex: 1;
             padding: 1rem;
@@ -249,59 +222,51 @@
             flex-direction: column;
             gap: 1rem;
         }
-
         .message {
             padding: 0.75rem 1rem;
             border-radius: 15px;
             max-width: 80%;
             animation: fadeInUp 0.3s ease-out;
         }
-
         .message.user {
-            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
-            color: white;
+            background: linear-gradient(135deg, #00ffcc 0%, #ffcc00 100%);
+            color: #0a0a0a;
             align-self: flex-end;
         }
-
         .message.ai {
             background: rgba(102, 126, 234, 0.2);
             color: #e0e0e0;
             align-self: flex-start;
             border: 1px solid rgba(102, 126, 234, 0.3);
         }
-
         .message.expert-suggestion {
             background: rgba(255, 193, 7, 0.2);
             color: #e0e0e0;
             align-self: flex-start;
             border: 1px solid rgba(255, 193, 7, 0.3);
         }
-
         .chat-input {
             padding: 1rem;
-            border-top: 1px solid rgba(0, 212, 255, 0.3);
+            border-top: 1px solid rgba(0, 255, 204, 0.3);
             display: flex;
             gap: 0.5rem;
         }
-
         .chat-input input {
             flex: 1;
             padding: 0.75rem;
             background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.3);
+            border: 1px solid rgba(0, 255, 204, 0.3);
             border-radius: 25px;
             outline: none;
             color: white;
             font-size: 1rem;
         }
-
         .chat-input input::placeholder {
             color: rgba(255, 255, 255, 0.6);
         }
-
         .chat-input button {
-            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
-            color: white;
+            background: linear-gradient(135deg, #00ffcc 0%, #ffcc00 100%);
+            color: #0a0a0a;
             border: none;
             border-radius: 50%;
             width: 40px;
@@ -311,42 +276,37 @@
             align-items: center;
             justify-content: center;
         }
-
         /* Core Services Section */
         .services {
             padding: 4rem 0;
             position: relative;
             z-index: 1;
         }
-
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 3rem;
-            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            background: linear-gradient(135deg, #00ffcc 0%, #ffcc00 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
         }
-
         .service-card {
             background: rgba(20, 20, 35, 0.8);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 2rem;
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            border: 1px solid rgba(0, 255, 204, 0.2);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
-
         .service-card::before {
             content: '';
             position: absolute;
@@ -354,54 +314,46 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            background: linear-gradient(135deg, #00ffcc 0%, #ffcc00 100%);
         }
-
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
-            border-color: rgba(0, 212, 255, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 255, 204, 0.2);
+            border-color: rgba(0, 255, 204, 0.5);
         }
-
         .service-header {
             display: flex;
             align-items: center;
             margin-bottom: 1.5rem;
         }
-
         .service-icon {
             font-size: 2.5rem;
             margin-right: 1rem;
-            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            background: linear-gradient(135deg, #00ffcc 0%, #ffcc00 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .service-card h3 {
             font-size: 1.4rem;
             color: #ffffff;
         }
-
         .service-features {
             list-style: none;
         }
-
         .service-features li {
             padding: 0.5rem 0;
             padding-left: 1.5rem;
             position: relative;
             color: #e0e0e0;
         }
-
         .service-features li::before {
             content: '✓';
             position: absolute;
             left: 0;
-            color: #00d4ff;
+            color: #00ffcc;
             font-weight: bold;
         }
-
         .expert-support-badge {
             position: absolute;
             top: 1rem;
@@ -413,21 +365,18 @@
             font-size: 0.8rem;
             border: 1px solid rgba(255, 193, 7, 0.3);
         }
-
         /* Features Section */
         .features {
             padding: 4rem 0;
             position: relative;
             z-index: 1;
         }
-
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-bottom: 3rem;
         }
-
         .feature-card {
             background: rgba(20, 20, 35, 0.8);
             backdrop-filter: blur(10px);
@@ -435,11 +384,10 @@
             padding: 2rem;
             text-align: center;
             transition: all 0.3s ease;
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            border: 1px solid rgba(0, 255, 204, 0.2);
             position: relative;
             overflow: hidden;
         }
-
         .feature-card::before {
             content: '';
             position: absolute;
@@ -447,40 +395,34 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 204, 0.1), transparent);
             transition: left 0.5s;
         }
-
         .feature-card:hover::before {
             left: 100%;
         }
-
         .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
-            border-color: rgba(0, 212, 255, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 255, 204, 0.2);
+            border-color: rgba(0, 255, 204, 0.5);
         }
-
         .feature-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            background: linear-gradient(135deg, #00ffcc 0%, #ffcc00 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .feature-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: #ffffff;
         }
-
         .feature-card p {
             color: #e0e0e0;
             line-height: 1.6;
         }
-
         /* Expert Consultation Section */
         .expert-consultation {
             padding: 4rem 0;
@@ -489,153 +431,132 @@
             background: rgba(15, 15, 25, 0.6);
             backdrop-filter: blur(10px);
         }
-
         .expert-categories {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
             margin-bottom: 3rem;
         }
-
         .expert-category-card {
             background: rgba(20, 20, 35, 0.8);
             backdrop-filter: blur(10px);
             border-radius: 15px;
             padding: 1.5rem;
             text-align: center;
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            border: 1px solid rgba(0, 255, 204, 0.2);
             transition: all 0.3s ease;
             cursor: pointer;
         }
-
         .expert-category-card:hover {
             transform: translateY(-5px);
-            border-color: rgba(0, 212, 255, 0.5);
-            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 255, 204, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 255, 204, 0.2);
         }
-
         .expert-category-icon {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            background: linear-gradient(135deg, #00ffcc 0%, #ffcc00 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .expert-category-card h3 {
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
             color: #ffffff;
         }
-
         .expert-category-card p {
             color: #e0e0e0;
             font-size: 0.9rem;
         }
-
         .expert-count {
             display: inline-block;
-            background: rgba(0, 212, 255, 0.2);
-            color: #00d4ff;
+            background: rgba(0, 255, 204, 0.2);
+            color: #00ffcc;
             padding: 0.25rem 0.75rem;
             border-radius: 15px;
             font-size: 0.8rem;
             margin-top: 0.5rem;
         }
-
         /* Expert Directory Section */
         .expert-directory {
             padding: 4rem 0;
             position: relative;
             z-index: 1;
         }
-
         .expert-filters {
             display: flex;
             gap: 1rem;
             margin-bottom: 2rem;
             flex-wrap: wrap;
         }
-
         .filter-button {
             background: rgba(20, 20, 35, 0.8);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            border: 1px solid rgba(0, 255, 204, 0.2);
             color: #e0e0e0;
             padding: 0.5rem 1rem;
             border-radius: 20px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
-
         .filter-button.active,
         .filter-button:hover {
-            background: rgba(0, 212, 255, 0.2);
-            border-color: #00d4ff;
-            color: #00d4ff;
+            background: rgba(0, 255, 204, 0.2);
+            border-color: #00ffcc;
+            color: #00ffcc;
         }
-
         .experts-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
         }
-
         .expert-card {
             background: rgba(20, 20, 35, 0.8);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 2rem;
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            border: 1px solid rgba(0, 255, 204, 0.2);
             transition: all 0.3s ease;
             position: relative;
         }
-
         .expert-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
-            border-color: rgba(0, 212, 255, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 255, 204, 0.2);
+            border-color: rgba(0, 255, 204, 0.5);
         }
-
         .expert-header {
             display: flex;
             align-items: center;
             margin-bottom: 1.5rem;
         }
-
         .expert-avatar {
             width: 80px;
             height: 80px;
             border-radius: 50%;
             margin-right: 1rem;
             object-fit: cover;
-            border: 3px solid rgba(0, 212, 255, 0.3);
+            border: 3px solid rgba(0, 255, 204, 0.3);
         }
-
         .expert-info h3 {
             font-size: 1.3rem;
             margin-bottom: 0.25rem;
             color: #ffffff;
         }
-
         .expert-specialty {
-            color: #00d4ff;
+            color: #00ffcc;
             font-size: 0.9rem;
             margin-bottom: 0.5rem;
         }
-
         .expert-rating {
             display: flex;
             align-items: center;
             gap: 0.5rem;
             font-size: 0.9rem;
         }
-
         .stars {
             color: #ffc107;
         }
-
         .expert-status {
             display: inline-flex;
             align-items: center;
@@ -645,48 +566,40 @@
             border-radius: 15px;
             margin-top: 0.5rem;
         }
-
         .status-online {
             background: rgba(76, 175, 80, 0.2);
             color: #4caf50;
         }
-
         .status-busy {
             background: rgba(255, 152, 0, 0.2);
             color: #ff9800;
         }
-
         .status-offline {
             background: rgba(244, 67, 54, 0.2);
             color: #f44336;
         }
-
         .expert-bio {
             color: #e0e0e0;
             margin-bottom: 1.5rem;
             line-height: 1.5;
         }
-
         .expert-skills {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-bottom: 1.5rem;
         }
-
         .skill-tag {
-            background: rgba(0, 212, 255, 0.1);
-            color: #00d4ff;
+            background: rgba(0, 255, 204, 0.1);
+            color: #00ffcc;
             padding: 0.25rem 0.75rem;
             border-radius: 15px;
             font-size: 0.8rem;
         }
-
         .expert-actions {
             display: flex;
             gap: 1rem;
         }
-
         .expert-actions button {
             flex: 1;
             padding: 0.75rem;
@@ -696,28 +609,23 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-
         .btn-book {
-            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
-            color: white;
+            background: linear-gradient(135deg, #00ffcc 0%, #ffcc00 100%);
+            color: #0a0a0a;
         }
-
         .btn-book:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 255, 204, 0.3);
         }
-
         .btn-profile {
             background: rgba(255, 255, 255, 0.1);
             color: #e0e0e0;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-
         .btn-profile:hover {
             background: rgba(255, 255, 255, 0.2);
             color: #ffffff;
         }
-
         .expert-availability {
             display: flex;
             justify-content: space-between;
@@ -726,31 +634,26 @@
             padding-top: 1rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-
         .availability-info {
             font-size: 0.9rem;
             color: #e0e0e0;
         }
-
         .consultation-price {
             font-size: 1.2rem;
             font-weight: 700;
-            color: #00d4ff;
+            color: #00ffcc;
         }
-
         /* Why Choose AiBhai Section */
         .why-choose {
             padding: 4rem 0;
             position: relative;
             z-index: 1;
         }
-
         .why-choose-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
-
         .why-choose-card {
             background: rgba(20, 20, 35, 0.8);
             backdrop-filter: blur(10px);
@@ -758,34 +661,29 @@
             padding: 2rem;
             text-align: center;
             transition: all 0.3s ease;
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            border: 1px solid rgba(0, 255, 204, 0.2);
         }
-
         .why-choose-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 255, 204, 0.2);
         }
-
         .why-choose-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            background: linear-gradient(135deg, #00ffcc 0%, #ffcc00 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .why-choose-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: #ffffff;
         }
-
         .why-choose-card p {
             color: #e0e0e0;
             line-height: 1.6;
         }
-
         /* Testimonials Section */
         .testimonials {
             padding: 4rem 0;
@@ -794,39 +692,33 @@
             position: relative;
             z-index: 1;
         }
-
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
-
         .testimonial-card {
             background: rgba(20, 20, 35, 0.8);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 2rem;
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            border: 1px solid rgba(0, 255, 204, 0.2);
             transition: all 0.3s ease;
         }
-
         .testimonial-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 255, 204, 0.2);
         }
-
         .testimonial-content {
             font-style: italic;
             color: #e0e0e0;
             margin-bottom: 1.5rem;
             line-height: 1.6;
         }
-
         .testimonial-author {
             display: flex;
             align-items: center;
         }
-
         .testimonial-avatar {
             width: 50px;
             height: 50px;
@@ -834,100 +726,85 @@
             margin-right: 1rem;
             object-fit: cover;
         }
-
         .testimonial-info h4 {
             color: #ffffff;
             margin-bottom: 0.25rem;
         }
-
         .testimonial-info p {
-            color: #00d4ff;
+            color: #00ffcc;
             font-size: 0.9rem;
         }
-
         /* Pricing Section */
         .pricing {
             padding: 4rem 0;
             position: relative;
             z-index: 1;
         }
-
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-
         .pricing-card {
             background: rgba(20, 20, 35, 0.8);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 2rem;
             text-align: center;
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            border: 1px solid rgba(0, 255, 204, 0.2);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
-
         .pricing-card.featured {
-            background: rgba(0, 212, 255, 0.1);
-            border-color: #00d4ff;
+            background: rgba(0, 255, 204, 0.1);
+            border-color: #00ffcc;
             transform: scale(1.05);
         }
-
         .pricing-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 255, 204, 0.2);
         }
-
         .pricing-card.featured:hover {
             transform: translateY(-5px) scale(1.05);
         }
-
         .pricing-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: #ffffff;
         }
-
         .price {
             font-size: 3rem;
             font-weight: 800;
             margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            background: linear-gradient(135deg, #00ffcc 0%, #ffcc00 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .price-subtitle {
             color: #e0e0e0;
             margin-bottom: 2rem;
         }
-
         .pricing-features {
             list-style: none;
             margin-bottom: 2rem;
             text-align: left;
         }
-
         .pricing-features li {
             padding: 0.5rem 0;
             padding-left: 1.5rem;
             position: relative;
             color: #e0e0e0;
         }
-
         .pricing-features li::before {
             content: '✓';
             position: absolute;
             left: 0;
-            color: #00d4ff;
+            color: #00ffcc;
             font-weight: bold;
         }
-
         /* Dashboard Section */
         .dashboard {
             padding: 4rem 0;
@@ -935,11 +812,9 @@
             z-index: 1;
             display: none;
         }
-
         .dashboard.active {
             display: block;
         }
-
         .dashboard-header {
             display: flex;
             justify-content: space-between;
@@ -948,71 +823,61 @@
             flex-wrap: wrap;
             gap: 1rem;
         }
-
         .dashboard-tabs {
             display: flex;
             gap: 1rem;
             margin-bottom: 2rem;
             flex-wrap: wrap;
         }
-
         .dashboard-tab {
             padding: 0.75rem 1.5rem;
             background: rgba(20, 20, 35, 0.8);
             backdrop-filter: blur(10px);
-            border: 2px solid #00d4ff;
+            border: 2px solid #00ffcc;
             border-radius: 25px;
-            color: #00d4ff;
+            color: #00ffcc;
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 600;
         }
-
         .dashboard-tab.active {
-            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
-            color: white;
+            background: linear-gradient(135deg, #00ffcc 0%, #ffcc00 100%);
+            color: #0a0a0a;
         }
-
         .dashboard-content {
             background: rgba(20, 20, 35, 0.8);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 2rem;
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            border: 1px solid rgba(0, 255, 204, 0.2);
         }
-
         .dashboard-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
         }
-
         .dashboard-widget {
             background: rgba(15, 15, 25, 0.6);
             backdrop-filter: blur(10px);
             border-radius: 15px;
             padding: 1.5rem;
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            border: 1px solid rgba(0, 255, 204, 0.2);
         }
-
         .widget-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 1rem;
         }
-
         .widget-title {
             font-size: 1.2rem;
             font-weight: 600;
             color: #ffffff;
         }
-
         .widget-icon {
             font-size: 1.5rem;
-            color: #00d4ff;
+            color: #00ffcc;
         }
-
         /* Chat Interface */
         .chat-interface {
             position: fixed;
@@ -1028,51 +893,45 @@
             flex-direction: column;
             z-index: 1000;
             overflow: hidden;
-            border: 1px solid rgba(0, 212, 255, 0.3);
+            border: 1px solid rgba(0, 255, 204, 0.3);
         }
-
         .chat-interface.active {
             display: flex;
         }
-
         .chat-header {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.3) 0%, rgba(102, 126, 234, 0.3) 100%);
+            background: linear-gradient(135deg, rgba(0, 255, 204, 0.3) 0%, rgba(255, 204, 0, 0.3) 100%);
             color: white;
             padding: 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+            border-bottom: 1px solid rgba(0, 255, 204, 0.3);
         }
-
         .chat-messages {
             flex: 1;
             padding: 1rem;
             overflow-y: auto;
             background: rgba(15, 15, 25, 0.5);
         }
-
         .chat-input {
             padding: 1rem;
-            border-top: 1px solid rgba(0, 212, 255, 0.3);
+            border-top: 1px solid rgba(0, 255, 204, 0.3);
             display: flex;
             gap: 0.5rem;
             background: rgba(20, 20, 35, 0.8);
         }
-
         .chat-input input {
             flex: 1;
             padding: 0.75rem;
             background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.3);
+            border: 1px solid rgba(0, 255, 204, 0.3);
             border-radius: 25px;
             outline: none;
             color: white;
         }
-
         .chat-input button {
-            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
-            color: white;
+            background: linear-gradient(135deg, #00ffcc 0%, #ffcc00 100%);
+            color: #0a0a0a;
             border: none;
             border-radius: 50%;
             width: 40px;
@@ -1082,28 +941,25 @@
             align-items: center;
             justify-content: center;
         }
-
         .chat-toggle {
             position: fixed;
             bottom: 20px;
             right: 20px;
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            background: linear-gradient(135deg, #00ffcc 0%, #ffcc00 100%);
             border-radius: 50%;
             border: none;
-            color: white;
+            color: #0a0a0a;
             font-size: 1.5rem;
             cursor: pointer;
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 255, 204, 0.4);
             transition: all 0.3s ease;
             z-index: 999;
         }
-
         .chat-toggle:hover {
             transform: scale(1.1);
         }
-
         /* Footer */
         footer {
             background: rgba(15, 15, 25, 0.8);
@@ -1111,48 +967,40 @@
             color: white;
             padding: 3rem 0 1rem;
             margin-top: 4rem;
-            border-top: 1px solid rgba(0, 212, 255, 0.2);
+            border-top: 1px solid rgba(0, 255, 204, 0.2);
             position: relative;
             z-index: 1;
         }
-
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-bottom: 2rem;
         }
-
         .footer-section h3 {
             margin-bottom: 1rem;
-            color: #00d4ff;
+            color: #00ffcc;
         }
-
         .footer-section ul {
             list-style: none;
         }
-
         .footer-section ul li {
             margin-bottom: 0.5rem;
         }
-
         .footer-section ul li a {
             color: #e0e0e0;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-
         .footer-section ul li a:hover {
-            color: #00d4ff;
+            color: #00ffcc;
         }
-
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #e0e0e0;
         }
-
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -1164,31 +1012,25 @@
                 transform: translateY(0);
             }
         }
-
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
         }
-
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
-
             .hero h1 {
                 font-size: 2.5rem;
             }
-
             .hero p {
                 font-size: 1.1rem;
             }
-
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-
             .features-grid,
             .services-grid,
             .pricing-grid,
@@ -1198,11 +1040,9 @@
             .why-choose-grid {
                 grid-template-columns: 1fr;
             }
-
             .pricing-card.featured {
                 transform: none;
             }
-
             .chat-interface {
                 width: 95%;
                 height: 80%;
@@ -1210,28 +1050,24 @@
                 right: 50%;
                 transform: translateX(50%);
             }
-
             .dashboard-header {
                 flex-direction: column;
                 align-items: flex-start;
             }
         }
-
         /* Loading States */
         .loading {
             display: inline-block;
             width: 20px;
             height: 20px;
-            border: 2px solid rgba(0, 212, 255, 0.3);
+            border: 2px solid rgba(0, 255, 204, 0.3);
             border-radius: 50%;
-            border-top-color: #00d4ff;
+            border-top-color: #00ffcc;
             animation: spin 1s ease-in-out infinite;
         }
-
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
-
         /* Notification System */
         .notification {
             position: fixed;
@@ -1239,7 +1075,7 @@
             right: 20px;
             background: rgba(20, 20, 35, 0.95);
             backdrop-filter: blur(20px);
-            border-left: 4px solid #00d4ff;
+            border-left: 4px solid #00ffcc;
             border-radius: 8px;
             padding: 1rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -1247,25 +1083,21 @@
             transform: translateX(400px);
             transition: transform 0.3s ease;
             max-width: 300px;
-            border: 1px solid rgba(0, 212, 255, 0.3);
+            border: 1px solid rgba(0, 255, 204, 0.3);
         }
-
         .notification.show {
             transform: translateX(0);
         }
-
         .notification-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 0.5rem;
         }
-
         .notification-title {
             font-weight: 600;
             color: #ffffff;
         }
-
         .notification-close {
             background: none;
             border: none;
@@ -1273,12 +1105,10 @@
             cursor: pointer;
             color: #e0e0e0;
         }
-
         .notification-message {
             color: #e0e0e0;
             font-size: 0.9rem;
         }
-
         /* Modal Styles */
         .modal {
             display: none;
@@ -1291,13 +1121,11 @@
             backdrop-filter: blur(5px);
             z-index: 2000;
         }
-
         .modal.active {
             display: flex;
             align-items: center;
             justify-content: center;
         }
-
         .modal-content {
             background: rgba(20, 20, 35, 0.95);
             backdrop-filter: blur(20px);
@@ -1308,9 +1136,8 @@
             max-height: 80vh;
             overflow-y: auto;
             position: relative;
-            border: 1px solid rgba(0, 212, 255, 0.3);
+            border: 1px solid rgba(0, 255, 204, 0.3);
         }
-
         .modal-close {
             position: absolute;
             top: 1rem;
@@ -1321,61 +1148,52 @@
             cursor: pointer;
             color: #e0e0e0;
         }
-
         .form-group {
             margin-bottom: 1.5rem;
         }
-
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
             color: #ffffff;
         }
-
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
             padding: 0.75rem;
             background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.3);
+            border: 1px solid rgba(0, 255, 204, 0.3);
             border-radius: 8px;
             font-size: 1rem;
             color: white;
             transition: border-color 0.3s ease;
         }
-
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #00d4ff;
+            border-color: #00ffcc;
         }
-
         .form-group input::placeholder,
         .form-group textarea::placeholder {
             color: rgba(255, 255, 255, 0.6);
         }
-
         /* Progress Tracker */
         .progress-tracker {
             margin: 2rem 0;
         }
-
         .progress-steps {
             display: flex;
             justify-content: space-between;
             margin-bottom: 1rem;
         }
-
         .progress-step {
             display: flex;
             flex-direction: column;
             align-items: center;
             flex: 1;
         }
-
         .step-circle {
             width: 40px;
             height: 40px;
@@ -1389,71 +1207,59 @@
             margin-bottom: 0.5rem;
             transition: all 0.3s ease;
         }
-
         .step-circle.active {
-            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
-            color: white;
+            background: linear-gradient(135deg, #00ffcc 0%, #ffcc00 100%);
+            color: #0a0a0a;
         }
-
         .step-circle.completed {
             background: #4caf50;
             color: white;
         }
-
         .step-label {
             font-size: 0.8rem;
             color: #e0e0e0;
             text-align: center;
         }
-
         .progress-bar {
             height: 4px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 2px;
             overflow: hidden;
         }
-
         .progress-fill {
             height: 100%;
-            background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+            background: linear-gradient(135deg, #00ffcc 0%, #ffcc00 100%);
             transition: width 0.3s ease;
         }
-
         /* Floating elements */
         .floating {
             animation: float 6s ease-in-out infinite;
         }
-
         .floating-delay-1 {
             animation-delay: 1s;
         }
-
         .floating-delay-2 {
             animation-delay: 2s;
         }
-
         .floating-delay-3 {
             animation-delay: 3s;
         }
-
         /* Glow effect */
         .glow {
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
         }
-
         /* Pulse animation */
         @keyframes pulse {
             0% {
-                box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7);
+                box-shadow: 0 0 0 0 rgba(0, 255, 204, 0.7);
             }
             70% {
-                box-shadow: 0 0 0 10px rgba(0, 212, 255, 0);
+                box-shadow: 0 0 0 10px rgba(0, 255, 204, 0);
             }
             100% {
-                box-shadow: 0 0 0 0 rgba(0, 212, 255, 0);
+                box-shadow: 0 0 0 0 rgba(0, 255, 204, 0);
             }
         }
-
         .pulse {
             animation: pulse 2s infinite;
         }
@@ -1463,7 +1269,6 @@
     <!-- Three.js Background -->
     <div id="three-container"></div>
     <div class="overlay"></div>
-
     <!-- Header -->
     <header>
         <nav class="container">
@@ -1484,7 +1289,6 @@
             </div>
         </nav>
     </header>
-
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
@@ -1498,7 +1302,6 @@
             </div>
         </div>
     </section>
-
     <!-- Chat Section -->
     <section class="chat-section">
         <div class="container">
@@ -1526,7 +1329,6 @@
             </div>
         </div>
     </section>
-
     <!-- Core Services Section -->
     <section class="services" id="services">
         <div class="container">
@@ -1547,7 +1349,6 @@
                         <li>Access to certified life coaches</li>
                     </ul>
                 </div>
-
                 <div class="service-card">
                     <div class="expert-support-badge">+ Human Expert</div>
                     <div class="service-header">
@@ -1563,7 +1364,6 @@
                         <li>Consultation with health professionals</li>
                     </ul>
                 </div>
-
                 <div class="service-card">
                     <div class="expert-support-badge">+ Human Expert</div>
                     <div class="service-header">
@@ -1579,7 +1379,6 @@
                         <li>Guidance from spiritual mentors</li>
                     </ul>
                 </div>
-
                 <div class="service-card">
                     <div class="expert-support-badge">+ Human Expert</div>
                     <div class="service-header">
@@ -1595,7 +1394,6 @@
                         <li>1-on-1 business consulting sessions</li>
                     </ul>
                 </div>
-
                 <div class="service-card">
                     <div class="expert-support-badge">+ Human Expert</div>
                     <div class="service-header">
@@ -1611,7 +1409,6 @@
                         <li>Consultation with financial advisors</li>
                     </ul>
                 </div>
-
                 <div class="service-card">
                     <div class="expert-support-badge">+ Human Expert</div>
                     <div class="service-header">
@@ -1627,7 +1424,6 @@
                         <li>Therapy and counseling sessions</li>
                     </ul>
                 </div>
-
                 <div class="service-card">
                     <div class="expert-support-badge">+ Human Expert</div>
                     <div class="service-header">
@@ -1643,7 +1439,6 @@
                         <li>Tutoring and mentorship sessions</li>
                     </ul>
                 </div>
-
                 <div class="service-card">
                     <div class="expert-support-badge">+ Human Expert</div>
                     <div class="service-header">
@@ -1662,7 +1457,6 @@
             </div>
         </div>
     </section>
-
     <!-- Features Section -->
     <section class="features" id="features">
         <div class="container">
@@ -1701,7 +1495,6 @@
             </div>
         </div>
     </section>
-
     <!-- Why Choose AiBhai Section -->
     <section class="why-choose" id="why-choose">
         <div class="container">
@@ -1740,7 +1533,6 @@
             </div>
         </div>
     </section>
-
     <!-- Expert Consultation Section -->
     <section class="expert-consultation" id="expert-consultation">
         <div class="container">
@@ -1836,7 +1628,6 @@
             </div>
         </div>
     </section>
-
     <!-- Expert Directory Section -->
     <section class="expert-directory" id="expert-directory">
         <div class="container">
@@ -1854,7 +1645,6 @@
             </div>
         </div>
     </section>
-
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
         <div class="container">
@@ -1872,7 +1662,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         "As someone who values both technology and human connection, AiBhai perfectly bridges the gap. The AI provides quick insights, while the expert network offers deep, personalized guidance."
@@ -1885,7 +1674,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         "The spiritual guidance features combined with access to real scholars have been incredible for my faith journey. I get daily reminders and can consult with experts when I have deeper questions."
@@ -1901,7 +1689,6 @@
             </div>
         </div>
     </section>
-
     <!-- Pricing Section -->
     <section class="pricing" id="pricing">
         <div class="container">
@@ -1920,7 +1707,6 @@
                     </ul>
                     <button class="cta-button" onclick="openModal('signupModal')" style="width: 100%;">Get Started Free</button>
                 </div>
-
                 <div class="pricing-card featured">
                     <h3>Pro</h3>
                     <div class="price">£9.99<span style="font-size: 1rem;">/month</span></div>
@@ -1935,7 +1721,6 @@
                     </ul>
                     <button class="btn-primary" onclick="openModal('signupModal')" style="width: 100%;">Start Pro Trial</button>
                 </div>
-
                 <div class="pricing-card">
                     <h3>Basic</h3>
                     <div class="price">£4.99<span style="font-size: 1rem;">/month</span></div>
@@ -1949,7 +1734,6 @@
                     </ul>
                     <button class="cta-button" onclick="openModal('signupModal')" style="width: 100%;">Choose Basic</button>
                 </div>
-
                 <div class="pricing-card">
                     <h3>Family/Enterprise</h3>
                     <div class="price">Custom</div>
@@ -1967,7 +1751,6 @@
             </div>
         </div>
     </section>
-
     <!-- Dashboard Section -->
     <section class="dashboard" id="dashboard">
         <div class="container">
@@ -1977,11 +1760,10 @@
                     <img src="https://picsum.photos/seed/user/50/50.jpg" alt="User" style="width: 50px; height: 50px; border-radius: 50%;">
                     <div>
                         <div style="font-weight: 600;">Welcome back!</div>
-                        <div style="color: #00d4ff; font-size: 0.9rem;">Pro Member</div>
+                        <div style="color: #00ffcc; font-size: 0.9rem;">Pro Member</div>
                     </div>
                 </div>
             </div>
-
             <div class="dashboard-tabs">
                 <button class="dashboard-tab active" onclick="switchDashboardTab('overview')">Overview</button>
                 <button class="dashboard-tab" onclick="switchDashboardTab('health')">Health</button>
@@ -1990,7 +1772,6 @@
                 <button class="dashboard-tab" onclick="switchDashboardTab('finance')">Finance</button>
                 <button class="dashboard-tab" onclick="switchDashboardTab('experts')">My Experts</button>
             </div>
-
             <div class="dashboard-content">
                 <div class="dashboard-grid">
                     <div class="dashboard-widget">
@@ -2022,18 +1803,16 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="dashboard-widget">
                         <div class="widget-header">
                             <div class="widget-title">Wellness Score</div>
                             <div class="widget-icon">💪</div>
                         </div>
                         <div style="text-align: center; padding: 1rem;">
-                            <div style="font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">85%</div>
+                            <div style="font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #00ffcc 0%, #ffcc00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">85%</div>
                             <div style="color: #e0e0e0;">Great job today!</div>
                         </div>
                     </div>
-
                     <div class="dashboard-widget">
                         <div class="widget-header">
                             <div class="widget-title">Upcoming Tasks</div>
@@ -2045,7 +1824,6 @@
                             <li style="padding: 0.5rem 0;">Evening prayer reminder</li>
                         </ul>
                     </div>
-
                     <div class="dashboard-widget">
                         <div class="widget-header">
                             <div class="widget-title">Expert Consultations</div>
@@ -2061,7 +1839,6 @@
             </div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -2106,7 +1883,6 @@
             </div>
         </div>
     </footer>
-
     <!-- Chat Interface -->
     <div class="chat-interface" id="chatInterface">
         <div class="chat-header">
@@ -2126,9 +1902,7 @@
             <button onclick="sendMessage()">📤</button>
         </div>
     </div>
-
     <button class="chat-toggle" onclick="toggleChat()" id="chatToggle">💬</button>
-
     <!-- Modals -->
     <div class="modal" id="loginModal">
         <div class="modal-content">
@@ -2148,7 +1922,6 @@
             </form>
         </div>
     </div>
-
     <div class="modal" id="signupModal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('signupModal')">×</button>
@@ -2183,7 +1956,6 @@
             </form>
         </div>
     </div>
-
     <div class="modal" id="contactModal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('contactModal')">×</button>
@@ -2220,7 +1992,6 @@
             </form>
         </div>
     </div>
-
     <!-- Notification -->
     <div class="notification" id="notification">
         <div class="notification-header">
@@ -2231,7 +2002,6 @@
             Welcome to AiBhai!
         </div>
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
         // Global variables
@@ -2241,7 +2011,6 @@
         let currentBookingTab = 'instant';
         let selectedExpert = null;
         let selectedTimeSlot = null;
-
         // Expert data
         const experts = [
             {
@@ -2401,13 +2170,12 @@
                 avatar: "https://picsum.photos/seed/mark/80/80.jpg"
             }
         ];
-
         // Three.js Background
-        let scene, camera, renderer, particles, particleSystem, connectionLines;
+        let scene, camera, renderer, particles, particleSystem, connectionLines, starField, successParticles;
         let mouseX = 0, mouseY = 0;
         let windowHalfX = window.innerWidth / 2;
         let windowHalfY = window.innerHeight / 2;
-
+        
         function initThreeJS() {
             // Create scene
             scene = new THREE.Scene();
@@ -2422,52 +2190,166 @@
             renderer.setPixelRatio(window.devicePixelRatio);
             document.getElementById('three-container').appendChild(renderer.domElement);
             
-            // Create nodes for expert network visualization
-            const nodeGeometry = new THREE.SphereGeometry(8, 16, 16);
-            const nodeMaterials = [
-                new THREE.MeshBasicMaterial({ color: 0x00d4ff }), // AI nodes - cyan
-                new THREE.MeshBasicMaterial({ color: 0x667eea }), // Expert nodes - purple
-                new THREE.MeshBasicMaterial({ color: 0x00ff88 }), // Support nodes - teal
-                new THREE.MeshBasicMaterial({ color: 0xff6b6b }), // User nodes - coral
-            ];
+            // Create vibrant starfield background
+            const starGeometry = new THREE.BufferGeometry();
+            const starVertices = [];
+            const starColors = [];
             
-            const nodes = [];
-            const nodeCount = 150;
+            const starCount = 2000;
             
-            for (let i = 0; i < nodeCount; i++) {
-                const material = nodeMaterials[Math.floor(Math.random() * nodeMaterials.length)];
-                const node = new THREE.Mesh(nodeGeometry, material);
+            for (let i = 0; i < starCount; i++) {
+                const x = (Math.random() - 0.5) * 2000;
+                const y = (Math.random() - 0.5) * 2000;
+                const z = (Math.random() - 0.5) * 2000;
                 
-                // Position nodes in a more organized pattern
-                const angle = (i / nodeCount) * Math.PI * 2;
-                const radius = 300 + Math.random() * 400;
-                const height = (Math.random() - 0.5) * 600;
+                starVertices.push(x, y, z);
                 
-                node.position.x = Math.cos(angle) * radius;
-                node.position.y = height;
-                node.position.z = Math.sin(angle) * radius;
+                // Create vibrant colors for stars
+                const colorOptions = [
+                    new THREE.Color(0x00ffcc), // Vibrant cyan
+                    new THREE.Color(0xffcc00), // Bright yellow
+                    new THREE.Color(0xff6600), // Orange
+                    new THREE.Color(0x00ff88), // Teal
+                    new THREE.Color(0xff00ff), // Magenta
+                ];
                 
-                nodes.push(node);
-                scene.add(node);
+                const color = colorOptions[Math.floor(Math.random() * colorOptions.length)];
+                starColors.push(color.r, color.g, color.b);
             }
             
-            // Create connection lines between nodes
-            const lineMaterial = new THREE.LineBasicMaterial({ 
-                color: 0x00d4ff, 
-                opacity: 0.3, 
-                transparent: true 
+            starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
+            starGeometry.setAttribute('color', new THREE.Float32BufferAttribute(starColors, 3));
+            
+            const starMaterial = new THREE.PointsMaterial({
+                size: 3,
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.8,
+                sizeAttenuation: true,
+                blending: THREE.AdditiveBlending
             });
             
-            const connectionLines = new THREE.Group();
+            starField = new THREE.Points(starGeometry, starMaterial);
+            scene.add(starField);
             
-            for (let i = 0; i < nodes.length; i++) {
-                for (let j = i + 1; j < nodes.length; j++) {
-                    const distance = nodes[i].position.distanceTo(nodes[j].position);
+            // Create success particles (floating upward)
+            const successGeometry = new THREE.BufferGeometry();
+            const successVertices = [];
+            const successVelocities = [];
+            const successColors = [];
+            
+            const successCount = 300;
+            
+            for (let i = 0; i < successCount; i++) {
+                const x = (Math.random() - 0.5) * 1500;
+                const y = -1000 + Math.random() * 2000;
+                const z = (Math.random() - 0.5) * 1500;
+                
+                successVertices.push(x, y, z);
+                
+                // Random velocities for each particle
+                successVelocities.push(
+                    (Math.random() - 0.5) * 0.5,
+                    Math.random() * 2 + 1, // Upward velocity
+                    (Math.random() - 0.5) * 0.5
+                );
+                
+                // Success-themed colors (gold, green, blue)
+                const colorOptions = [
+                    new THREE.Color(0xffcc00), // Gold
+                    new THREE.Color(0x00ff88), // Green
+                    new THREE.Color(0x00ffcc), // Cyan
+                ];
+                
+                const color = colorOptions[Math.floor(Math.random() * colorOptions.length)];
+                successColors.push(color.r, color.g, color.b);
+            }
+            
+            successGeometry.setAttribute('position', new THREE.Float32BufferAttribute(successVertices, 3));
+            successGeometry.setAttribute('color', new THREE.Float32BufferAttribute(successColors, 3));
+            
+            const successMaterial = new THREE.PointsMaterial({
+                size: 5,
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.7,
+                sizeAttenuation: true,
+                blending: THREE.AdditiveBlending
+            });
+            
+            successParticles = new THREE.Points(successGeometry, successMaterial);
+            successParticles.userData = { velocities: successVelocities };
+            scene.add(successParticles);
+            
+            // Create glowing orbs representing success and growth
+            const orbGeometry = new THREE.SphereGeometry(30, 32, 32);
+            const orbMaterials = [
+                new THREE.MeshBasicMaterial({ 
+                    color: 0x00ffcc, 
+                    transparent: true, 
+                    opacity: 0.7,
+                    emissive: 0x00ffcc,
+                    emissiveIntensity: 0.5
+                }),
+                new THREE.MeshBasicMaterial({ 
+                    color: 0xffcc00, 
+                    transparent: true, 
+                    opacity: 0.7,
+                    emissive: 0xffcc00,
+                    emissiveIntensity: 0.5
+                }),
+                new THREE.MeshBasicMaterial({ 
+                    color: 0x00ff88, 
+                    transparent: true, 
+                    opacity: 0.7,
+                    emissive: 0x00ff88,
+                    emissiveIntensity: 0.5
+                })
+            ];
+            
+            const orbs = [];
+            const orbCount = 15;
+            
+            for (let i = 0; i < orbCount; i++) {
+                const material = orbMaterials[Math.floor(Math.random() * orbMaterials.length)];
+                const orb = new THREE.Mesh(orbGeometry, material);
+                
+                // Position orbs in a more organized pattern
+                const angle = (i / orbCount) * Math.PI * 2;
+                const radius = 400 + Math.random() * 300;
+                const height = (Math.random() - 0.5) * 600;
+                
+                orb.position.x = Math.cos(angle) * radius;
+                orb.position.y = height;
+                orb.position.z = Math.sin(angle) * radius;
+                
+                // Store original position for floating animation
+                orb.userData.originalY = orb.position.y;
+                orb.userData.floatSpeed = 0.5 + Math.random() * 1.5;
+                orb.userData.floatAmount = 20 + Math.random() * 30;
+                
+                orbs.push(orb);
+                scene.add(orb);
+            }
+            
+            // Create connection lines between orbs
+            const lineMaterial = new THREE.LineBasicMaterial({ 
+                color: 0x00ffcc, 
+                opacity: 0.4, 
+                transparent: true,
+                blending: THREE.AdditiveBlending
+            });
+            
+            connectionLines = new THREE.Group();
+            
+            for (let i = 0; i < orbs.length; i++) {
+                for (let j = i + 1; j < orbs.length; j++) {
+                    const distance = orbs[i].position.distanceTo(orbs[j].position);
                     
-                    if (distance < 200) { // Only connect nearby nodes
+                    if (distance < 300) { // Only connect nearby orbs
                         const geometry = new THREE.BufferGeometry().setFromPoints([
-                            nodes[i].position,
-                            nodes[j].position
+                            orbs[i].position,
+                            orbs[j].position
                         ]);
                         const line = new THREE.Line(geometry, lineMaterial);
                         connectionLines.add(line);
@@ -2477,72 +2359,37 @@
             
             scene.add(connectionLines);
             
-            // Create floating icons/symbols
-            const iconGeometries = [
-                new THREE.RingGeometry(15, 25, 8), // Support rings
-                new THREE.ConeGeometry(10, 20, 8), // Expert cones
-                new THREE.OctahedronGeometry(12), // AI crystals
+            // Create floating success symbols (stars, checkmarks, etc.)
+            const symbolGeometries = [
+                new THREE.TetrahedronGeometry(15, 0), // Pyramid-like shape
+                new THREE.OctahedronGeometry(12, 0), // Diamond shape
+                new THREE.ConeGeometry(10, 20, 8), // Cone shape
             ];
             
-            const iconMaterial = new THREE.MeshBasicMaterial({ 
-                color: 0x00d4ff, 
-                opacity: 0.6, 
-                transparent: true,
+            const symbolMaterial = new THREE.MeshBasicMaterial({ 
+                color: 0xffcc00, 
+                transparent: true, 
+                opacity: 0.6,
                 wireframe: true
             });
             
             for (let i = 0; i < 30; i++) {
-                const geometry = iconGeometries[Math.floor(Math.random() * iconGeometries.length)];
-                const icon = new THREE.Mesh(geometry, iconMaterial);
+                const geometry = symbolGeometries[Math.floor(Math.random() * symbolGeometries.length)];
+                const symbol = new THREE.Mesh(geometry, symbolMaterial);
                 
-                icon.position.x = (Math.random() - 0.5) * 1000;
-                icon.position.y = (Math.random() - 0.5) * 1000;
-                icon.position.z = (Math.random() - 0.5) * 1000;
+                symbol.position.x = (Math.random() - 0.5) * 1000;
+                symbol.position.y = (Math.random() - 0.5) * 1000;
+                symbol.position.z = (Math.random() - 0.5) * 1000;
                 
-                icon.rotation.x = Math.random() * Math.PI;
-                icon.rotation.y = Math.random() * Math.PI;
+                symbol.rotation.x = Math.random() * Math.PI;
+                symbol.rotation.y = Math.random() * Math.PI;
                 
-                scene.add(icon);
+                // Store rotation speeds
+                symbol.userData.rotationSpeedX = (Math.random() - 0.5) * 0.02;
+                symbol.userData.rotationSpeedY = (Math.random() - 0.5) * 0.02;
+                
+                scene.add(symbol);
             }
-            
-            // Create particle system for ambient effect
-            const particleGeometry = new THREE.BufferGeometry();
-            const vertices = [];
-            const colors = [];
-            
-            const particleCount = 1000;
-            
-            for (let i = 0; i < particleCount; i++) {
-                vertices.push(
-                    Math.random() * 2000 - 1000,
-                    Math.random() * 2000 - 1000,
-                    Math.random() * 2000 - 1000
-                );
-                
-                const colorOptions = [
-                    new THREE.Color(0x00d4ff), // Cyan
-                    new THREE.Color(0x667eea), // Purple
-                    new THREE.Color(0x00ff88), // Teal
-                ];
-                
-                const color = colorOptions[Math.floor(Math.random() * colorOptions.length)];
-                colors.push(color.r, color.g, color.b);
-            }
-            
-            particleGeometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
-            particleGeometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
-            
-            const particleMaterial = new THREE.PointsMaterial({
-                size: 3,
-                vertexColors: true,
-                transparent: true,
-                opacity: 0.6,
-                sizeAttenuation: true,
-                blending: THREE.AdditiveBlending
-            });
-            
-            particleSystem = new THREE.Points(particleGeometry, particleMaterial);
-            scene.add(particleSystem);
             
             // Add lights
             const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
@@ -2583,10 +2430,32 @@
             camera.position.y += (-mouseY * 0.3 - camera.position.y) * 0.05;
             camera.lookAt(scene.position);
             
-            // Rotate particle system
-            if (particleSystem) {
-                particleSystem.rotation.x += 0.0005;
-                particleSystem.rotation.y += 0.001;
+            // Rotate starfield
+            if (starField) {
+                starField.rotation.x += 0.0005;
+                starField.rotation.y += 0.001;
+            }
+            
+            // Update success particles
+            if (successParticles) {
+                const positions = successParticles.geometry.attributes.position.array;
+                const velocities = successParticles.userData.velocities;
+                
+                for (let i = 0; i < positions.length; i += 3) {
+                    // Update position based on velocity
+                    positions[i] += velocities[i];
+                    positions[i + 1] += velocities[i + 1];
+                    positions[i + 2] += velocities[i + 2];
+                    
+                    // Reset particles that go off screen
+                    if (positions[i + 1] > 1000) {
+                        positions[i] = (Math.random() - 0.5) * 1500;
+                        positions[i + 1] = -1000;
+                        positions[i + 2] = (Math.random() - 0.5) * 1500;
+                    }
+                }
+                
+                successParticles.geometry.attributes.position.needsUpdate = true;
             }
             
             // Rotate connection lines
@@ -2595,20 +2464,27 @@
                 connectionLines.rotation.y += 0.0007;
             }
             
-            // Animate individual nodes
+            // Animate individual orbs
             scene.children.forEach(child => {
                 if (child.type === 'Mesh' && child.geometry.type === 'SphereGeometry') {
-                    child.rotation.x += 0.01;
-                    child.rotation.y += 0.01;
+                    // Floating motion
+                    child.position.y = child.userData.originalY + 
+                        Math.sin(Date.now() * 0.001 * child.userData.floatSpeed) * child.userData.floatAmount;
                     
-                    // Gentle floating motion
-                    child.position.y += Math.sin(Date.now() * 0.001 + child.position.x * 0.01) * 0.5;
+                    // Gentle rotation
+                    child.rotation.x += 0.005;
+                    child.rotation.y += 0.01;
+                }
+                
+                // Animate floating symbols
+                if (child.userData.rotationSpeedX !== undefined) {
+                    child.rotation.x += child.userData.rotationSpeedX;
+                    child.rotation.y += child.userData.rotationSpeedY;
                 }
             });
             
             renderer.render(scene, camera);
         }
-
         // Initialize the application
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize Three.js background
@@ -2630,13 +2506,11 @@
                     }
                 });
             });
-
             // Show welcome notification
             setTimeout(() => {
                 showNotification('Welcome to AiBhai!', 'Your AI companion for holistic life development is ready to help.');
             }, 2000);
         });
-
         // Expert functions
         function populateExpertsGrid(filter = 'all') {
             const grid = document.getElementById('expertsGrid');
@@ -2661,7 +2535,6 @@
                 grid.appendChild(expertCard);
             });
         }
-
         function createExpertCard(expert) {
             const card = document.createElement('div');
             card.className = 'expert-card';
@@ -2701,7 +2574,6 @@
             
             return card;
         }
-
         function filterExperts(category) {
             populateExpertsGrid(category);
             
@@ -2711,20 +2583,17 @@
             });
             event.target.classList.add('active');
         }
-
         // Modal functions
         function openModal(modalId) {
             const modal = document.getElementById(modalId);
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
-
         function closeModal(modalId) {
             const modal = document.getElementById(modalId);
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
         }
-
         // Close modals when clicking outside
         window.addEventListener('click', function(event) {
             if (event.target.classList.contains('modal')) {
@@ -2732,7 +2601,6 @@
                 document.body.style.overflow = 'auto';
             }
         });
-
         // Form handlers
         function handleLogin(event) {
             event.preventDefault();
@@ -2741,7 +2609,6 @@
             
             submitBtn.innerHTML = '<div class="loading"></div> Logging in...';
             submitBtn.disabled = true;
-
             setTimeout(() => {
                 closeModal('loginModal');
                 showNotification('Login Successful!', 'Welcome back to your AiBhai dashboard.');
@@ -2751,7 +2618,6 @@
                 event.target.reset();
             }, 2000);
         }
-
         function handleSignup(event) {
             event.preventDefault();
             const submitBtn = event.target.querySelector('button[type="submit"]');
@@ -2759,7 +2625,6 @@
             
             submitBtn.innerHTML = '<div class="loading"></div> Creating account...';
             submitBtn.disabled = true;
-
             setTimeout(() => {
                 closeModal('signupModal');
                 showNotification('Account Created!', 'Welcome to AiBhai! Start your journey to holistic development.');
@@ -2769,7 +2634,6 @@
                 event.target.reset();
             }, 2000);
         }
-
         function handleContact(event) {
             event.preventDefault();
             const submitBtn = event.target.querySelector('button[type="submit"]');
@@ -2777,7 +2641,6 @@
             
             submitBtn.innerHTML = '<div class="loading"></div> Sending...';
             submitBtn.disabled = true;
-
             setTimeout(() => {
                 closeModal('contactModal');
                 showNotification('Message Sent!', 'Our sales team will contact you within 24 hours.');
@@ -2786,21 +2649,18 @@
                 event.target.reset();
             }, 2000);
         }
-
         // Dashboard functions
         function showDashboard() {
             const dashboard = document.getElementById('dashboard');
             dashboard.classList.add('active');
             dashboard.scrollIntoView({ behavior: 'smooth' });
         }
-
         function switchDashboardTab(tabName) {
             // Update tab buttons
             document.querySelectorAll('.dashboard-tab').forEach(tab => {
                 tab.classList.remove('active');
             });
             event.target.classList.add('active');
-
             // Update content based on tab
             const content = document.querySelector('.dashboard-content');
             
@@ -2843,7 +2703,7 @@
                                 <div class="widget-icon">💪</div>
                             </div>
                             <div style="text-align: center; padding: 1rem;">
-                                <div style="font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">85%</div>
+                                <div style="font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #00ffcc 0%, #ffcc00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">85%</div>
                                 <div style="color: #e0e0e0;">Great job today!</div>
                             </div>
                         </div>
@@ -3118,26 +2978,24 @@
                             <ul style="list-style: none;">
                                 <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
                                     <div style="font-weight: 600;">Dr. Sarah Johnson</div>
-                                    <div style="font-size: 0.9rem; color: #00d4ff;">Medical Expert</div>
+                                    <div style="font-size: 0.9rem; color: #00ffcc;">Medical Expert</div>
                                 </li>
                                 <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
                                     <div style="font-weight: 600;">Sheikh Ahmed Hassan</div>
-                                    <div style="font-size: 0.9rem; color: #00d4ff;">Islamic Scholar</div>
+                                    <div style="font-size: 0.9rem; color: #00ffcc;">Islamic Scholar</div>
                                 </li>
                                 <li style="padding: 0.5rem 0;">
                                     <div style="font-weight: 600;">Emily Rodriguez</div>
-                                    <div style="font-size: 0.9rem; color: #00d4ff;">Financial Advisor</div>
+                                    <div style="font-size: 0.9rem; color: #00ffcc;">Financial Advisor</div>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 `
             };
-
             content.innerHTML = tabContents[tabName] || tabContents.overview;
             currentDashboardTab = tabName;
         }
-
         // Chat functions
         function toggleChat() {
             const chatInterface = document.getElementById('chatInterface');
@@ -3151,7 +3009,6 @@
                 chatToggle.innerHTML = '✕';
             }
         }
-
         function sendMessage() {
             const input = document.getElementById('messageInput');
             const message = input.value.trim();
@@ -3175,7 +3032,6 @@
                 }, 1000);
             }
         }
-
         function addChatMessage(sender, message, isHeroChat = false) {
             const messagesDiv = isHeroChat ? document.getElementById('heroChatMessages') : document.getElementById('chatMessages');
             const messageDiv = document.createElement('div');
@@ -3190,7 +3046,6 @@
                 chatHistory.push({ sender, message, timestamp: new Date() });
             }
         }
-
         function generateAIResponse(userMessage) {
             const responses = {
                 greeting: [
@@ -3224,7 +3079,6 @@
                     "I'm your holistic life assistant! Whether it's personal growth, professional development, or spiritual guidance, I'm here to help."
                 ]
             };
-
             const lowerMessage = userMessage.toLowerCase();
             
             if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
@@ -3241,13 +3095,11 @@
                 return responses.default[Math.floor(Math.random() * responses.default.length)];
             }
         }
-
         function handleChatKeyPress(event) {
             if (event.key === 'Enter') {
                 sendMessage();
             }
         }
-
         // Hero chat functions
         function sendHeroMessage() {
             const input = document.getElementById('heroMessageInput');
@@ -3272,13 +3124,11 @@
                 }, 1000);
             }
         }
-
         function handleHeroChatKeyPress(event) {
             if (event.key === 'Enter') {
                 sendHeroMessage();
             }
         }
-
         // Utility functions
         function scrollToSection(sectionId) {
             const section = document.getElementById(sectionId);
@@ -3286,7 +3136,6 @@
                 section.scrollIntoView({ behavior: 'smooth' });
             }
         }
-
         function showNotification(title, message) {
             const notification = document.getElementById('notification');
             const notificationTitle = document.querySelector('.notification-title');
@@ -3301,12 +3150,10 @@
                 hideNotification();
             }, 5000);
         }
-
         function hideNotification() {
             const notification = document.getElementById('notification');
             notification.classList.remove('show');
         }
-
         // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
@@ -3318,7 +3165,6 @@
                 header.style.boxShadow = 'none';
             }
         });
-
         // Add some interactive animations
         document.addEventListener('DOMContentLoaded', function() {
             // Animate cards on scroll
@@ -3326,7 +3172,6 @@
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
             };
-
             const observer = new IntersectionObserver(function(entries) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -3335,7 +3180,6 @@
                     }
                 });
             }, observerOptions);
-
             // Observe all cards
             document.querySelectorAll('.service-card, .feature-card, .pricing-card, .testimonial-card, .expert-card, .expert-category-card, .why-choose-card').forEach(card => {
                 card.style.opacity = '0';
