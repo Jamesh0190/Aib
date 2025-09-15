@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AiBhai - Your AI-Powered Life Support Tool</title>
+    <meta name="description" content="AiBhai is your comprehensive AI companion for holistic life development - health, wellness, spirituality, productivity, relationships, finance, career, and continuous learning.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <!-- Three.js Background -->
+    <div id="three-container"></div>
+    <div class="overlay"></div>
+    
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">AiBhai</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#why-choose">Why Choose AiBhai</a></li>
+                <li><a href="#expert-consultation">Expert Consultation</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#" onclick="showDashboard()">Dashboard</a></li>
+            </ul>
+            <div>
+                <a href="#" class="cta-button" onclick="openModal('loginModal')">Login</a>
+                <a href="#" class="cta-button" onclick="openModal('signupModal')" style="margin-left: 10px;">Get Started</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="floating">Your AI Companion in Life, Faith, and Growth</h1>
+                <p>AiBhai is your comprehensive AI-powered personal assistant, supporting your journey toward holistic development across health, wellness, spirituality, productivity, relationships, finance, career, and continuous learning.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary pulse" onclick="openModal('signupModal')">Start Your Journey</a>
+                    <a href="#" class="btn-secondary" onclick="scrollToSection('expert-consultation')">Talk to Expert</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Section -->
+    <section class="chat-section">
+        <div class="container">
+            <h2 class="section-title">Chat with AiBhai</h2>
+            <div class="chat-container">
+                <div class="chat-header">
+                    <div>
+                        <h3>AiBhai Assistant</h3>
+                        <div style="font-size: 0.9rem; opacity: 0.8;">Always here to help</div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 10px; height: 10px; background: #00ff00; border-radius: 50%; animation: pulse 2s infinite;"></div>
+                        <span style="font-size: 0.9rem;">Online</span>
+                    </div>
+                </div>
+                <div class="chat-messages" id="heroChatMessages">
+                    <div class="message ai">
+                        👋 Hello! I'm AiBhai, your AI companion for life, faith, and growth. How can I support you today?
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="heroMessageInput" placeholder="Type your message..." onkeypress="handleHeroChatKeyPress(event)">
+                    <button onclick="sendHeroMessage()">📤</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Core Life Support Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="expert-support-badge">+ Human Expert</div>
+                    <div class="service-header">
+                        <div class="service-icon">📅</div>
+                        <h3>Life Planner & Habit Architect</h3>
+                    </div>
+                    <ul class="service-features">
+                        <li>Smart calendar with AI time-blocking</li>
+                        <li>Intelligent habit coaching & reminders</li>
+                        <li>Weekly progress reviews & insights</li>
+                        <li>Personalized improvement suggestions</li>
+                        <li>Goal tracking & milestone celebrations</li>
+                        <li>Access to certified life coaches</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="expert-support-badge">+ Human Expert</div>
+                    <div class="service-header">
+                        <div class="service-icon">💪</div>
+                        <h3>Health & Wellness Guide</h3>
+                    </div>
+                    <ul class="service-features">
+                        <li>Nutrition tracking & meal planning</li>
+                        <li>Movement prompts & exercise guidance</li>
+                        <li>Sleep analytics & optimization</li>
+                        <li>Mental wellness chat with CBT-based tools</li>
+                        <li>Wearable device integration</li>
+                        <li>Consultation with health professionals</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="expert-support-badge">+ Human Expert</div>
+                    <div class="service-header">
+                        <div class="service-icon">🕌</div>
+                        <h3>Faith & Spiritual Advisor</h3>
+                    </div>
+                    <ul class="service-features">
+                        <li>Customizable by belief system</li>
+                        <li>Prayer times & spiritual reminders</li>
+                        <li>Quranic/Hadith-based guidance (Muslim users)</li>
+                        <li>Daily reflection prompts</li>
+                        <li>Spiritual journaling & growth tracking</li>
+                        <li>Guidance from spiritual mentors</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="expert-support-badge">+ Human Expert</div>
+                    <div class="service-header">
+                        <div class="service-icon">💼</div>
+                        <h3>Business & Career Coach</h3>
+                    </div>
+                    <ul class="service-features">
+                        <li>AI-powered email & proposal writing</li>
+                        <li>Startup mentorship & Lean Canvas tools</li>
+                        <li>Freelancer & solopreneur support</li>
+                        <li>Career path planning & skill development</li>
+                        <li>Professional networking strategies</li>
+                        <li>1-on-1 business consulting sessions</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="expert-support-badge">+ Human Expert</div>
+                    <div class="service-header">
+                        <div class="service-icon">💰</div>
+                        <h3>Financial Wellness Assistant</h3>
+                    </div>
+                    <ul class="service-features">
+                        <li>Budget planning & expense tracking</li>
+                        <li>Savings goals & investment guidance</li>
+                        <li>Subscription management & optimization</li>
+                        <li>Spending analysis with AI insights</li>
+                        <li>Financial education & alerts</li>
+                        <li>Consultation with financial advisors</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="expert-support-badge">+ Human Expert</div>
+                    <div class="service-header">
+                        <div class="service-icon">❤️</div>
+                        <h3>Social & Emotional Growth</h3>
+                    </div>
+                    <ul class="service-features">
+                        <li>Conversation practice for conflicts</li>
+                        <li>Relationship journaling & insights</li>
+                        <li>Emotional resilience exercises</li>
+                        <li>Communication skill development</li>
+                        <li>Empathy & relationship building tools</li>
+                        <li>Therapy and counseling sessions</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="expert-support-badge">+ Human Expert</div>
+                    <div class="service-header">
+                        <div class="service-icon">📚</div>
+                        <h3>Learning & Skill Builder</h3>
+                    </div>
+                    <ul class="service-features">
+                        <li>Personalized learning plans</li>
+                        <li>Micro-learning modules & quizzes</li>
+                        <li>Language learning support</li>
+                        <li>Coding & technical skill development</li>
+                        <li>Progress tracking & achievement badges</li>
+                        <li>Tutoring and mentorship sessions</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="expert-support-badge">+ Human Expert</div>
+                    <div class="service-header">
+                        <div class="service-icon">🎯</div>
+                        <h3>Personal Integration Hub</h3>
+                    </div>
+                    <ul class="service-features">
+                        <li>Unified dashboard for all life areas</li>
+                        <li>Cross-domain insights & correlations</li>
+                        <li>Life balance assessments</li>
+                        <li>Personalized recommendations</li>
+                        <li>Holistic progress reporting</li>
+                        <li>Integrated expert consultations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Platform Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI-Powered Intelligence</h3>
+                    <p>Advanced GPT-4 technology with custom-trained models for personalized, context-aware guidance and support across all life domains.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Human Expert Network</h3>
+                    <p>Access to verified professionals across all domains for personalized consultation and expert validation of AI insights.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Seamless Integration</h3>
+                    <p>Perfect harmony between AI assistance and human expertise, providing instant answers with the option for deeper human consultation.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Privacy & Security</h3>
+                    <p>End-to-end encryption and robust data protection protocols ensure your personal information remains secure and private.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>24/7 Availability</h3>
+                    <p>Your AI companion is always available to provide support, guidance, and assistance whenever you need it.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Personal Growth</h3>
+                    <p>Continuous learning and improvement tracking to help you become the best version of yourself with expert guidance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose AiBhai Section -->
+    <section class="why-choose" id="why-choose">
+        <div class="container">
+            <h2 class="section-title">Why Choose AiBhai?</h2>
+            <div class="why-choose-grid">
+                <div class="why-choose-card">
+                    <div class="why-choose-icon">🧠</div>
+                    <h3>Holistic Approach</h3>
+                    <p>Comprehensive support across all life domains - mental, physical, spiritual, emotional, and professional development.</p>
+                </div>
+                <div class="why-choose-card">
+                    <div class="why-choose-icon">🕌</div>
+                    <h3>Faith-Conscious Design</h3>
+                    <p>Spiritual guidance and values-based support tailored to your beliefs, with special features for faith-conscious users.</p>
+                </div>
+                <div class="why-choose-card">
+                    <div class="why-choose-icon">⚡</div>
+                    <h3>Instant & Deep Support</h3>
+                    <p>Get immediate AI answers and connect with human experts for confirmation, verification, and deeper insights when needed.</p>
+                </div>
+                <div class="why-choose-card">
+                    <div class="why-choose-icon">🎯</div>
+                    <h3>Personalized Experience</h3>
+                    <p>Tailored guidance and recommendations based on your unique needs, goals, and preferences across all life areas.</p>
+                </div>
+                <div class="why-choose-card">
+                    <div class="why-choose-icon">🌟</div>
+                    <h3>Expert Verification</h3>
+                    <p>All human experts are verified professionals, ensuring quality guidance and reliable advice for important decisions.</p>
+                </div>
+                <div class="why-choose-card">
+                    <div class="why-choose-icon">💎</div>
+                    <h3>Premium Quality</h3>
+                    <p>Combination of cutting-edge AI technology and human expertise provides unparalleled support for your life journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Consultation Section -->
+    <section class="expert-consultation" id="expert-consultation">
+        <div class="container">
+            <h2 class="section-title">Connect with Human Experts</h2>
+            <p style="text-align: center; margin-bottom: 3rem; color: #e0e0e0; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Get personalized guidance from verified human experts to complement AI insights. Our experts can help confirm, verify, and enhance the answers you receive from our AI platform.
+            </p>
+            
+            <div class="expert-categories">
+                <div class="expert-category-card" onclick="filterExperts('health')">
+                    <div class="expert-category-icon">🏥</div>
+                    <h3>Health & Medical</h3>
+                    <p>Professional medical advice and wellness guidance</p>
+                    <span class="expert-count">245 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('mental-health')">
+                    <div class="expert-category-icon">🧠</div>
+                    <h3>Mental Health</h3>
+                    <p>Therapy, counseling, and emotional support</p>
+                    <span class="expert-count">189 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('spiritual')">
+                    <div class="expert-category-icon">🕌</div>
+                    <h3>Spiritual Guidance</h3>
+                    <p>Faith-based counseling and spiritual mentoring</p>
+                    <span class="expert-count">156 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('financial')">
+                    <div class="expert-category-icon">💰</div>
+                    <h3>Financial Planning</h3>
+                    <p>Investment, budgeting, and wealth management</p>
+                    <span class="expert-count">203 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('career')">
+                    <div class="expert-category-icon">💼</div>
+                    <h3>Career & Business</h3>
+                    <p>Professional development and business strategy</p>
+                    <span class="expert-count">267 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('legal')">
+                    <div class="expert-category-icon">⚖️</div>
+                    <h3>Legal Advice</h3>
+                    <p>Legal consultation and document review</p>
+                    <span class="expert-count">134 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('education')">
+                    <div class="expert-category-icon">📚</div>
+                    <h3>Education & Learning</h3>
+                    <p>Academic guidance and skill development</p>
+                    <span class="expert-count">178 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('relationships')">
+                    <div class="expert-category-icon">❤️</div>
+                    <h3>Relationships</h3>
+                    <p>Family, marriage, and interpersonal counseling</p>
+                    <span class="expert-count">145 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('technology')">
+                    <div class="expert-category-icon">💻</div>
+                    <h3>Technology & IT</h3>
+                    <p>Tech support and digital transformation</p>
+                    <span class="expert-count">198 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('real-estate')">
+                    <div class="expert-category-icon">🏠</div>
+                    <h3>Real Estate</h3>
+                    <p>Property investment and real estate advice</p>
+                    <span class="expert-count">112 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('nutrition')">
+                    <div class="expert-category-icon">🥗</div>
+                    <h3>Nutrition & Diet</h3>
+                    <p>Dietary planning and nutritional counseling</p>
+                    <span class="expert-count">167 experts</span>
+                </div>
+                
+                <div class="expert-category-card" onclick="filterExperts('fitness')">
+                    <div class="expert-category-icon">💪</div>
+                    <h3>Fitness & Training</h3>
+                    <p>Personal training and fitness coaching</p>
+                    <span class="expert-count">156 experts</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Directory Section -->
+    <section class="expert-directory" id="expert-directory">
+        <div class="container">
+            <h2 class="section-title">Featured Experts</h2>
+            
+            <div class="expert-filters">
+                <button class="filter-button active" onclick="filterExperts('all')">All Experts</button>
+                <button class="filter-button" onclick="filterExperts('available')">Available Now</button>
+                <button class="filter-button" onclick="filterExperts('top-rated')">Top Rated</button>
+                <button class="filter-button" onclick="filterExperts('new')">New Experts</button>
+            </div>
+            
+            <div class="experts-grid" id="expertsGrid">
+                <!-- Expert cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Success Stories</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "The combination of AI insights and human expert consultation has been transformative. I get instant answers from AiBhai and can validate them with certified professionals when needed."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://picsum.photos/seed/user1/50/50.jpg" alt="User" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Sarah Ahmed</h4>
+                            <p>Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "As someone who values both technology and human connection, AiBhai perfectly bridges the gap. The AI provides quick insights, while the expert network offers deep, personalized guidance."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://picsum.photos/seed/user2/50/50.jpg" alt="User" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Michael Chen</h4>
+                            <p>Software Developer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "The spiritual guidance features combined with access to real scholars have been incredible for my faith journey. I get daily reminders and can consult with experts when I have deeper questions."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://picsum.photos/seed/user3/50/50.jpg" alt="User" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Aisha Khan</h4>
+                            <p>Student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Choose Your Plan</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Free</h3>
+                    <div class="price">£0<span style="font-size: 1rem;">/month</span></div>
+                    <div class="price-subtitle">Perfect for getting started</div>
+                    <ul class="pricing-features">
+                        <li>Basic AI assistance</li>
+                        <li>Limited expert access (1/month)</li>
+                        <li>Basic life planning tools</li>
+                        <li>Community support</li>
+                        <li>Mobile app access</li>
+                    </ul>
+                    <button class="cta-button" onclick="openModal('signupModal')" style="width: 100%;">Get Started Free</button>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>Pro</h3>
+                    <div class="price">£9.99<span style="font-size: 1rem;">/month</span></div>
+                    <div class="price-subtitle">Most popular choice</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Free</li>
+                        <li>Unlimited AI conversations</li>
+                        <li>5 expert consultations/month</li>
+                        <li>Advanced analytics</li>
+                        <li>Priority support</li>
+                        <li>All premium features</li>
+                    </ul>
+                    <button class="btn-primary" onclick="openModal('signupModal')" style="width: 100%;">Start Pro Trial</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>Basic</h3>
+                    <div class="price">£4.99<span style="font-size: 1rem;">/month</span></div>
+                    <div class="price-subtitle">Essential features</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Free</li>
+                        <li>20 AI conversations/day</li>
+                        <li>2 expert consultations/month</li>
+                        <li>Enhanced features</li>
+                        <li>Email support</li>
+                    </ul>
+                    <button class="cta-button" onclick="openModal('signupModal')" style="width: 100%;">Choose Basic</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>Family/Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <div class="price-subtitle">For teams & families</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Pro</li>
+                        <li>Unlimited expert access</li>
+                        <li>Multiple user accounts</li>
+                        <li>Team collaboration tools</li>
+                        <li>Custom integrations</li>
+                        <li>Dedicated support</li>
+                    </ul>
+                    <button class="cta-button" onclick="openModal('contactModal')" style="width: 100%;">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard" id="dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h2>Your Personal Dashboard</h2>
+                <div class="user-info">
+                    <img src="https://picsum.photos/seed/user/50/50.jpg" alt="User" style="width: 50px; height: 50px; border-radius: 50%;">
+                    <div>
+                        <div style="font-weight: 600;">Welcome back!</div>
+                        <div style="color: #00ffcc; font-size: 0.9rem;">Pro Member</div>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard-tabs">
+                <button class="dashboard-tab active" onclick="switchDashboardTab('overview')">Overview</button>
+                <button class="dashboard-tab" onclick="switchDashboardTab('health')">Health</button>
+                <button class="dashboard-tab" onclick="switchDashboardTab('spiritual')">Spiritual</button>
+                <button class="dashboard-tab" onclick="switchDashboardTab('productivity')">Productivity</button>
+                <button class="dashboard-tab" onclick="switchDashboardTab('finance')">Finance</button>
+                <button class="dashboard-tab" onclick="switchDashboardTab('experts')">My Experts</button>
+            </div>
+            <div class="dashboard-content">
+                <div class="dashboard-grid">
+                    <div class="dashboard-widget">
+                        <div class="widget-header">
+                            <div class="widget-title">Daily Progress</div>
+                            <div class="widget-icon">📊</div>
+                        </div>
+                        <div class="progress-tracker">
+                            <div class="progress-steps">
+                                <div class="progress-step">
+                                    <div class="step-circle completed">✓</div>
+                                    <div class="step-label">Morning Prayer</div>
+                                </div>
+                                <div class="progress-step">
+                                    <div class="step-circle completed">✓</div>
+                                    <div class="step-label">Exercise</div>
+                                </div>
+                                <div class="progress-step">
+                                    <div class="step-circle active">3</div>
+                                    <div class="step-label">Work Tasks</div>
+                                </div>
+                                <div class="progress-step">
+                                    <div class="step-circle">4</div>
+                                    <div class="step-label">Learning</div>
+                                </div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-widget">
+                        <div class="widget-header">
+                            <div class="widget-title">Wellness Score</div>
+                            <div class="widget-icon">💪</div>
+                        </div>
+                        <div style="text-align: center; padding: 1rem;">
+                            <div style="font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #00ffcc 0%, #ffcc00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">85%</div>
+                            <div style="color: #e0e0e0;">Great job today!</div>
+                        </div>
+                    </div>
+                    <div class="dashboard-widget">
+                        <div class="widget-header">
+                            <div class="widget-title">Upcoming Tasks</div>
+                            <div class="widget-icon">📋</div>
+                        </div>
+                        <ul style="list-style: none;">
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">Team meeting at 2:00 PM</li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">Review project proposal</li>
+                            <li style="padding: 0.5rem 0;">Evening prayer reminder</li>
+                        </ul>
+                    </div>
+                    <div class="dashboard-widget">
+                        <div class="widget-header">
+                            <div class="widget-title">Expert Consultations</div>
+                            <div class="widget-icon">👥</div>
+                        </div>
+                        <div style="text-align: center; padding: 1rem;">
+                            <div style="font-size: 2rem; margin: 1rem 0;">3/5</div>
+                            <div style="color: #e0e0e0;">Used this month</div>
+                            <button class="btn-primary" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;" onclick="scrollToSection('expert-consultation')">Book Expert</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AiBhai</h3>
+                    <p>Your AI-powered life support tool for holistic development across all aspects of life.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><a href="#">Life Planning</a></li>
+                        <li><a href="#">Health & Wellness</a></li>
+                        <li><a href="#">Spiritual Guidance</a></li>
+                        <li><a href="#">Business Coaching</a></li>
+                        <li><a href="#">Expert Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Become an Expert</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Expert Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AiBhai. All rights reserved. | Designed with ❤️ for your holistic growth</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Interface -->
+    <div class="chat-interface" id="chatInterface">
+        <div class="chat-header">
+            <div>
+                <h3>AiBhai Assistant</h3>
+                <div style="font-size: 0.9rem; opacity: 0.8;">Always here to help</div>
+            </div>
+            <button onclick="toggleChat()" style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message ai">
+                👋 Hello! I'm AiBhai, your AI companion for life, faith, and growth. How can I support you today?
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Type your message..." onkeypress="handleChatKeyPress(event)">
+            <button onclick="sendMessage()">📤</button>
+        </div>
+    </div>
+    <button class="chat-toggle" onclick="toggleChat()" id="chatToggle">💬</button>
+
+    <!-- Modals -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('loginModal')">×</button>
+            <h2>Welcome Back</h2>
+            <p>Login to access your AiBhai dashboard</p>
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" required>
+                </div>
+                <button type="submit" class="cta-button" style="width: 100%;">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('signupModal')">×</button>
+            <h2>Join AiBhai</h2>
+            <p>Start your journey to holistic life development</p>
+            <form onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" required>
+                </div>
+                <div class="form-group">
+                    <label>Faith/Belief System (Optional)</label>
+                    <select>
+                        <option value="">Prefer not to say</option>
+                        <option value="islam">Islam</option>
+                        <option value="christianity">Christianity</option>
+                        <option value="judaism">Judaism</option>
+                        <option value="hinduism">Hinduism</option>
+                        <option value="buddhism">Buddhism</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="cta-button" style="width: 100%;">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('contactModal')">×</button>
+            <h2>Contact Sales</h2>
+            <p>Interested in Family/Enterprise plans? Let us know how we can help.</p>
+            <form onsubmit="handleContact(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Company/Organization</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Number of Users</label>
+                    <select required>
+                        <option value="">Select range</option>
+                        <option value="1-10">1-10 users</option>
+                        <option value="11-50">11-50 users</option>
+                        <option value="51-200">51-200 users</option>
+                        <option value="200+">200+ users</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea rows="4" required></textarea>
+                </div>
+                <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <div class="notification-header">
+            <div class="notification-title">Notification</div>
+            <button class="notification-close" onclick="hideNotification()">×</button>
+        </div>
+        <div class="notification-message" id="notificationMessage">
+            Welcome to AiBhai!
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/three-background.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
